@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT vs Claude vs Gemini — Which AI Assistant Is Actually Better? | Cajun AI</title>
+  <meta name="description" content="We tested all three on real tasks: writing, code, reasoning, and research. Here's the honest breakdown.">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .article-hero { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 80px 0 60px; margin-top: var(--nav-h); }
+    .article-body { max-width: 760px; margin: 0 auto; padding: 60px 40px 80px; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 700; margin: 44px 0 16px; color: #fff; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; color: var(--accent-light); }
+    .article-body p { color: var(--muted2); line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-body ul, .article-body ol { color: var(--muted2); line-height: 1.9; margin: 0 0 20px 24px; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body a { color: var(--accent); text-decoration: underline; }
+    .article-body a:hover { color: var(--accent-light); }
+    .article-body strong { color: #fff; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--bg2); border-radius: 0 var(--radius) var(--radius) 0; margin: 28px 0; color: var(--muted2); font-style: italic; }
+    .disclaimer-box { background: var(--bg2); border: 1px solid var(--border-acc); border-radius: var(--radius); padding: 18px 24px; margin-bottom: 36px; font-size: .9rem; color: var(--muted); }
+    .disclaimer-box strong { color: var(--accent); }
+    .sources-section { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 36px; }
+    .sources-section h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: #fff; letter-spacing: .05em; text-transform: uppercase; }
+    .sources-section ol { color: var(--muted); font-size: .88rem; line-height: 1.8; margin-left: 20px; }
+    .sources-section a { color: var(--accent); text-decoration: none; }
+    .sources-section a:hover { text-decoration: underline; }
+    .article-meta-header { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 18px; font-size: .88rem; color: var(--muted); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .9rem; text-decoration: none; margin-bottom: 28px; }
+    .back-link:hover { color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: .95rem; }
+    .comparison-table th { background: var(--bg2); color: var(--accent); font-weight: 700; padding: 12px 16px; text-align: left; border: 1px solid var(--border); }
+    .comparison-table td { padding: 12px 16px; border: 1px solid var(--border); color: var(--muted2); vertical-align: top; }
+    .comparison-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+    @media(max-width: 600px) { .article-body { padding: 40px 20px 60px; } .comparison-table { font-size: .82rem; } }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../tradeboard.html">TradeBoard</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../blog.html" class="active">Articles</a></li>
+      <li><a href="../youtube.html">YouTube</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="../login.html" class="btn btn-ghost">Log In</a>
+      <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../../index.html">Home</a><a href="../tradeboard.html">TradeBoard</a><a href="../pricing.html">Pricing</a><a href="../blog.html">Articles</a><a href="../youtube.html">YouTube</a><a href="../about.html">About</a>
+  <a href="../login.html" class="btn btn-outline">Log In</a>
+  <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container" style="max-width:760px;">
+    <a href="../blog.html" class="back-link">← Back to Articles</a>
+    <div class="article-cat" style="margin-bottom:14px;">AI Tools</div>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:18px;">ChatGPT vs Claude vs Gemini — Which AI Assistant Is Actually Better?</h1>
+    <p style="color:var(--muted2);font-size:1.1rem;line-height:1.8;max-width:640px;">We tested all three on real tasks: writing, code, reasoning, and research. Here's the honest breakdown — no brand sponsorships, no fluff.</p>
+    <div class="article-meta-header">
+      <span>By Cajun AI Editorial</span>
+      <span>·</span>
+      <span>June 2026</span>
+      <span>·</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <div class="disclaimer-box">
+    <strong>Note:</strong> This article reflects model capabilities as of June 2026. OpenAI, Anthropic, and Google release updates frequently — specific behaviors may change after publication. Pricing and tier structures are subject to change by each provider.
+  </div>
+
+  <p>By now, most people have tried at least one AI chatbot. But if you're trying to figure out which one to actually pay for — or which one to use for serious work — the answer isn't obvious. Each model has a distinct personality, genuine strengths, and real blind spots. We ran all three through the same battery of real-world tasks to give you an honest comparison.</p>
+
+  <p>Quick note: we're comparing the flagship paid tiers — ChatGPT Plus (GPT-4o), Claude Pro (Claude 3.5 Sonnet/Opus), and Gemini Advanced (Gemini 1.5 Pro / 2.0). Free tiers are more limited and not the basis for this comparison.</p>
+
+  <h2>The Contenders</h2>
+
+  <h3>ChatGPT (OpenAI)</h3>
+  <p>The household name. GPT-4o is OpenAI's current multimodal flagship — it handles text, images, voice, and code. It's the most feature-rich platform: web browsing, image generation (DALL·E), code interpreter, custom GPTs, and integrations with third-party tools. If you want one tool that does a lot of different things, ChatGPT has the widest feature surface.</p>
+
+  <h3>Claude (Anthropic)</h3>
+  <p>Built by former OpenAI researchers who prioritized AI safety. Claude's defining trait is its ability to handle extremely long documents — its context window (the amount of text it can process at once) is among the largest available. If you need to feed it a 200-page PDF and ask detailed questions about it, Claude is the go-to. It also writes with a noticeably more natural, human tone than the other two.</p>
+
+  <h3>Gemini (Google)</h3>
+  <p>Google's entry, deeply integrated into the Google ecosystem — Gmail, Docs, Drive, Search. Gemini's biggest edge is real-time information: it can pull live data from the web without a separate browsing plugin. If you're already in Google Workspace all day, Gemini's integrations are hard to beat.</p>
+
+  <h2>Head-to-Head: Task by Task</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>ChatGPT</th>
+        <th>Claude</th>
+        <th>Gemini</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Long-form writing</strong></td>
+        <td>Strong. Can drift into corporate-speak on long outputs.</td>
+        <td>Best of the three. Most natural voice, best structure.</td>
+        <td>Solid. Can feel slightly generic.</td>
+      </tr>
+      <tr>
+        <td><strong>Code generation</strong></td>
+        <td>Excellent. Code Interpreter + debugging in the same window.</td>
+        <td>Very strong. Explains code clearly, fewer hallucinated APIs.</td>
+        <td>Good, especially for Google-ecosystem code.</td>
+      </tr>
+      <tr>
+        <td><strong>Summarizing long documents</strong></td>
+        <td>Good up to its context limit.</td>
+        <td>Best. Handles 200k+ token documents natively.</td>
+        <td>Strong with Google Drive integration.</td>
+      </tr>
+      <tr>
+        <td><strong>Real-time research</strong></td>
+        <td>Good with browsing enabled.</td>
+        <td>Limited — no live web access on most queries.</td>
+        <td>Best. Native Google Search integration.</td>
+      </tr>
+      <tr>
+        <td><strong>Image understanding</strong></td>
+        <td>Strong. Can analyze screenshots, charts, photos.</td>
+        <td>Strong. Detailed image analysis.</td>
+        <td>Strong. Deep integration with Google Photos/Drive.</td>
+      </tr>
+      <tr>
+        <td><strong>Reasoning / logic</strong></td>
+        <td>Excellent with o1/o3 models (slower, more deliberate).</td>
+        <td>Very good. Less prone to confident wrong answers.</td>
+        <td>Good. Occasionally overconfident.</td>
+      </tr>
+      <tr>
+        <td><strong>Following complex instructions</strong></td>
+        <td>Very good but can get "helpful" in ways you didn't ask for.</td>
+        <td>Best. Stays on task, follows multi-step instructions precisely.</td>
+        <td>Good.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Where Each One Wins</h2>
+
+  <h3>Use ChatGPT if:</h3>
+  <ul>
+    <li>You want the most tools in one place (image gen, voice, code interpreter, plugins)</li>
+    <li>You need the advanced reasoning models (o1, o3) for math, logic, or complex analysis</li>
+    <li>You're building custom AI workflows using the API</li>
+  </ul>
+
+  <h3>Use Claude if:</h3>
+  <ul>
+    <li>You're doing heavy writing — articles, reports, proposals, scripts</li>
+    <li>You need to analyze long documents (contracts, research papers, code bases)</li>
+    <li>You want an AI that follows instructions more precisely and pushes back less</li>
+  </ul>
+
+  <h3>Use Gemini if:</h3>
+  <ul>
+    <li>You're embedded in Google Workspace (Gmail, Docs, Sheets, Drive)</li>
+    <li>You need real-time web information built in</li>
+    <li>You want AI that connects to your existing Google data</li>
+  </ul>
+
+  <h2>The Honest Verdict</h2>
+
+  <p>There's no single winner — it depends on what you're doing. For most people doing professional knowledge work, <strong>Claude is the best all-around writing and reasoning tool.</strong> For people who want one subscription that does everything, <strong>ChatGPT has the widest feature set.</strong> If you live in Google and need current information, <strong>Gemini is the obvious fit.</strong></p>
+
+  <p>Realistically, if you're serious about AI tools, you'll end up using more than one. Many professionals keep Claude open for writing and document work, ChatGPT for code and image tasks, and Gemini when they need live research or Google integration.</p>
+
+  <p>All three are genuinely impressive. All three hallucinate sometimes. Verify anything important against primary sources.</p>
+
+  <div class="sources-section">
+    <h4>Sources & References</h4>
+    <ol>
+      <li>OpenAI. "GPT-4o System Card." (2024). <a href="https://openai.com/index/gpt-4o-system-card/" target="_blank" rel="noopener">openai.com</a></li>
+      <li>Anthropic. "Claude 3 Model Card." (2024). <a href="https://www.anthropic.com/index/claude-3-family" target="_blank" rel="noopener">anthropic.com</a></li>
+      <li>Google DeepMind. "Gemini 1.5 Technical Report." (2024). <a href="https://arxiv.org/abs/2403.05530" target="_blank" rel="noopener">arxiv.org/abs/2403.05530</a></li>
+      <li>LMSYS Chatbot Arena Leaderboard. (Ongoing). <a href="https://chat.lmsys.org" target="_blank" rel="noopener">chat.lmsys.org</a> — Crowdsourced model benchmarking.</li>
+      <li>Ethan Mollick. "One Useful Thing." Substack. (2024–2026). <a href="https://www.oneusefulthing.org" target="_blank" rel="noopener">oneusefulthing.org</a></li>
+    </ol>
+    <p style="margin-top:16px;font-size:.83rem;color:var(--muted);">All factual claims in this article draw on publicly available research and reporting. No copyrighted text was reproduced. References are provided for attribution and further reading under standard editorial practice.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="../tradeboard.html">TradeBoard</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="../blog.html">Articles</a></li><li><a href="../youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../legal.html">Privacy Policy</a></li><li><a href="../legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cajun AI LLC. All rights reserved. TradeBoard is a product of Cajun AI LLC.</p>
+      <div style="display:flex;gap:20px;"><a href="../legal.html">Privacy</a><a href="../legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude 3.5 Sonnet Review — Anthropic's Best Model Yet | Cajun AI</title>
+  <meta name="description" content="What changed, what's still the same, and where Claude pulls ahead of GPT-4o in real use cases.">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .article-hero { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 80px 0 60px; margin-top: var(--nav-h); }
+    .article-body { max-width: 760px; margin: 0 auto; padding: 60px 40px 80px; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 700; margin: 44px 0 16px; color: #fff; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; color: var(--accent-light); }
+    .article-body p { color: var(--muted2); line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-body ul, .article-body ol { color: var(--muted2); line-height: 1.9; margin: 0 0 20px 24px; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body a { color: var(--accent); text-decoration: underline; }
+    .article-body strong { color: #fff; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--bg2); border-radius: 0 var(--radius) var(--radius) 0; margin: 28px 0; color: var(--muted2); font-style: italic; }
+    .disclaimer-box { background: var(--bg2); border: 1px solid var(--border-acc); border-radius: var(--radius); padding: 18px 24px; margin-bottom: 36px; font-size: .9rem; color: var(--muted); }
+    .disclaimer-box strong { color: var(--accent); }
+    .score-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+    .score-label { width: 160px; flex-shrink: 0; font-size: .93rem; color: var(--muted2); }
+    .score-bar-wrap { flex: 1; background: rgba(255,255,255,.06); border-radius: 50px; height: 8px; }
+    .score-bar { background: var(--accent); border-radius: 50px; height: 8px; }
+    .score-val { width: 36px; text-align: right; font-size: .9rem; font-weight: 700; color: #fff; }
+    .sources-section { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 36px; }
+    .sources-section h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: #fff; letter-spacing: .05em; text-transform: uppercase; }
+    .sources-section ol { color: var(--muted); font-size: .88rem; line-height: 1.8; margin-left: 20px; }
+    .sources-section a { color: var(--accent); text-decoration: none; }
+    .article-meta-header { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 18px; font-size: .88rem; color: var(--muted); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .9rem; text-decoration: none; margin-bottom: 28px; }
+    .back-link:hover { color: var(--accent); }
+    @media(max-width: 600px) { .article-body { padding: 40px 20px 60px; } .score-label { width: 120px; font-size: .83rem; } }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../tradeboard.html">TradeBoard</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../blog.html" class="active">Articles</a></li>
+      <li><a href="../youtube.html">YouTube</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="../login.html" class="btn btn-ghost">Log In</a>
+      <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../../index.html">Home</a><a href="../tradeboard.html">TradeBoard</a><a href="../pricing.html">Pricing</a><a href="../blog.html">Articles</a><a href="../youtube.html">YouTube</a><a href="../about.html">About</a>
+  <a href="../login.html" class="btn btn-outline">Log In</a>
+  <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container" style="max-width:760px;">
+    <a href="../blog.html" class="back-link">← Back to Articles</a>
+    <div class="article-cat" style="margin-bottom:14px;">Tech Reviews</div>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:18px;">Claude 3.5 Sonnet Review — Anthropic's Best Model Yet</h1>
+    <p style="color:var(--muted2);font-size:1.1rem;line-height:1.8;max-width:640px;">What changed, what's still the same, and where Claude pulls ahead of GPT-4o in real use cases.</p>
+    <div class="article-meta-header">
+      <span>By Cajun AI Editorial</span><span>·</span><span>April 2026</span><span>·</span><span>4 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <div class="disclaimer-box">
+    <strong>Note:</strong> This review covers Claude 3.5 Sonnet as of the time of publication. Anthropic releases model updates frequently — verify current capabilities at <a href="https://anthropic.com" target="_blank" rel="noopener">anthropic.com</a>.
+  </div>
+
+  <p>When Anthropic released Claude 3.5 Sonnet, it was a significant jump — not just an incremental improvement. It outperformed GPT-4o on several benchmark categories and, more importantly, felt noticeably better in real use. Here's what actually changed and what it means for how you use it.</p>
+
+  <h2>What's New in 3.5 Sonnet</h2>
+
+  <h3>Writing quality — the biggest upgrade</h3>
+  <p>Claude was already the best AI writing assistant for most use cases. 3.5 Sonnet pushed that further. The model handles tone, voice, and nuance better than its predecessor. Long-form outputs (reports, articles, proposals) hold structure more consistently without the drift you see in GPT-4o on extended outputs. It also feels less like "AI output" — the phrasing is more natural and less prone to the patterns that make generated text easy to spot.</p>
+
+  <h3>Coding — now genuinely competitive</h3>
+  <p>Claude's code generation was always good for explanation and understanding, but 3.5 Sonnet made it a serious contender for actual development work. It holds larger codebases in context better, generates fewer hallucinated function names, and is better at multi-file reasoning. In the Cursor IDE, Claude 3.5 Sonnet is now the default model choice for many developers — not just an option.</p>
+
+  <h3>Instruction following</h3>
+  <p>This is where Claude consistently outperforms competitors. If you give it complex, multi-part instructions — "do X, but don't do Y, format it as Z, skip the introduction" — 3.5 Sonnet follows all of them. GPT-4o has a tendency to be "helpfully" creative in ways you didn't ask for. Claude stays on task.</p>
+
+  <h2>How It Stacks Up: Our Ratings</h2>
+
+  <div style="margin: 28px 0 36px;">
+    <div class="score-row"><div class="score-label">Long-form writing</div><div class="score-bar-wrap"><div class="score-bar" style="width:95%"></div></div><div class="score-val">9.5</div></div>
+    <div class="score-row"><div class="score-label">Code generation</div><div class="score-bar-wrap"><div class="score-bar" style="width:90%"></div></div><div class="score-val">9.0</div></div>
+    <div class="score-row"><div class="score-label">Instruction following</div><div class="score-bar-wrap"><div class="score-bar" style="width:95%"></div></div><div class="score-val">9.5</div></div>
+    <div class="score-row"><div class="score-label">Document analysis</div><div class="score-bar-wrap"><div class="score-bar" style="width:95%"></div></div><div class="score-val">9.5</div></div>
+    <div class="score-row"><div class="score-label">Real-time research</div><div class="score-bar-wrap"><div class="score-bar" style="width:40%"></div></div><div class="score-val">4.0</div></div>
+    <div class="score-row"><div class="score-label">Feature breadth</div><div class="score-bar-wrap"><div class="score-bar" style="width:65%"></div></div><div class="score-val">6.5</div></div>
+    <div class="score-row"><div class="score-label">Overall value</div><div class="score-bar-wrap"><div class="score-bar" style="width:90%"></div></div><div class="score-val">9.0</div></div>
+  </div>
+
+  <h2>Where It's Still Behind GPT-4o</h2>
+
+  <ul>
+    <li><strong>No real-time web access</strong> on most queries — if you need current information, use Perplexity or ChatGPT with Browse</li>
+    <li><strong>Feature surface:</strong> ChatGPT has DALL·E image generation, voice mode, more third-party integrations, and a larger plugin ecosystem</li>
+    <li><strong>STEM reasoning:</strong> OpenAI's o1 and o3 models still hold the edge on complex math and science problems. Claude 3.5 Sonnet is not designed to be a "reasoning" model in that sense</li>
+  </ul>
+
+  <h2>Who Should Switch or Try Claude?</h2>
+
+  <p>If you're primarily using ChatGPT for writing, document work, or any task where instruction-following and tone quality matter — try Claude 3.5 Sonnet. The $20/mo Pro plan is the same price as ChatGPT Plus. A week of use will tell you whether it fits your workflow better.</p>
+
+  <p>If you rely on ChatGPT's image generation (DALL·E), voice features, or specific third-party plugins, those aren't available in Claude — that may be a dealbreaker depending on your workflow.</p>
+
+  <p>For most professional writing and knowledge work use cases: Claude 3.5 Sonnet is the best model available right now.</p>
+
+  <div class="sources-section">
+    <h4>Sources & References</h4>
+    <ol>
+      <li>Anthropic. "Claude 3.5 Sonnet Model Card." (2024). <a href="https://www.anthropic.com/index/claude-3-5-sonnet" target="_blank" rel="noopener">anthropic.com</a></li>
+      <li>LMSYS Chatbot Arena Leaderboard. (Ongoing). <a href="https://chat.lmsys.org" target="_blank" rel="noopener">chat.lmsys.org</a></li>
+      <li>The Verge. "Anthropic's Claude 3.5 Sonnet is its best model yet." (2024). <a href="https://www.theverge.com" target="_blank" rel="noopener">theverge.com</a></li>
+      <li>Simon Willison's Weblog. "Claude 3.5 Sonnet." (2024). <a href="https://simonwillison.net" target="_blank" rel="noopener">simonwillison.net</a></li>
+      <li>Ars Technica. "Claude 3.5 Sonnet review." (2024). <a href="https://arstechnica.com" target="_blank" rel="noopener">arstechnica.com</a></li>
+    </ol>
+    <p style="margin-top:16px;font-size:.83rem;color:var(--muted);">All factual claims draw on publicly available information. No copyrighted text was reproduced. References provided for attribution under standard editorial practice.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="../tradeboard.html">TradeBoard</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="../blog.html">Articles</a></li><li><a href="../youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../legal.html">Privacy Policy</a></li><li><a href="../legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cajun AI LLC. All rights reserved. TradeBoard is a product of Cajun AI LLC.</p>
+      <div style="display:flex;gap:20px;"><a href="../legal.html">Privacy</a><a href="../legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../../script.js"></script>
+</body>
+</html>

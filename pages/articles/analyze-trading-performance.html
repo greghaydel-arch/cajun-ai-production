@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Analyze Your Trading Performance — A Data-Driven Guide | Cajun AI</title>
+  <meta name="description" content="Most traders track P&L and nothing else. Here's the full set of metrics you should be reviewing every week.">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .article-hero { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 80px 0 60px; margin-top: var(--nav-h); }
+    .article-body { max-width: 760px; margin: 0 auto; padding: 60px 40px 80px; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 700; margin: 44px 0 16px; color: #fff; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; color: var(--accent-light); }
+    .article-body p { color: var(--muted2); line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-body ul, .article-body ol { color: var(--muted2); line-height: 1.9; margin: 0 0 20px 24px; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body a { color: var(--accent); text-decoration: underline; }
+    .article-body strong { color: #fff; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--bg2); border-radius: 0 var(--radius) var(--radius) 0; margin: 28px 0; color: var(--muted2); font-style: italic; }
+    .metric-block { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin-bottom: 20px; }
+    .metric-block .metric-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .metric-block .metric-desc { font-size: .95rem; color: var(--muted2); line-height: 1.8; }
+    .sources-section { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 36px; }
+    .sources-section h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: #fff; letter-spacing: .05em; text-transform: uppercase; }
+    .sources-section ol { color: var(--muted); font-size: .88rem; line-height: 1.8; margin-left: 20px; }
+    .sources-section a { color: var(--accent); text-decoration: none; }
+    .article-meta-header { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 18px; font-size: .88rem; color: var(--muted); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .9rem; text-decoration: none; margin-bottom: 28px; }
+    .back-link:hover { color: var(--accent); }
+    @media(max-width: 600px) { .article-body { padding: 40px 20px 60px; } }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../tradeboard.html">TradeBoard</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../blog.html" class="active">Articles</a></li>
+      <li><a href="../youtube.html">YouTube</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="../login.html" class="btn btn-ghost">Log In</a>
+      <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../../index.html">Home</a><a href="../tradeboard.html">TradeBoard</a><a href="../pricing.html">Pricing</a><a href="../blog.html">Articles</a><a href="../youtube.html">YouTube</a><a href="../about.html">About</a>
+  <a href="../login.html" class="btn btn-outline">Log In</a>
+  <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container" style="max-width:760px;">
+    <a href="../blog.html" class="back-link">← Back to Articles</a>
+    <div class="article-cat" style="margin-bottom:14px;">Trading</div>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:18px;">How to Analyze Your Trading Performance — A Data-Driven Guide</h1>
+    <p style="color:var(--muted2);font-size:1.1rem;line-height:1.8;max-width:640px;">Most traders track P&L and nothing else. Here's the full set of metrics you should be reviewing every week.</p>
+    <div class="article-meta-header">
+      <span>By Cajun AI Editorial</span><span>·</span><span>June 2026</span><span>·</span><span>9 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <p>P&L is a score, not an insight. It tells you whether you made or lost money — it tells you nothing about <em>why.</em> Two traders can have identical P&L numbers and completely opposite underlying performance. One got lucky on a few oversized positions. The other has a reproducible edge.</p>
+
+  <p>If you want to actually improve as a trader — not just hope you have a good week — you need to review the metrics that explain the mechanics of your performance. Here's the complete breakdown of what to track and how to interpret it.</p>
+
+  <h2>The Core Metrics</h2>
+
+  <div class="metric-block">
+    <div class="metric-name">Win Rate</div>
+    <div class="metric-desc">The percentage of your trades that close profitable. A 60% win rate sounds great — but if your average loss is 3x your average win, you're still losing money. Win rate only tells you part of the story. It must be read alongside your profit factor and average win/loss.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Profit Factor</div>
+    <div class="metric-desc">Gross wins divided by gross losses. A profit factor above 1.5 is generally considered a solid edge. Above 2.0 is excellent. Below 1.0 means you're losing overall regardless of win rate. This is arguably the single most important metric for evaluating a strategy.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Average Win vs. Average Loss (Risk/Reward Ratio)</div>
+    <div class="metric-desc">If your average win is $400 and your average loss is $200, you have a 2:1 reward-to-risk ratio. Combined with win rate, this tells you your expected value per trade — the most important number for long-term account survival.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Maximum Drawdown</div>
+    <div class="metric-desc">The largest peak-to-trough decline in your account value over a given period. This is your risk metric — it tells you the worst it's gotten and whether your position sizing is sustainable during a losing streak. Most serious traders set a max drawdown threshold as a risk limit.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Expectancy</div>
+    <div class="metric-desc">The average amount you expect to make per dollar risked. Formula: (Win Rate × Avg Win) − (Loss Rate × Avg Loss). A positive expectancy means you have a mathematical edge. This is the clearest single-number test of whether a strategy is worth continuing.</div>
+  </div>
+
+  <h2>Behavior Metrics — The Ones Most Traders Skip</h2>
+
+  <p>Technical performance metrics tell you what happened. Behavioral metrics tell you whether you're executing your strategy or sabotaging it.</p>
+
+  <div class="metric-block">
+    <div class="metric-name">Plan Adherence Rate</div>
+    <div class="metric-desc">What percentage of your trades followed your defined entry and exit rules? If you have a solid strategy but a 60% adherence rate, your poor performance isn't a strategy problem — it's a discipline problem.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Revenge Trading Frequency</div>
+    <div class="metric-desc">How often do you enter a trade within 10–15 minutes of a loss? Revenge trades are almost always losers. Tracking this forces you to confront whether emotional trading is eating into your returns.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Hold Time Analysis</div>
+    <div class="metric-desc">Compare your average hold time on winners vs. losers. If you're cutting winners short and holding losers too long (a nearly universal trader tendency), this shows up clearly in the data.</div>
+  </div>
+
+  <div class="metric-block">
+    <div class="metric-name">Performance by Time of Day / Day of Week</div>
+    <div class="metric-desc">Many traders have dramatically different results at different times. Some are profitable in the first hour of market open and bleed money in the afternoon. Knowing this lets you stop trading when the data says you shouldn't.</div>
+  </div>
+
+  <h2>Segmenting for Real Insight</h2>
+
+  <p>Raw averages hide patterns. Slice your data by:</p>
+
+  <ul>
+    <li><strong>Symbol / sector:</strong> Are you consistently winning on some stocks and losing on others? That's signal.</li>
+    <li><strong>Setup type:</strong> If you trade multiple strategies, track them separately. One setup might have a 2.0 profit factor while another drags down your overall numbers.</li>
+    <li><strong>Account size at entry:</strong> Does your performance change when you're trading larger? Position-sizing pressure affects execution.</li>
+    <li><strong>Market conditions:</strong> Trending days vs. choppy days. High VIX vs. low VIX. Many strategies only work in specific environments.</li>
+  </ul>
+
+  <h2>The Weekly Review Process</h2>
+
+  <p>A data-driven review doesn't need to take hours. Here's a 30-minute weekly framework:</p>
+
+  <ol>
+    <li><strong>Log everything first.</strong> Don't review until your journal is complete for the week. Incomplete data produces incomplete conclusions.</li>
+    <li><strong>Check your expectancy and profit factor.</strong> Are they trending up or down over the past 4 weeks?</li>
+    <li><strong>Flag your three worst trades.</strong> Were they system failures (bad market conditions) or execution failures (you broke your rules)? Those require different fixes.</li>
+    <li><strong>Check your behavioral metrics.</strong> Revenge trades? Oversized positions after wins? Patterns show up when you look for them.</li>
+    <li><strong>Write one adjustment.</strong> Not five. One specific, testable change to make next week.</li>
+  </ol>
+
+  <blockquote>"The market doesn't know you exist. It doesn't owe you a win. The only edge you can build is in how you process information and execute decisions. The journal is where that edge gets built." — common framing in professional trading circles</blockquote>
+
+  <h2>The Bottom Line</h2>
+
+  <p>The gap between traders who improve and traders who spin in place is almost always the gap between those who analyze their data and those who just watch their account balance. The metrics above aren't complicated — but they require honest tracking and consistent review.</p>
+
+  <p>TradeBoard automates most of this. It pulls your trade history, calculates these metrics automatically, and surfaces the patterns you'd otherwise miss. <a href="../tradeboard.html">See what it tracks →</a></p>
+
+  <div class="sources-section">
+    <h4>Sources & References</h4>
+    <ol>
+      <li>Tharp, Van K. <em>Trade Your Way to Financial Freedom.</em> McGraw-Hill, 2nd ed., 2006. — Source for expectancy and profit factor frameworks.</li>
+      <li>Douglas, Mark. <em>Trading in the Zone.</em> Prentice Hall Press, 2000. — Behavioral metrics and discipline frameworks.</li>
+      <li>Steenbarger, Brett N. <em>The Psychology of Trading.</em> Wiley, 2002. — Performance review methodology.</li>
+      <li>Investopedia. "Profit Factor." <a href="https://www.investopedia.com/terms/p/profit-factor.asp" target="_blank" rel="noopener">investopedia.com</a></li>
+      <li>Investopedia. "Maximum Drawdown (MDD)." <a href="https://www.investopedia.com/terms/m/maximum-drawdown-mdd.asp" target="_blank" rel="noopener">investopedia.com</a></li>
+    </ol>
+    <p style="margin-top:16px;font-size:.83rem;color:var(--muted);">This article is for educational purposes only and does not constitute financial or investment advice. All factual claims draw on publicly available sources. No copyrighted text was reproduced.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="../tradeboard.html">TradeBoard</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="../blog.html">Articles</a></li><li><a href="../youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../legal.html">Privacy Policy</a></li><li><a href="../legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cajun AI LLC. All rights reserved. TradeBoard is a product of Cajun AI LLC.</p>
+      <div style="display:flex;gap:20px;"><a href="../legal.html">Privacy</a><a href="../legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../../script.js"></script>
+</body>
+</html>

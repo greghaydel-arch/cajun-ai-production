@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trailing Stops Explained — How to Lock In Gains Without Cutting Winners Short | Cajun AI</title>
+  <meta name="description" content="The mechanics of trailing stops, when to use them, and how to configure them for different trade setups.">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .article-hero { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 80px 0 60px; margin-top: var(--nav-h); }
+    .article-body { max-width: 760px; margin: 0 auto; padding: 60px 40px 80px; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 700; margin: 44px 0 16px; color: #fff; }
+    .article-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; color: var(--accent-light); }
+    .article-body p { color: var(--muted2); line-height: 1.9; margin-bottom: 20px; font-size: 1.05rem; }
+    .article-body ul, .article-body ol { color: var(--muted2); line-height: 1.9; margin: 0 0 20px 24px; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body a { color: var(--accent); text-decoration: underline; }
+    .article-body strong { color: #fff; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 16px 24px; background: var(--bg2); border-radius: 0 var(--radius) var(--radius) 0; margin: 28px 0; color: var(--muted2); font-style: italic; }
+    .example-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin: 28px 0; }
+    .example-box .ex-title { font-size: .85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .example-box p { color: var(--muted2); font-size: .96rem; line-height: 1.85; margin-bottom: 0; }
+    .sources-section { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 36px; }
+    .sources-section h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: #fff; letter-spacing: .05em; text-transform: uppercase; }
+    .sources-section ol { color: var(--muted); font-size: .88rem; line-height: 1.8; margin-left: 20px; }
+    .sources-section a { color: var(--accent); text-decoration: none; }
+    .article-meta-header { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 18px; font-size: .88rem; color: var(--muted); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .9rem; text-decoration: none; margin-bottom: 28px; }
+    .back-link:hover { color: var(--accent); }
+    @media(max-width: 600px) { .article-body { padding: 40px 20px 60px; } }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../tradeboard.html">TradeBoard</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../blog.html" class="active">Articles</a></li>
+      <li><a href="../youtube.html">YouTube</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="../login.html" class="btn btn-ghost">Log In</a>
+      <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../../index.html">Home</a><a href="../tradeboard.html">TradeBoard</a><a href="../pricing.html">Pricing</a><a href="../blog.html">Articles</a><a href="../youtube.html">YouTube</a><a href="../about.html">About</a>
+  <a href="../login.html" class="btn btn-outline">Log In</a>
+  <a href="../pricing.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container" style="max-width:760px;">
+    <a href="../blog.html" class="back-link">← Back to Articles</a>
+    <div class="article-cat" style="margin-bottom:14px;">Trading</div>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:18px;">Trailing Stops Explained — How to Lock In Gains Without Cutting Winners Short</h1>
+    <p style="color:var(--muted2);font-size:1.1rem;line-height:1.8;max-width:640px;">The mechanics of trailing stops, when to use them, and how to configure them for different trade setups.</p>
+    <div class="article-meta-header">
+      <span>By Cajun AI Editorial</span><span>·</span><span>April 2026</span><span>·</span><span>5 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <p>One of the hardest things in trading is staying in a winner. Human instinct says "take the profit before it disappears." The market rewards patience — but only if you have a system that protects you while staying in the trade. That's what trailing stops do.</p>
+
+  <p>This isn't an advanced concept, but it's one that trips up traders who misapply it. Here's the full breakdown: what trailing stops are, how the math works, and how to configure them for different types of setups.</p>
+
+  <h2>What Is a Trailing Stop?</h2>
+
+  <p>A trailing stop is a stop-loss order that moves with the price as the trade goes in your favor — but never moves backward against you.</p>
+
+  <p>A fixed stop loss sits at a static price: "Exit if the stock drops to $45." A trailing stop is dynamic: "Exit if the stock drops 5% below its highest point since I entered."</p>
+
+  <p>If the stock climbs from $50 to $60, a 5% trailing stop moves your exit from $47.50 to $57 — locking in most of the gain. If the stock then drops from $60 to $57, you're out. If it continues to $70, your stop moves to $66.50. It always stays 5% below the highest price reached.</p>
+
+  <div class="example-box">
+    <div class="ex-title">Example: $50 Entry, 5% Trailing Stop</div>
+    <p>Entry: $50.00 → Initial stop: $47.50<br>
+    Stock rises to $55 → Stop moves to $52.25<br>
+    Stock rises to $62 → Stop moves to $58.90<br>
+    Stock pulls back to $59 → Stop triggers at $58.90, exit with a gain<br>
+    <br>
+    Without a trailing stop and a $45 fixed stop: you might have exited at your original target or held through the pullback wondering whether to sell.</p>
+  </div>
+
+  <h2>Types of Trailing Stops</h2>
+
+  <h3>Percentage-Based Trailing Stop</h3>
+  <p>Trails a fixed percentage below the highest price reached. Simple, easy to configure on most brokers, works well for stocks with consistent volatility. Most retail traders start here.</p>
+
+  <h3>Dollar-Amount Trailing Stop</h3>
+  <p>Trails a fixed dollar amount (e.g., $2.00) below the highest price. Useful when you want the same dollar exposure regardless of the stock's price level.</p>
+
+  <h3>ATR-Based Trailing Stop</h3>
+  <p>Uses the Average True Range — a measure of how much a stock typically moves per day — to set the trail distance. A 2× ATR trailing stop gives the stock room to breathe based on its actual volatility, not an arbitrary fixed percentage. This is the most sophisticated approach and is used by most systematic traders.</p>
+
+  <h3>Moving Average Trailing Stop</h3>
+  <p>Exits when price closes below a key moving average (e.g., the 20-day EMA). Works well for swing trades and longer holding periods where you want to stay in as long as the trend holds.</p>
+
+  <h2>When Trailing Stops Work Best</h2>
+
+  <ul>
+    <li><strong>Momentum trades:</strong> When you enter a breakout expecting a strong move, a trailing stop lets you stay in the full trend while protecting capital if it reverses.</li>
+    <li><strong>When you can't watch the screen:</strong> Trailing stops automate exit discipline. If you set them before stepping away, the position manages itself.</li>
+    <li><strong>After hitting the first target:</strong> A common approach is to take partial profit at T1 (first target) and switch the remaining position to a trailing stop, letting it run to T2 or further.</li>
+  </ul>
+
+  <h2>When Trailing Stops Work Against You</h2>
+
+  <ul>
+    <li><strong>Volatile, choppy stocks:</strong> If a stock has wide intraday swings, a tight trailing stop will trigger prematurely on normal price noise before the real move happens. Size the trail to the stock's actual volatility.</li>
+    <li><strong>Illiquid stocks:</strong> Wide bid-ask spreads can cause you to exit at a much worse price than your trailing stop level. Use limit orders or be aware of the spread before relying on stops.</li>
+    <li><strong>Gap downs:</strong> A trailing stop doesn't protect against overnight gap-downs. If a stock closes at $60 with a trailing stop at $57, and opens the next day at $50 due to bad news, you exit at $50 — not $57. This is called slippage. Always factor gap risk into overnight positions.</li>
+  </ul>
+
+  <h2>How to Size Your Trail</h2>
+
+  <p>The most common mistake is setting the trail too tight. A 1% trailing stop on a stock that moves 3% intraday will get triggered constantly on normal volatility. A few guidelines:</p>
+
+  <ul>
+    <li>Calculate the stock's average daily range (ADR) or ATR before setting your trail</li>
+    <li>Your trail should be at least 1.5–2× the typical intraday noise for that stock</li>
+    <li>For intraday trades: tighter trails are appropriate (2–5% typical)</li>
+    <li>For swing trades: wider trails needed to survive normal pullbacks (5–15% or ATR-based)</li>
+    <li>If you keep getting stopped out at breakeven, your trail is probably too tight</li>
+  </ul>
+
+  <blockquote>"The best trailing stop is the one set at a level where a trigger means the trade thesis has actually changed — not just normal price fluctuation." — systematic trading principle</blockquote>
+
+  <h2>Trailing Stops and TradeBoard</h2>
+
+  <p>TradeBoard's Webull Bot tracks trailing stop logic automatically for paper trades, including the dual-phase Telegram trade structure (premarket fixed target → trailing stop at market open). It logs every stop trigger with price, time, and gain/loss so you can review whether your trail settings are optimized. <a href="../tradeboard.html">Learn more →</a></p>
+
+  <div class="sources-section">
+    <h4>Sources & References</h4>
+    <ol>
+      <li>Investopedia. "Trailing Stop Definition." <a href="https://www.investopedia.com/terms/t/trailingstop.asp" target="_blank" rel="noopener">investopedia.com</a></li>
+      <li>Investopedia. "Average True Range (ATR)." <a href="https://www.investopedia.com/terms/a/atr.asp" target="_blank" rel="noopener">investopedia.com</a></li>
+      <li>Tharp, Van K. <em>Trade Your Way to Financial Freedom.</em> McGraw-Hill, 2nd ed., 2006. — Position sizing and stop methodology.</li>
+      <li>CME Group Education. "Order Types." <a href="https://www.cmegroup.com/education" target="_blank" rel="noopener">cmegroup.com</a></li>
+    </ol>
+    <p style="margin-top:16px;font-size:.83rem;color:var(--muted);">This article is for educational purposes only and does not constitute financial or investment advice. All factual claims draw on publicly available sources. No copyrighted text was reproduced.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand"><img src="../../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="../tradeboard.html">TradeBoard</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="../blog.html">Articles</a></li><li><a href="../youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="../about.html">About</a></li><li><a href="../legal.html">Privacy Policy</a></li><li><a href="../legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Cajun AI LLC. All rights reserved. TradeBoard is a product of Cajun AI LLC.</p>
+      <div style="display:flex;gap:20px;"><a href="../legal.html">Privacy</a><a href="../legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../../script.js"></script>
+</body>
+</html>
