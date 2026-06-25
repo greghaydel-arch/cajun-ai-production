@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradeBoard | Cajun AI</title>
+  <meta name="description" content="TradeBoard — professional trading analytics and automation platform. Multi-broker, real-time P&L, advanced charting.">
+  <link rel="icon" href="../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tradeboard.html" class="active">TradeBoard</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="youtube.html">YouTube</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Get Started</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../index.html">Home</a>
+  <a href="tradeboard.html">TradeBoard</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="blog.html">Articles</a>
+  <a href="youtube.html">YouTube</a>
+  <a href="about.html">About</a>
+  <a href="login.html" class="btn btn-outline">Log In</a>
+  <a href="pricing.html" class="btn btn-primary">Get Started</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="tag">Flagship Product</div>
+    <h1 class="section-title" style="font-size:clamp(2.4rem,5vw,3.6rem);max-width:700px;margin:0 auto 20px;">
+      Trading analytics built for <span class="accent">serious traders</span>
+    </h1>
+    <p class="section-sub">
+      Multi-broker portfolio analytics, real-time P&amp;L tracking, automated execution tools, and more — in a single dashboard.
+    </p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;">
+      <a href="pricing.html" class="btn btn-primary">Start Free →</a>
+      <a href="pricing.html" class="btn btn-outline">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES DEEP DIVE -->
+<section class="section-pad" style="background:var(--bg);">
+  <div class="container">
+    <div class="tag">Features</div>
+    <h2 class="section-title">Everything a retail trader needs</h2>
+    <p class="section-sub" style="margin-bottom:60px;">Built by traders, for traders. No bloat, no learning curve.</p>
+    <div class="features-grid">
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">📊</div>
+        <h3 style="margin-bottom:10px;">Performance Analytics</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Win rate, avg gain/loss, Sharpe ratio, equity curve, max drawdown — every metric that actually matters for evaluating your trading.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">🔗</div>
+        <h3 style="margin-bottom:10px;">Multi-Broker Support</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Webull, Robinhood, TD Ameritrade/Schwab, IBKR, Tastytrade, Alpaca — OAuth-first connections, CSV fallback for full history.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">⚡</div>
+        <h3 style="margin-bottom:10px;">Execution Bot</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Watchlist-driven auto-entry from Discord and Telegram signals. Configurable trailing stops, T1/T2 targets, and paper trade mode to validate before going live.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">📅</div>
+        <h3 style="margin-bottom:10px;">Trade Journal</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Tag every trade with strategy, setup, and notes. Filter, search, and review any entry. Screenshot support included.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">📱</div>
+        <h3 style="margin-bottom:10px;">Web + Mobile App</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Full analytics web dashboard plus a native mobile app (iOS &amp; Android) so you can monitor positions anywhere.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">📤</div>
+        <h3 style="margin-bottom:10px;">PDF / CSV Export</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Export any chart or report. Tax lot tracking and wash sale reporting built-in for end-of-year filing.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">🔔</div>
+        <h3 style="margin-bottom:10px;">Smart Alerts</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Email, browser, and desktop notifications for auto-entries, exits, and watchlist triggers. Never miss a signal.</p>
+      </div>
+
+      <div class="card feature-card-item">
+        <div class="feature-icon">🔒</div>
+        <h3 style="margin-bottom:10px;">Secure by Design</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">OAuth-only broker authentication. Tokens encrypted in the database. We never store your username, password, or login credentials.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS CATEGORIES -->
+<section class="section-pad" style="background:var(--bg2);">
+  <div class="container">
+    <div class="tag">Analytics</div>
+    <h2 class="section-title">20+ analytics views, organized</h2>
+    <p class="section-sub" style="margin-bottom:50px;">Every dashboard page is built around a specific trading question. Not just charts — answers.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <!-- analytics pills -->
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
+        <div style="color:var(--accent);font-size:1.2rem;margin-bottom:8px;">📈</div>
+        <div style="font-weight:600;margin-bottom:4px;">Performance</div>
+        <div style="font-size:.83rem;color:var(--muted);">Win rate, P&amp;L, equity curve, streaks</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
+        <div style="color:var(--accent);font-size:1.2rem;margin-bottom:8px;">🎯</div>
+        <div style="font-weight:600;margin-bottom:4px;">Behavior</div>
+        <div style="font-size:.83rem;color:var(--muted);">Trade timing, hold times, pattern analysis</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
+        <div style="color:var(--accent);font-size:1.2rem;margin-bottom:8px;">💹</div>
+        <div style="font-weight:600;margin-bottom:4px;">Symbol</div>
+        <div style="font-size:.83rem;color:var(--muted);">Per-ticker win rates, best/worst symbols</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
+        <div style="color:var(--accent);font-size:1.2rem;margin-bottom:8px;">⚠️</div>
+        <div style="font-weight:600;margin-bottom:4px;">Risk</div>
+        <div style="font-size:.83rem;color:var(--muted);">Max drawdown, risk/reward, exposure</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
+        <div style="color:var(--accent);font-size:1.2rem;margin-bottom:8px;">📆</div>
+        <div style="font-weight:600;margin-bottom:4px;">Calendar</div>
+        <div style="font-size:.83rem;color:var(--muted);">Monthly/weekly summary, heatmaps</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
+        <div style="color:var(--accent);font-size:1.2rem;margin-bottom:8px;">📡</div>
+        <div style="font-weight:600;margin-bottom:4px;">Benchmarking</div>
+        <div style="font-size:.83rem;color:var(--muted);">vs SPY, QQQ, NASDAQ, S&amp;P 500, DOW</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-pad cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <h2 class="section-title">Ready to trade smarter?</h2>
+      <p class="section-sub" style="margin:0 auto 36px;">
+        Get started free. No credit card required.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="pricing.html" class="btn btn-primary">Get TradeBoard Free →</a>
+        <a href="pricing.html" class="btn btn-outline">See All Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Louisiana-based technology company building smart software, AI tools, and digital products. Powered by TradeBoard, LLC.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="blog.html">Articles</a></li><li><a href="youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="legal.html">Privacy Policy</a></li><li><a href="legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TradeBoard, LLC d/b/a Cajun AI. All rights reserved.</p>
+      <div style="display:flex;gap:20px;"><a href="legal.html">Privacy</a><a href="legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

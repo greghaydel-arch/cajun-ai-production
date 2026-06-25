@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles | Cajun AI</title>
+  <meta name="description" content="AI news, tool reviews, tech guides, and Louisiana innovation stories from Cajun AI.">
+  <link rel="icon" href="../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tradeboard.html">TradeBoard</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html" class="active">Articles</a></li>
+      <li><a href="youtube.html">YouTube</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../index.html">Home</a><a href="tradeboard.html">TradeBoard</a><a href="pricing.html">Pricing</a><a href="blog.html">Articles</a><a href="youtube.html">YouTube</a><a href="about.html">About</a>
+  <a href="login.html" class="btn btn-outline">Log In</a>
+  <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="tag">Articles</div>
+    <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.2rem);max-width:660px;margin:0 auto 20px;">
+      AI, tech, and trading — explained
+    </h1>
+    <p class="section-sub">Practical guides, honest reviews, and tech insights. No hype.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:20px 0;">
+  <div class="container" style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button onclick="filterCat('all')" class="filter-btn active-filter btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">All</button>
+    <button onclick="filterCat('ai')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">AI Tools</button>
+    <button onclick="filterCat('trading')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">Trading</button>
+    <button onclick="filterCat('tech')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">Tech Reviews</button>
+    <button onclick="filterCat('louisiana')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">Louisiana Tech</button>
+    <button onclick="filterCat('howto')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">How-To</button>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<section style="background:var(--bg);padding:70px 0 0;">
+  <div class="container">
+    <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;" data-cat="ai">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem;">🤖</div>
+      <div>
+        <div class="article-cat">Featured · AI Tools</div>
+        <h2 style="font-size:1.6rem;font-weight:700;line-height:1.3;margin-bottom:14px;">What Is Generative AI? A Plain-English Breakdown</h2>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:22px;">How modern AI systems create text, images, video and code — and why it matters for your business, career, or creative work right now.</p>
+        <div class="article-meta" style="margin-bottom:22px;"><span>June 2026</span><div class="article-meta-dot"></div><span>5 min read</span></div>
+        <a href="#" class="btn btn-primary">Read Article →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE GRID -->
+<section class="section-pad" style="background:var(--bg);">
+  <div class="container">
+    <div class="features-grid" id="article-grid">
+
+      <div class="card article-card-item" data-cat="ai">
+        <div class="article-cat">AI Tools</div>
+        <div class="article-title">ChatGPT vs Claude vs Gemini — Which AI Assistant Is Actually Better?</div>
+        <div class="article-excerpt">We tested all three on real tasks: writing, code, reasoning, and research. Here's the honest breakdown.</div>
+        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot"></div><span>8 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="ai">
+        <div class="article-cat">AI Tools</div>
+        <div class="article-title">Best AI Tools In 2026 — Our Top Picks by Category</div>
+        <div class="article-excerpt">From writing assistants to code generators to image tools — the ones actually worth your money this year.</div>
+        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot"></div><span>7 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="trading">
+        <div class="article-cat">Trading</div>
+        <div class="article-title">How to Analyze Your Trading Performance — A Data-Driven Guide</div>
+        <div class="article-excerpt">Most traders track P&amp;L and nothing else. Here's the full set of metrics you should be reviewing every week.</div>
+        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot"></div><span>9 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="louisiana">
+        <div class="article-cat">Louisiana Tech</div>
+        <div class="article-title">AI Opportunities in Louisiana — Energy, Healthcare &amp; Small Business</div>
+        <div class="article-excerpt">How the Gulf South is uniquely positioned to take advantage of the AI revolution happening right now.</div>
+        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot"></div><span>6 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="tech">
+        <div class="article-cat">Tech Reviews</div>
+        <div class="article-title">Perplexity AI Review — The Research Tool That's Actually Useful</div>
+        <div class="article-excerpt">We've been using Perplexity daily for 6 months. Here's what it's good at and where it falls short vs Google.</div>
+        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot"></div><span>5 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="howto">
+        <div class="article-cat">How-To</div>
+        <div class="article-title">How to Set Up a Trading Journal That Actually Improves Your Results</div>
+        <div class="article-excerpt">A simple system for logging trades, identifying patterns, and fixing the leaks in your strategy — step by step.</div>
+        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot"></div><span>6 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="ai">
+        <div class="article-cat">AI Tools</div>
+        <div class="article-title">Using AI to Automate Your Workflow — Practical Examples That Work Today</div>
+        <div class="article-excerpt">Not theoretical. These are real workflows we've automated with AI tools that save hours every week.</div>
+        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot"></div><span>7 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="trading">
+        <div class="article-cat">Trading</div>
+        <div class="article-title">Trailing Stops Explained — How to Lock In Gains Without Cutting Winners Short</div>
+        <div class="article-excerpt">The mechanics of trailing stops, when to use them, and how to configure them for different trade setups.</div>
+        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot"></div><span>5 min read</span></div>
+      </div>
+
+      <div class="card article-card-item" data-cat="tech">
+        <div class="article-cat">Tech Reviews</div>
+        <div class="article-title">Claude 3.5 Sonnet Review — Anthropic's Best Model Yet</div>
+        <div class="article-excerpt">What changed, what's still the same, and where Claude pulls ahead of GPT-4o in real use cases.</div>
+        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot"></div><span>4 min read</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section-pad cta-band">
+  <div class="container">
+    <div class="cta-band-inner" style="max-width:560px;">
+      <div class="tag">Newsletter</div>
+      <h2 class="section-title">Stay in the loop</h2>
+      <p class="section-sub" style="margin:0 auto 30px;">New articles, tool reviews, and tech news — delivered to your inbox.</p>
+      <div style="display:flex;gap:10px;max-width:440px;margin:0 auto;">
+        <input type="email" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius);padding:13px 16px;color:#fff;font-size:.95rem;outline:none;">
+        <button class="btn btn-primary" style="flex-shrink:0;">Subscribe</button>
+      </div>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:12px;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Louisiana-based technology company. Powered by TradeBoard, LLC.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="blog.html">Articles</a></li><li><a href="youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="legal.html">Privacy Policy</a></li><li><a href="legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TradeBoard, LLC d/b/a Cajun AI. All rights reserved.</p>
+      <div style="display:flex;gap:20px;"><a href="legal.html">Privacy</a><a href="legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+<script>
+function filterCat(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
+  event.target.classList.add('active-filter');
+  document.querySelectorAll('[data-cat]').forEach(el => {
+    el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+<style>
+.active-filter { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
+@media(max-width:700px){
+  .card[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important; gap:24px !important;}
+}
+</style>
+</body>
+</html>

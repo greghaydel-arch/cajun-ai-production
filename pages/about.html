@@ -1,27 +1,184 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI News | Cajun AI</title>
-<link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Cajun AI</title>
+  <meta name="description" content="About Cajun AI — a Louisiana-based technology company building smart software and AI tools.">
+  <link rel="icon" href="../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-<section class="creator">
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tradeboard.html">TradeBoard</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Articles</a></li>
+      <li><a href="youtube.html">YouTube</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-ghost">Log In</a>
+      <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="../index.html">Home</a><a href="tradeboard.html">TradeBoard</a><a href="pricing.html">Pricing</a><a href="blog.html">Articles</a><a href="youtube.html">YouTube</a><a href="about.html">About</a>
+  <a href="login.html" class="btn btn-outline">Log In</a>
+  <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
 
-<h1>About Us</h1>
-
-<p>
-This section will contain information about our company and team.
-</p>
-
-<a href="../index.html" class="btn-primary">
-Back Home
-</a>
-
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="tag">About Us</div>
+    <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.2rem);max-width:640px;margin:0 auto 20px;">
+      Built in Louisiana. <span class="accent">Built for real use.</span>
+    </h1>
+    <p class="section-sub">
+      We're a small Louisiana-based tech company that builds software people actually use — trading tools, AI content, and more.
+    </p>
+  </div>
 </section>
 
+<!-- STORY -->
+<section class="section-pad" style="background:var(--bg);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <div class="tag">Our Story</div>
+        <h2 class="section-title">From IT veteran to software founder</h2>
+        <p style="color:var(--muted2);line-height:1.9;margin-bottom:18px;">
+          Cajun AI started from a simple frustration: existing trading tools were either too basic, too expensive, or built by people who don't actually trade. So we built our own.
+        </p>
+        <p style="color:var(--muted2);line-height:1.9;margin-bottom:18px;">
+          What began as a personal trading dashboard has grown into TradeBoard — a full analytics and automation platform designed for retail traders who take their craft seriously.
+        </p>
+        <p style="color:var(--muted2);line-height:1.9;">
+          We're also passionate about AI education. Through our YouTube channel and articles, we break down the tools and trends shaping the tech industry — in plain language, without the hype.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card" style="display:flex;align-items:center;gap:18px;">
+          <div style="font-size:1.8rem;">🏢</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">TradeBoard, LLC</div>
+            <div style="font-size:.87rem;color:var(--muted);">Louisiana registered LLC operating as Cajun AI</div>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;">
+          <div style="font-size:1.8rem;">📍</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">Louisiana, USA</div>
+            <div style="font-size:.87rem;color:var(--muted);">Proud to build and operate from the Gulf South</div>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;">
+          <div style="font-size:1.8rem;">🔒</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">Security First</div>
+            <div style="font-size:.87rem;color:var(--muted);">OAuth-only broker auth — we never store your login credentials</div>
+          </div>
+        </div>
+        <div class="card" style="display:flex;align-items:center;gap:18px;">
+          <div style="font-size:1.8rem;">📈</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">Built by Traders</div>
+            <div style="font-size:.87rem;color:var(--muted);">Everything we build, we use ourselves first</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section-pad" style="background:var(--bg2);">
+  <div class="container" style="max-width:780px;">
+    <div class="tag">Mission</div>
+    <h2 class="section-title">Why we build what we build</h2>
+    <p style="color:var(--muted2);line-height:1.9;font-size:1.05rem;margin-bottom:20px;">
+      The technology industry moves fast. Most people don't have time to sort through the noise and figure out what's actually useful. That's where we come in.
+    </p>
+    <p style="color:var(--muted2);line-height:1.9;font-size:1.05rem;margin-bottom:20px;">
+      Whether it's a trading analytics platform that gives retail traders an actual edge, or an article that explains AI in plain English — we focus on practical, real-world value. Not hype.
+    </p>
+    <p style="color:var(--muted2);line-height:1.9;font-size:1.05rem;">
+      We're a small team, but we're moving fast. More products, more content, and more tools coming from Louisiana to the world.
+    </p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section-pad" style="background:var(--bg);">
+  <div class="container">
+    <div class="tag">Team</div>
+    <h2 class="section-title" style="margin-bottom:50px;">The people behind Cajun AI</h2>
+    <div class="team-grid" style="max-width:700px;">
+      <div class="team-card">
+        <div class="team-avatar">👨‍💻</div>
+        <div class="team-name">Greg H.</div>
+        <div class="team-role">Founder &amp; Developer</div>
+        <div class="team-bio">IT veteran of 20+ years. Built TradeBoard from scratch to solve his own trading analytics problem. Analytical, direct, and allergic to software that doesn't work.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="section-pad cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <h2 class="section-title">Have a question?</h2>
+      <p class="section-sub" style="margin:0 auto 36px;">Reach out — we actually respond.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://x.com/cajunai1001" target="_blank" rel="noopener" class="btn btn-primary">Message on X →</a>
+        <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener" class="btn btn-outline">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <p>Louisiana-based technology company. Powered by TradeBoard, LLC.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Content</h5><ul><li><a href="blog.html">Articles</a></li><li><a href="youtube.html">YouTube</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="legal.html">Privacy Policy</a></li><li><a href="legal.html#tos">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TradeBoard, LLC d/b/a Cajun AI. All rights reserved.</p>
+      <div style="display:flex;gap:20px;"><a href="legal.html">Privacy</a><a href="legal.html#tos">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+<style>
+@media(max-width:900px){
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;gap:40px !important;}
+}
+</style>
 </body>
 </html>

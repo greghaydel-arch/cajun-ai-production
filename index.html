@@ -1,265 +1,396 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cajun AI | AI for the Gulf South</title>
-
-<meta name="description" content="AI news, AI tools, technology reviews, Louisiana innovation stories and emerging technology coverage from Cajun AI.">
-
-<link rel="icon" href="assets/images/favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajun AI | Technology. AI. Innovation.</title>
+  <meta name="description" content="Cajun AI is a Louisiana-based technology company building smart software, AI tools, and digital products for the modern world.">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header class="navbar">
-
-<div class="nav-container">
-
-<a href="#" class="brand">
-<img src="assets/images/logo.png" alt="Cajun AI">
-<span>Cajun AI</span>
-</a>
-
-<nav>
-<a href="#">Home</a>
-<a href="pages/ai-news.html">AI News</a>
-<a href="pages/ai-tools.html">AI Tools</a>
-<a href="pages/tech-reviews.html">Tech Reviews</a>
-<a href="pages/about.html">About</a>
-<a href="pages/contact.html">Contact</a>
-</nav>
-
-<a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje"
-target="_blank"
-class="youtube-btn">
-Watch on YouTube </a>
-
-</div>
-
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/images/logo.png" alt="Cajun AI">
+      Cajun AI
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/tradeboard.html">TradeBoard</a></li>
+      <li><a href="pages/pricing.html">Pricing</a></li>
+      <li><a href="pages/blog.html">Articles</a></li>
+      <li><a href="pages/youtube.html">YouTube</a></li>
+      <li><a href="pages/about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="pages/login.html" class="btn btn-ghost">Log In</a>
+      <a href="pages/tradeboard.html" class="btn btn-primary">Get TradeBoard</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
+<!-- Mobile Nav -->
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="pages/tradeboard.html">TradeBoard</a>
+  <a href="pages/pricing.html">Pricing</a>
+  <a href="pages/blog.html">Articles</a>
+  <a href="pages/youtube.html">YouTube</a>
+  <a href="pages/about.html">About</a>
+  <a href="pages/login.html" class="btn btn-outline">Log In</a>
+  <a href="pages/tradeboard.html" class="btn btn-primary">Get TradeBoard</a>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
 
-<div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="tag">Louisiana Tech Company</div>
 
-<div class="hero-content">
+    <div class="hero-logo-row">
+      <img src="assets/images/logo.png" alt="Cajun AI">
+      <h1>Cajun AI</h1>
+    </div>
 
-<div class="hero-tag">
-AI FOR THE GULF SOUTH
-</div>
+    <p class="hero-headline">
+      Smart Software.<br>
+      Real Innovation.<br>
+      Built in Louisiana.
+    </p>
 
-<div class="hero-logo-row">
-<img src="assets/images/logo.png" alt="Cajun AI Logo">
-<div>
-<h1>Cajun AI</h1>
-</div>
-</div>
+    <p>
+      We build technology products that solve real problems — from AI-powered trading tools 
+      to educational content about the software shaping tomorrow's world.
+    </p>
 
-<h2>
-Artificial Intelligence.
-Technology.
-Louisiana Innovation.
-</h2>
+    <div class="hero-btns">
+      <a href="pages/tradeboard.html" class="btn btn-primary">Explore TradeBoard →</a>
+      <a href="pages/youtube.html" class="btn btn-outline">Watch on YouTube</a>
+    </div>
+  </div>
 
-<p>
-Practical AI news, tool reviews, technology insights, and digital innovation for Louisiana and beyond.
-</p>
-
-<div class="hero-buttons">
-
-<a href="pages/ai-tools.html" class="btn-primary">
-Explore AI Tools
-</a>
-
-<a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje"
-target="_blank"
-class="btn-secondary">
-Watch on YouTube </a>
-
-</div>
-
-</div>
-
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
 </section>
 
-<section class="features">
+<!-- ═══════════════════════════════ TRUST BAR ═══════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span>AI Tools</span><div class="trust-dot"></div>
+    <span>Trading Software</span><div class="trust-dot"></div>
+    <span>Tech Education</span><div class="trust-dot"></div>
+    <span>Louisiana Innovation</span><div class="trust-dot"></div>
+    <span>Automation</span><div class="trust-dot"></div>
+    <span>TradeBoard</span><div class="trust-dot"></div>
+    <span>YouTube Content</span><div class="trust-dot"></div>
+    <span>AI Tools</span><div class="trust-dot"></div>
+    <span>Trading Software</span><div class="trust-dot"></div>
+    <span>Tech Education</span><div class="trust-dot"></div>
+    <span>Louisiana Innovation</span><div class="trust-dot"></div>
+    <span>Automation</span><div class="trust-dot"></div>
+    <span>TradeBoard</span><div class="trust-dot"></div>
+    <span>YouTube Content</span><div class="trust-dot"></div>
+  </div>
+</div>
 
-<a href="pages/ai-news.html" class="feature-card">
-<h3>AI News</h3>
-<p>Stay up to date on the latest developments in artificial intelligence.</p>
-</a>
+<!-- ═══════════════════════════════ WHAT WE BUILD ═══════════════════════════════ -->
+<section class="section-pad" style="background:var(--bg2);">
+  <div class="container">
+    <div class="tag">What We Build</div>
+    <h2 class="section-title">Technology that works for you</h2>
+    <p class="section-sub" style="margin-bottom:60px;">
+      From trading analytics to AI content, everything we build is practical, data-driven, and built for people who take their work seriously.
+    </p>
+    <div class="features-grid">
+      <div class="card feature-card-item">
+        <div class="feature-icon">📊</div>
+        <h3 style="margin-bottom:12px;">TradeBoard</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">
+          A full-featured trading analytics dashboard. Multi-broker support, real-time P&amp;L, advanced charting, and automated execution tools.
+        </p>
+        <a href="pages/tradeboard.html" style="color:var(--accent);font-size:.88rem;font-weight:600;text-decoration:none;margin-top:20px;display:inline-block;">
+          Learn more →
+        </a>
+      </div>
 
-<a href="pages/ai-tools.html" class="feature-card">
-<h3>AI Tools</h3>
-<p>Discover the best AI tools for productivity, business, and content creation.</p>
-</a>
+      <div class="card feature-card-item">
+        <div class="feature-icon">🤖</div>
+        <h3 style="margin-bottom:12px;">AI Tools & Reviews</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">
+          Honest breakdowns of the AI tools changing how we work — ChatGPT, Claude, Perplexity, and everything in between.
+        </p>
+        <a href="pages/blog.html" style="color:var(--accent);font-size:.88rem;font-weight:600;text-decoration:none;margin-top:20px;display:inline-block;">
+          Read articles →
+        </a>
+      </div>
 
-<a href="pages/tech-reviews.html" class="feature-card">
-<h3>Tech Reviews</h3>
-<p>Hardware, software, gadgets and technology reviews.</p>
-</a>
+      <div class="card feature-card-item">
+        <div class="feature-icon">▶️</div>
+        <h3 style="margin-bottom:12px;">YouTube Channel</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">
+          Tech tutorials, AI news, and software walkthroughs from Cajun Nation Tech — real content, no fluff.
+        </p>
+        <a href="pages/youtube.html" style="color:var(--accent);font-size:.88rem;font-weight:600;text-decoration:none;margin-top:20px;display:inline-block;">
+          Watch videos →
+        </a>
+      </div>
 
-<a href="pages/about.html" class="feature-card">
-<h3>Louisiana & AI</h3>
-<p>Technology and innovation stories from the Gulf South.</p>
-</a>
-
+      <div class="card feature-card-item">
+        <div class="feature-icon">🏢</div>
+        <h3 style="margin-bottom:12px;">Louisiana Tech</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">
+          Built and operated from Louisiana. We cover local innovation, Gulf South technology news, and homegrown startup stories.
+        </p>
+        <a href="pages/about.html" style="color:var(--accent);font-size:.88rem;font-weight:600;text-decoration:none;margin-top:20px;display:inline-block;">
+          Our story →
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section-dark">
+<!-- ═══════════════════════════════ TRADEBOARD SHOWCASE ═══════════════════════════════ -->
+<section class="section-pad product-showcase">
+  <div class="container">
+    <div class="showcase-grid">
+      <!-- Mock Dashboard -->
+      <div class="showcase-img">
+        <div class="showcase-img-inner">
+          <div class="mock-topbar">
+            <div class="mock-dot"></div>
+            <div class="mock-dot"></div>
+            <div class="mock-dot"></div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-chart">
+              <div class="mock-bar" style="height:40%"></div>
+              <div class="mock-bar" style="height:65%"></div>
+              <div class="mock-bar" style="height:50%"></div>
+              <div class="mock-bar" style="height:80%"></div>
+              <div class="mock-bar" style="height:60%"></div>
+              <div class="mock-bar" style="height:90%"></div>
+              <div class="mock-bar" style="height:70%"></div>
+              <div class="mock-bar" style="height:85%"></div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">+24.7%</div>
+              <div class="mock-stat-lbl">Win Rate</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val">$3.2k</div>
+              <div class="mock-stat-lbl">Realized P&amp;L</div>
+            </div>
+            <div class="mock-chart">
+              <div class="mock-bar" style="height:30%"></div>
+              <div class="mock-bar" style="height:55%"></div>
+              <div class="mock-bar" style="height:75%"></div>
+              <div class="mock-bar" style="height:45%"></div>
+              <div class="mock-bar" style="height:95%"></div>
+              <div class="mock-bar" style="height:60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div class="section-container">
+      <!-- Text -->
+      <div>
+        <div class="tag">Flagship Product</div>
+        <h2 class="section-title">TradeBoard — <span class="accent">Trade smarter</span></h2>
+        <p class="section-sub">
+          A professional trading analytics platform built for retail traders who want real insights — 
+          not just another P&amp;L export. Multi-broker, real-time, and built to scale.
+        </p>
 
-<h2>Featured AI Articles</h2>
+        <div class="showcase-features">
+          <div class="sf-item">
+            <div class="sf-icon">📈</div>
+            <div class="sf-text">
+              <h4>Multi-Broker Analytics</h4>
+              <p>Connect Webull, Robinhood, TD Ameritrade and more. See your full portfolio in one view.</p>
+            </div>
+          </div>
+          <div class="sf-item">
+            <div class="sf-icon">⚡</div>
+            <div class="sf-text">
+              <h4>Automated Execution (Bot)</h4>
+              <p>Watchlist-driven auto-entry with configurable trailing stops and profit targets.</p>
+            </div>
+          </div>
+          <div class="sf-item">
+            <div class="sf-icon">📱</div>
+            <div class="sf-text">
+              <h4>Web + Mobile</h4>
+              <p>Full-featured dashboard on the web, mobile-optimized for monitoring on the go.</p>
+            </div>
+          </div>
+          <div class="sf-item">
+            <div class="sf-icon">🔒</div>
+            <div class="sf-text">
+              <h4>Secure by Design</h4>
+              <p>OAuth-only broker connections. We never store your login credentials — ever.</p>
+            </div>
+          </div>
+        </div>
 
-<div class="article-grid">
-
-<div class="article-card">
-<h3>What Is Generative AI?</h3>
-<p>Learn how modern AI systems create text, images, video and code.</p>
-</div>
-
-<div class="article-card">
-<h3>Best AI Tools In 2026</h3>
-<p>Our picks for productivity, creators, businesses and entrepreneurs.</p>
-</div>
-
-<div class="article-card">
-<h3>AI Opportunities In Louisiana</h3>
-<p>How AI is impacting energy, healthcare, education and small business.</p>
-</div>
-
-</div>
-
-</div>
-
+        <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="pages/tradeboard.html" class="btn btn-primary">See TradeBoard →</a>
+          <a href="pages/pricing.html" class="btn btn-outline">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section-light">
-
-<div class="section-container">
-
-<h2>Louisiana Innovation & Technology</h2>
-
-<p class="section-text">
-
-Cajun AI highlights emerging technology, innovation, entrepreneurship,
-digital transformation and artificial intelligence developments
-throughout Louisiana and the Gulf South.
-
-</p>
-
-</div>
-
+<!-- ═══════════════════════════════ STATS ═══════════════════════════════ -->
+<section class="section-pad-sm" style="background:var(--bg);">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-val">3+</div>
+        <div class="stat-lbl">Broker Integrations<br>Supported</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">20+</div>
+        <div class="stat-lbl">Analytics<br>Dashboards</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">100%</div>
+        <div class="stat-lbl">OAuth-only<br>Broker Auth</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">LA</div>
+        <div class="stat-lbl">Louisiana-Based<br>LLC</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section-dark">
-
-<div class="section-container">
-
-<h2>AI Tool Spotlight</h2>
-
-<div class="article-grid">
-
-<div class="article-card">
-<h3>ChatGPT</h3>
-<p>AI assistant for writing, research and productivity.</p>
-</div>
-
-<div class="article-card">
-<h3>Claude</h3>
-<p>Advanced reasoning and document analysis platform.</p>
-</div>
-
-<div class="article-card">
-<h3>Perplexity</h3>
-<p>Research-focused AI search engine.</p>
-</div>
-
-</div>
-
-</div>
-
+<!-- ═══════════════════════════════ LATEST ARTICLES ═══════════════════════════════ -->
+<section class="section-pad" style="background:var(--bg2);">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
+      <div>
+        <div class="tag">Articles</div>
+        <h2 class="section-title" style="margin-bottom:0;">Latest from Cajun AI</h2>
+      </div>
+      <a href="pages/blog.html" class="btn btn-ghost">View all articles →</a>
+    </div>
+    <div class="features-grid">
+      <div class="card article-card-item">
+        <div class="article-cat">AI Tools</div>
+        <div class="article-title">What Is Generative AI? A Plain-English Breakdown</div>
+        <div class="article-excerpt">How modern AI systems create text, images, video and code — and why it matters for your business or career.</div>
+        <div class="article-meta">
+          <span>June 2026</span>
+          <div class="article-meta-dot"></div>
+          <span>5 min read</span>
+        </div>
+      </div>
+      <div class="card article-card-item">
+        <div class="article-cat">Software</div>
+        <div class="article-title">Best AI Tools In 2026 — Our Top Picks by Category</div>
+        <div class="article-excerpt">From writing assistants to code generators — the tools worth your time and money this year.</div>
+        <div class="article-meta">
+          <span>June 2026</span>
+          <div class="article-meta-dot"></div>
+          <span>7 min read</span>
+        </div>
+      </div>
+      <div class="card article-card-item">
+        <div class="article-cat">Louisiana Tech</div>
+        <div class="article-title">AI Opportunities in Louisiana — Energy, Healthcare & Small Business</div>
+        <div class="article-excerpt">How the Gulf South is uniquely positioned to take advantage of the AI revolution.</div>
+        <div class="article-meta">
+          <span>May 2026</span>
+          <div class="article-meta-dot"></div>
+          <span>6 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="creator">
-
-<h2>Latest Videos</h2>
-
-<p>
-
-Watch reviews, tutorials, AI news and technology coverage from Cajun Nation Tech.
-
-</p>
-
-<a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje"
-target="_blank"
-class="btn-primary">
-
-Visit YouTube Channel
-
-</a>
-
+<!-- ═══════════════════════════════ YOUTUBE CTA ═══════════════════════════════ -->
+<section class="section-pad cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div class="tag">YouTube</div>
+      <h2 class="section-title">Watch. Learn. Build.</h2>
+      <p class="section-sub" style="margin: 0 auto 36px;">
+        Tech tutorials, AI tool reviews, and software walkthroughs from Cajun Nation Tech — real talk, no hype.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener" class="btn btn-primary">Visit YouTube Channel</a>
+        <a href="pages/youtube.html" class="btn btn-outline">Browse Videos</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="newsletter">
-
-<h2>Join the Cajun AI Newsletter</h2>
-
-<p>
-
-Get AI news, tool reviews and technology insights delivered to your inbox.
-
-</p>
-
-<button>
-
-Coming Soon
-
-</button>
-
-</section>
-
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
 <footer>
-
-<h3>Cajun AI</h3>
-
-<p>
-AI for the Gulf South
-</p>
-
-<div class="social-links">
-
-<a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank">YouTube</a>
-
-<a href="https://x.com/cajunai1001?s=11" target="_blank">X</a>
-
-<a href="https://www.instagram.com/cajun_ai" target="_blank">Instagram</a>
-
-<a href="https://www.tiktok.com/@cajun_ai" target="_blank">TikTok</a>
-
-</div>
-
-<p class="copyright">
-© 2026 Cajun AI. All Rights Reserved.
-</p>
-
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/images/logo.png" alt="Cajun AI">
+          Cajun AI
+        </a>
+        <p>Louisiana-based technology company building smart software, AI tools, and digital products. Powered by TradeBoard, LLC.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener" title="YouTube">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener" title="X / Twitter">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener" title="Instagram">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener" title="TikTok">TK</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="pages/tradeboard.html">TradeBoard</a></li>
+          <li><a href="pages/pricing.html">Pricing</a></li>
+          <li><a href="pages/login.html">Log In</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Content</h5>
+        <ul>
+          <li><a href="pages/blog.html">Articles</a></li>
+          <li><a href="pages/youtube.html">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/legal.html">Privacy Policy</a></li>
+          <li><a href="pages/legal.html#tos">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TradeBoard, LLC d/b/a Cajun AI. All rights reserved.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="pages/legal.html">Privacy</a>
+        <a href="pages/legal.html#tos">Terms</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
