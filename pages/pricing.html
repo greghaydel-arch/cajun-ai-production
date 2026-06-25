@@ -55,8 +55,9 @@
     .pricing-card { display:flex; flex-direction:column; }
     .pricing-card .pricing-features { flex:1; }
     .pricing-plan { font-size: .78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
-    .pricing-price { font-size: 2.6rem; font-weight:800; line-height:1; margin-bottom:6px; }
+    .pricing-price { font-size: 2.6rem; font-weight:800; line-height:1; margin-bottom:6px; color: var(--text); }
     .pricing-price span { font-size: 1rem; font-weight:400; color: var(--muted); }
+    .pricing-price .price-amount { font-size: 2.6rem; font-weight:800; color: var(--text); }
     .pricing-price .price-mo { font-size:.82rem; color:var(--muted); display:block; margin-top:4px; font-weight:400; }
     .pricing-desc { font-size:.88rem; color:var(--muted); margin-bottom:20px; line-height:1.6; }
     .pricing-divider { border:none; border-top:1px solid var(--border); margin-bottom:20px; }
@@ -258,7 +259,7 @@
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-plan tier-label-pro">Pro</div>
         <div class="pricing-price">
-          <span id="price-pro-amount">$29</span> <span id="price-pro-period">/ month</span>
+          <span class="price-amount" id="price-pro-amount">$29</span><span id="price-pro-period" style="font-size:1rem;font-weight:400;color:var(--muted);"> / month</span>
         </div>
         <p class="price-mo" id="price-pro-note" style="height:22px;color:var(--muted);font-size:.8rem;"></p>
         <div class="pricing-desc">
@@ -290,7 +291,7 @@
       <div class="pricing-card">
         <div class="pricing-plan" style="color:#a78bfa;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Pro+</div>
         <div class="pricing-price">
-          <span id="price-proplus-amount">$49</span> <span id="price-proplus-period">/ month</span>
+          <span class="price-amount" id="price-proplus-amount">$49</span><span id="price-proplus-period" style="font-size:1rem;font-weight:400;color:var(--muted);"> / month</span>
         </div>
         <p class="price-mo" id="price-proplus-note" style="height:22px;color:var(--muted);font-size:.8rem;"></p>
         <div class="pricing-desc">
