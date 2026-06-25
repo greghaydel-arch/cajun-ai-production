@@ -4,12 +4,176 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing | TradeBoard by Cajun AI</title>
-  <meta name="description" content="TradeBoard pricing — free and pro plans for retail traders.">
+  <meta name="description" content="TradeBoard pricing — free trial, lifetime purchase, and pro subscription for retail traders.">
   <link rel="icon" href="../assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── Pricing page extras ── */
+    .pricing-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    @media(max-width:900px){ .pricing-grid-3 { grid-template-columns:1fr 1fr; } }
+    @media(max-width:580px){ .pricing-grid-3 { grid-template-columns:1fr; } }
+
+    /* Toggle annual/monthly */
+    .billing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 44px;
+    }
+    .billing-toggle span { font-size:.9rem; color: var(--muted); font-weight:500; }
+    .billing-toggle span.active { color: var(--text); font-weight:700; }
+    .toggle-switch {
+      position: relative; width: 48px; height: 26px;
+      background: var(--border); border-radius: 13px;
+      cursor: pointer; transition: background .2s;
+    }
+    .toggle-switch.on { background: var(--accent); }
+    .toggle-switch::after {
+      content:''; position:absolute; top:3px; left:3px;
+      width:20px; height:20px; background:#fff; border-radius:50%;
+      transition: transform .2s;
+    }
+    .toggle-switch.on::after { transform: translateX(22px); }
+    .save-badge {
+      display:inline-block; background:rgba(34,197,94,.15);
+      border:1px solid rgba(34,197,94,.3); color:#22c55e;
+      font-size:.7rem; font-weight:700; letter-spacing:.06em;
+      padding:3px 9px; border-radius:20px; text-transform:uppercase;
+    }
+
+    /* Pricing card overrides for 3-col layout */
+    .pricing-card { display:flex; flex-direction:column; }
+    .pricing-card .pricing-features { flex:1; }
+    .pricing-plan { font-size: .78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+    .pricing-price { font-size: 2.6rem; font-weight:800; line-height:1; margin-bottom:6px; }
+    .pricing-price span { font-size: 1rem; font-weight:400; color: var(--muted); }
+    .pricing-price .price-mo { font-size:.82rem; color:var(--muted); display:block; margin-top:4px; font-weight:400; }
+    .pricing-desc { font-size:.88rem; color:var(--muted); margin-bottom:20px; line-height:1.6; }
+    .pricing-divider { border:none; border-top:1px solid var(--border); margin-bottom:20px; }
+
+    .one-time-note {
+      display:inline-block;
+      background: rgba(139,92,246,.1);
+      border: 1px solid rgba(139,92,246,.3);
+      color: #a78bfa;
+      font-size:.75rem; font-weight:700; letter-spacing:.05em;
+      padding: 4px 11px; border-radius:20px; text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .tier-label-trial  { color: #22c55e; }
+    .tier-label-buy    { color: #a78bfa; }
+    .tier-label-pro    { color: var(--accent); }
+
+    /* Feature comparison table */
+    .feat-table { width:100%; border-collapse:collapse; font-size:.87rem; }
+    .feat-table th {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+    }
+    .feat-table th:first-child { text-align:left; color:var(--muted); width:46%; }
+    .feat-table th.col-trial { text-align:center; color:#22c55e; }
+    .feat-table th.col-buy   { text-align:center; color:#a78bfa; }
+    .feat-table th.col-pro   { text-align:center; color:var(--accent); }
+    .feat-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+    .feat-table td:first-child { color:var(--text); }
+    .feat-table td.center { text-align:center; }
+    .feat-table tr:nth-child(even) td { background:rgba(255,255,255,.02); }
+    .feat-table .check-g { color:#22c55e; font-size:1.1rem; font-weight:700; }
+    .feat-table .check-p { color:#a78bfa; font-size:1.1rem; font-weight:700; }
+    .feat-table .check-o { color:var(--accent); font-size:1.1rem; font-weight:700; }
+    .feat-table .dash     { color:var(--muted); font-size:1rem; }
+    .feat-table .val      { font-weight:600; }
+    .feat-table .val-g    { color:#22c55e; font-weight:600; }
+    .feat-table .val-p    { color:#a78bfa; font-weight:600; }
+    .feat-table .val-o    { color:var(--accent); font-weight:600; }
+    .feat-table .section-row td {
+      background: rgba(229,143,82,.06);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .76rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      border-bottom: 1px solid rgba(229,143,82,.15);
+    }
+
+    /* Video placeholder */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .video-placeholder {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    .video-placeholder:hover { border-color: var(--accent); }
+    .video-thumb {
+      height: 155px;
+      background: linear-gradient(135deg, #0f1f17 0%, #1a2f1e 100%);
+      display: flex; align-items:center; justify-content:center;
+      position: relative;
+    }
+    .video-thumb .play-icon {
+      width:50px; height:50px;
+      background: rgba(229,143,82,.15);
+      border: 2px solid rgba(229,143,82,.4);
+      border-radius: 50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.2rem;
+    }
+    .coming-soon-tag {
+      position:absolute; top:11px; right:11px;
+      background:rgba(229,143,82,.14);
+      border:1px solid rgba(229,143,82,.35);
+      color:var(--accent);
+      font-size:.68rem; font-weight:700; letter-spacing:.06em;
+      padding:4px 9px; border-radius:20px; text-transform:uppercase;
+    }
+    .video-info { padding:15px 17px 19px; }
+    .video-tier-tag {
+      display:inline-block;
+      font-size:.68rem; font-weight:700; letter-spacing:.06em;
+      text-transform:uppercase;
+      padding:3px 9px; border-radius:20px; margin-bottom:9px;
+    }
+    .tier-trial { background:rgba(34,197,94,.12); color:#22c55e; border:1px solid rgba(34,197,94,.25); }
+    .tier-buy   { background:rgba(139,92,246,.12); color:#a78bfa; border:1px solid rgba(139,92,246,.25); }
+    .tier-pro   { background:rgba(229,143,82,.12); color:var(--accent); border:1px solid rgba(229,143,82,.25); }
+    .video-info h4 { font-size:.97rem; margin-bottom:5px; }
+    .video-info p  { font-size:.82rem; color:var(--muted); line-height:1.6; }
+
+    /* FAQ accordion */
+    .faq-item { border-bottom:1px solid var(--border); }
+    .faq-q {
+      width:100%; background:none; border:none; color:var(--text);
+      font-size:.97rem; font-weight:600; text-align:left;
+      padding:18px 0; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+    }
+    .faq-q .arrow { color:var(--accent); font-size:1.1rem; transition:transform .2s; flex-shrink:0; }
+    .faq-q.open .arrow { transform:rotate(180deg); }
+    .faq-a { display:none; font-size:.88rem; color:var(--muted); line-height:1.7; padding-bottom:18px; }
+    .faq-a.open { display:block; }
+  </style>
 </head>
 <body>
 
@@ -42,153 +206,351 @@
 <section class="page-hero">
   <div class="container">
     <div class="tag">Pricing</div>
-    <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.2rem);max-width:600px;margin:0 auto 20px;">
-      Simple, honest pricing
+    <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.2rem);max-width:640px;margin:0 auto 20px;">
+      Try it. Own it. Level up.
     </h1>
-    <p class="section-sub">Start free. Upgrade when you're ready. No hidden fees.</p>
+    <p class="section-sub" style="max-width:520px;margin:0 auto;">
+      Start with a 7-day trial — no credit card required. Keep what you need, upgrade when you're ready.
+    </p>
   </div>
 </section>
 
-<!-- PRICING CARDS -->
+<!-- PRICING CARDS — 3 tiers -->
 <section class="section-pad" style="background:var(--bg);">
   <div class="container">
-    <div class="pricing-grid">
 
-      <!-- Free -->
+    <!-- Annual/Monthly toggle -->
+    <div class="billing-toggle">
+      <span id="lbl-monthly" class="active">Monthly</span>
+      <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"></div>
+      <span id="lbl-annual">Annual &nbsp;<span class="save-badge">Save 25%</span></span>
+    </div>
+
+    <div class="pricing-grid-3">
+
+      <!-- FREE TRIAL -->
       <div class="pricing-card">
-        <div class="pricing-plan">Free</div>
-        <div class="pricing-price">$0 <span>/ month</span></div>
-        <div class="pricing-desc">Get started with core analytics. No credit card required.</div>
+        <div class="pricing-plan tier-label-trial">Free Trial</div>
+        <div class="pricing-price">$0 <span>/ 7 days</span></div>
+        <p class="price-mo" style="height:22px;"></p>
+        <div class="pricing-desc">
+          Try the core platform free. No credit card. Cancel any time before day 7 — nothing charged.
+        </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li>1 broker connection</li>
-          <li>90-day trade history</li>
+          <li>1 broker connection (CSV import)</li>
+          <li>Last 60 days of trade history</li>
           <li>Core performance dashboard</li>
           <li>Win rate &amp; P&amp;L tracking</li>
           <li>Basic trade journal</li>
-          <li>CSV import (manual)</li>
           <li>Web dashboard only</li>
+          <li>Help center access</li>
         </ul>
-        <a href="login.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started Free</a>
+        <a href="login.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:auto;">Start Free Trial →</a>
+        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">No card required. 7 days only.</p>
       </div>
 
-      <!-- Pro (featured) -->
+      <!-- STARTER (ONE-TIME PURCHASE) — featured -->
       <div class="pricing-card featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-plan">Pro</div>
-        <div class="pricing-price">$29 <span>/ month</span></div>
-        <div class="pricing-desc">Full analytics suite for active traders who want an edge.</div>
+        <div class="pricing-badge">Best Value</div>
+        <div class="pricing-plan tier-label-buy">Starter — Own It</div>
+        <div class="pricing-price" id="price-buy">$97 <span>one-time</span></div>
+        <p class="price-mo" id="price-buy-note" style="color:#a78bfa;font-size:.8rem;font-weight:600;">Pay once. Use forever. No renewal.</p>
+        <div class="pricing-desc">
+          Core analytics suite with no ongoing fees. Perfect for traders who want solid tools without a subscription.
+        </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li>Up to 3 broker connections</li>
+          <li>Everything in Free Trial</li>
+          <li>Up to 2 broker connections</li>
           <li>Full trade history (unlimited)</li>
-          <li>All 20+ analytics dashboards</li>
-          <li>Benchmark vs SPY / QQQ / indices</li>
+          <li>All core analytics dashboards</li>
           <li>Advanced trade journal + tagging</li>
           <li>PDF &amp; CSV export</li>
-          <li>Tax lot / wash sale reporting</li>
+          <li>Win-rate heatmap &amp; streak tracker</li>
+          <li>Equity curve &amp; max drawdown</li>
           <li>Mobile app (iOS &amp; Android)</li>
-          <li>Email &amp; browser notifications</li>
-          <li>OAuth broker connections</li>
+          <li>Email support</li>
+          <li style="color:var(--muted);font-size:.82rem;list-style:none;padding-left:0;margin-top:8px;">
+            ⚡ 1 year of free updates included
+          </li>
         </ul>
-        <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;">Start Pro Free →</a>
+        <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Buy Starter →</a>
+        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">Founding price — locks in before launch.</p>
       </div>
 
-      <!-- Bot Add-on -->
+      <!-- PRO SUBSCRIPTION -->
       <div class="pricing-card">
-        <div class="pricing-plan">Pro + Bot</div>
-        <div class="pricing-price">$49 <span>/ month</span></div>
-        <div class="pricing-desc">Everything in Pro, plus the automated execution bot for Discord &amp; Telegram signals.</div>
+        <div class="pricing-plan tier-label-pro">Pro — Everything</div>
+        <div class="pricing-price">
+          <span id="price-pro-amount">$29</span> <span id="price-pro-period">/ month</span>
+        </div>
+        <p class="price-mo" id="price-pro-note" style="height:22px;color:var(--muted);font-size:.8rem;"></p>
+        <div class="pricing-desc">
+          Full platform. Every feature unlocked. Continuous updates, AI features as they roll out, and priority support.
+        </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li>Everything in Pro</li>
-          <li>Automated execution bot</li>
-          <li>Discord watchlist integration</li>
-          <li>Telegram signal parsing (images)</li>
-          <li>Paper trade mode</li>
-          <li>Configurable trailing stops</li>
-          <li>T1 / T2 profit targets</li>
-          <li>Semi-auto live mode</li>
+          <li>Everything in Starter</li>
+          <li>Up to 5 broker connections</li>
+          <li>Benchmark vs SPY / QQQ / NASDAQ / S&amp;P 500 / DOW</li>
+          <li>Correlation analysis across symbols</li>
+          <li>Open positions tracker (live)</li>
+          <li>Monthly &amp; weekly summaries</li>
+          <li>Tax lot &amp; wash sale reporting</li>
+          <li>Screenshot attach to trades</li>
+          <li>Desktop push notifications</li>
+          <li>Persistent filters across sessions</li>
+          <li>Keyboard shortcuts + crosshair tooltips</li>
+          <li>Multi-broker CSV import (Robinhood, IBKR, TD, Tastytrade)</li>
+          <li>Early access to new features + AI tools</li>
           <li>Priority support</li>
         </ul>
-        <a href="login.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Pro + Bot</a>
+        <a href="login.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:auto;border-color:var(--accent);color:var(--accent);">Start Pro Free →</a>
+        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">Includes 7-day trial. Cancel anytime.</p>
       </div>
 
     </div>
 
-    <!-- FAQ note -->
-    <p style="text-align:center;color:var(--muted);font-size:.88rem;margin-top:50px;">
-      Prices subject to change before public launch. Early adopters locked in at founding rate. 
+    <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:40px;max-width:520px;margin-left:auto;margin-right:auto;">
+      Founding pricing in effect. Rates may increase at public launch — early buyers lock in for life.
       Questions? <a href="about.html" style="color:var(--accent);">Contact us.</a>
     </p>
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section class="section-pad" style="background:var(--bg2);">
+<!-- COMPETITOR CONTEXT BAR -->
+<section style="background:var(--bg2);padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
-    <h2 class="section-title" style="margin-bottom:40px;">What's included</h2>
+    <p style="text-align:center;font-size:.85rem;color:var(--muted);margin:0;">
+      <strong style="color:var(--text);">How we compare:</strong>&nbsp;&nbsp;
+      TraderSync starts at $29.95/mo &nbsp;·&nbsp; TradeZella starts at $29/mo &nbsp;·&nbsp; Tradervue Silver is $29.95/mo &nbsp;·&nbsp; Edgewonk is $197/yr (no monthly)
+      &nbsp;&mdash;&nbsp; <strong style="color:var(--accent);">TradeBoard Starter: own it once for $97.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- FULL FEATURE COMPARISON TABLE -->
+<section class="section-pad" style="background:var(--bg);">
+  <div class="container">
+    <div class="tag" style="margin-bottom:12px;">Full Breakdown</div>
+    <h2 class="section-title" style="margin-bottom:8px;">Everything compared</h2>
+    <p class="section-sub" style="margin-bottom:40px;">No fine print — see exactly what each tier includes.</p>
     <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+      <table class="feat-table">
         <thead>
           <tr>
-            <th style="text-align:left;padding:14px 20px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);">Feature</th>
-            <th style="text-align:center;padding:14px 20px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);">Free</th>
-            <th style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:700;border-bottom:1px solid var(--border);">Pro</th>
-            <th style="text-align:center;padding:14px 20px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);">Pro + Bot</th>
+            <th style="text-align:left;">Feature</th>
+            <th class="col-trial">Free Trial<br><span style="font-size:.72rem;font-weight:400;opacity:.7;">7 days</span></th>
+            <th class="col-buy">Starter<br><span style="font-size:.72rem;font-weight:400;opacity:.7;">$97 one-time</span></th>
+            <th class="col-pro">Pro<br><span style="font-size:.72rem;font-weight:400;opacity:.7;">$29/mo</span></th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:14px 20px;">Broker connections</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">1</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">3</td>
-            <td style="text-align:center;padding:14px 20px;">3</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);">
-            <td style="padding:14px 20px;">Trade history</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">90 days</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">Unlimited</td>
-            <td style="text-align:center;padding:14px 20px;">Unlimited</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:14px 20px;">Analytics dashboards</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">Core only</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">All 20+</td>
-            <td style="text-align:center;padding:14px 20px;">All 20+</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);">
-            <td style="padding:14px 20px;">Mobile app</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">✓</td>
-            <td style="text-align:center;padding:14px 20px;">✓</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:14px 20px;">PDF / CSV export</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">✓</td>
-            <td style="text-align:center;padding:14px 20px;">✓</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);">
-            <td style="padding:14px 20px;">Tax lot / wash sale</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">✓</td>
-            <td style="text-align:center;padding:14px 20px;">✓</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:14px 20px;">Execution bot</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">✓</td>
-          </tr>
-          <tr>
-            <td style="padding:14px 20px;">Paper trade mode</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--muted);">—</td>
-            <td style="text-align:center;padding:14px 20px;color:var(--accent);font-weight:600;">✓</td>
-          </tr>
+          <!-- Access & Data -->
+          <tr class="section-row"><td colspan="4">Access &amp; Data</td></tr>
+          <tr><td>Broker connections</td><td class="center val-g">1</td><td class="center val-p">2</td><td class="center val-o">5</td></tr>
+          <tr><td>Trade history</td><td class="center val-g">60 days</td><td class="center val-p">Unlimited</td><td class="center val-o">Unlimited</td></tr>
+          <tr><td>CSV import (manual)</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>OAuth broker auth (no credential storage)</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Multi-broker CSV (Robinhood, IBKR, TD, Tastytrade)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+
+          <!-- Analytics -->
+          <tr class="section-row"><td colspan="4">Analytics &amp; Dashboards</td></tr>
+          <tr><td>Core performance dashboard</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Win rate &amp; P&amp;L tracking</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>All core analytics dashboards</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Win-rate heatmap (day &amp; time of day)</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Streak tracker (consecutive wins/losses)</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Equity curve &amp; max drawdown</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Benchmark vs SPY / QQQ / NASDAQ / S&amp;P 500 / DOW</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+          <tr><td>Correlation analysis across symbols</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+          <tr><td>Open positions tracker (live)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+          <tr><td>Monthly &amp; weekly performance summaries</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+
+          <!-- Journal -->
+          <tr class="section-row"><td colspan="4">Trade Journal</td></tr>
+          <tr><td>Basic trade journal</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Advanced journal + custom tagging</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Inline P&amp;L coloring on trade rows</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Trade detail side panel</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Screenshot attach to trades</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+
+          <!-- Export & Reporting -->
+          <tr class="section-row"><td colspan="4">Export &amp; Reporting</td></tr>
+          <tr><td>PDF &amp; CSV export</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Tax lot &amp; wash sale reporting</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+
+          <!-- Mobile & UX -->
+          <tr class="section-row"><td colspan="4">Mobile &amp; UX</td></tr>
+          <tr><td>Web dashboard</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Mobile app (iOS &amp; Android)</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Dark / light theme toggle</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Keyboard shortcuts</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Persistent filters across sessions</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+          <tr><td>Collapsible sidebar</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+
+          <!-- Notifications -->
+          <tr class="section-row"><td colspan="4">Notifications &amp; Alerts</td></tr>
+          <tr><td>Email &amp; browser notifications</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Desktop push notifications</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+
+          <!-- Support -->
+          <tr class="section-row"><td colspan="4">Support</td></tr>
+          <tr><td>Help center &amp; video walkthroughs</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Email support</td><td class="center check-g">✓</td><td class="center check-p">✓</td><td class="center check-o">✓</td></tr>
+          <tr><td>Priority support</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+          <tr><td>Early access to new features &amp; AI tools</td><td class="center dash">—</td><td class="center dash">—</td><td class="center check-o">✓</td></tr>
+          <tr><td>1 year of free updates</td><td class="center dash">—</td><td class="center check-p">✓</td><td class="center check-o">Always</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION — COMING SOON -->
+<section class="section-pad" style="background:var(--bg2);">
+  <div class="container">
+    <div class="tag" style="margin-bottom:12px;">In Action</div>
+    <h2 class="section-title" style="margin-bottom:8px;">See TradeBoard in action</h2>
+    <p class="section-sub" style="margin-bottom:40px;">
+      Walkthroughs for every tier — coming soon before launch.
+    </p>
+    <div class="video-grid">
+
+      <div class="video-placeholder">
+        <div class="video-thumb">
+          <div class="play-icon">▶</div>
+          <span class="coming-soon-tag">Coming Soon</span>
+        </div>
+        <div class="video-info">
+          <span class="video-tier-tag tier-trial">Free Trial</span>
+          <h4>Getting Started in 5 Minutes</h4>
+          <p>Connect your broker, import trades, and see your P&amp;L live — from zero to dashboard in under 5 minutes.</p>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+        <div class="video-thumb">
+          <div class="play-icon">▶</div>
+          <span class="coming-soon-tag">Coming Soon</span>
+        </div>
+        <div class="video-info">
+          <span class="video-tier-tag tier-buy">Starter</span>
+          <h4>Core Analytics Walkthrough</h4>
+          <p>Win-rate heatmap, equity curve, streak tracker — all the tools included in your one-time purchase.</p>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+        <div class="video-thumb">
+          <div class="play-icon">▶</div>
+          <span class="coming-soon-tag">Coming Soon</span>
+        </div>
+        <div class="video-info">
+          <span class="video-tier-tag tier-pro">Pro</span>
+          <h4>20+ Dashboards — Full Pro Tour</h4>
+          <p>Every Pro analytics panel from benchmark overlay to correlation analysis — see the full power of the platform.</p>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+        <div class="video-thumb">
+          <div class="play-icon">▶</div>
+          <span class="coming-soon-tag">Coming Soon</span>
+        </div>
+        <div class="video-info">
+          <span class="video-tier-tag tier-pro">Pro</span>
+          <h4>Beating the Market — Benchmark Overlay</h4>
+          <p>Overlay SPY, QQQ, NASDAQ, S&amp;P 500, and DOW on your equity curve to see if you're actually outperforming.</p>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+        <div class="video-thumb">
+          <div class="play-icon">▶</div>
+          <span class="coming-soon-tag">Coming Soon</span>
+        </div>
+        <div class="video-info">
+          <span class="video-tier-tag tier-pro">Pro</span>
+          <h4>Mobile App Walkthrough</h4>
+          <p>iOS and Android — monitor live positions, check P&amp;L, and review your journal on the go.</p>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+        <div class="video-thumb">
+          <div class="play-icon">▶</div>
+          <span class="coming-soon-tag">Coming Soon</span>
+        </div>
+        <div class="video-info">
+          <span class="video-tier-tag tier-pro">Pro</span>
+          <h4>Tax Reporting — Wash Sales Simplified</h4>
+          <p>Automated tax lot tracking and wash sale identification — simplify year-end reporting in one click.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--bg);">
+  <div class="container" style="max-width:720px;">
+    <div class="tag" style="margin-bottom:12px;">FAQ</div>
+    <h2 class="section-title" style="margin-bottom:36px;">Common questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What happens after my 7-day free trial? <span class="arrow">▾</span></button>
+      <div class="faq-a">Nothing automatically. You won't be charged unless you choose a paid plan. After 7 days your account goes read-only — you keep your data but can't add new trades until you upgrade to Starter or Pro.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What's the difference between Starter and Pro? <span class="arrow">▾</span></button>
+      <div class="faq-a">Starter is a one-time purchase — you own the core platform forever with no monthly fees, plus 1 year of free updates. Pro is a subscription that unlocks everything: advanced benchmarking, tax lot reporting, correlation analysis, multi-broker imports, live positions tracker, priority support, and early access to every new feature and AI tool we ship.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I upgrade from Starter to Pro later? <span class="arrow">▾</span></button>
+      <div class="faq-a">Yes. If you start on Starter and decide you want everything, you can upgrade to Pro at any time. We'll credit a portion of your Starter purchase toward your first Pro payment.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you store my brokerage credentials? <span class="arrow">▾</span></button>
+      <div class="faq-a">Never. TradeBoard uses OAuth for broker connections — you authorize access through your broker's own login screen and we receive a secure token only. We never see or store your username or password. Tokens are stored encrypted in our database.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What brokers are supported? <span class="arrow">▾</span></button>
+      <div class="faq-a">At launch: Webull (OAuth). CSV import works with Robinhood, TD Ameritrade/Schwab, IBKR, Tastytrade, and Alpaca on Pro. Additional OAuth broker connections (Robinhood, others) are actively in development and will roll out to all active Pro subscribers first.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Is there a discount for annual billing? <span class="arrow">▾</span></button>
+      <div class="faq-a">Yes — toggle to Annual above and Pro drops to ~$22/month (billed $264/year), saving you about 25% vs monthly. Starter is a one-time price regardless of when you buy.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What is the "founding rate" and how long does it last? <span class="arrow">▾</span></button>
+      <div class="faq-a">Founding pricing is available now through public launch. We expect to raise prices after the official launch — anyone on a paid plan before then locks in their current rate for as long as they stay subscribed (or permanently, for Starter purchasers).</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="section-pad cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div class="tag">Ready to start?</div>
+      <h2 class="section-title">7 days free. No card needed.</h2>
+      <p class="section-sub" style="margin:0 auto 36px;">
+        Try TradeBoard free, then pick the plan that fits. Founding pricing won't last.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="login.html" class="btn btn-primary">Start Free Trial →</a>
+        <a href="tradeboard.html" class="btn btn-outline">Learn About TradeBoard</a>
+      </div>
     </div>
   </div>
 </section>
@@ -219,5 +581,52 @@
 </footer>
 
 <script src="../script.js"></script>
+<script>
+  // Billing toggle
+  let isAnnual = false;
+  function toggleBilling() {
+    isAnnual = !isAnnual;
+    const sw = document.getElementById('billing-toggle');
+    const lm = document.getElementById('lbl-monthly');
+    const la = document.getElementById('lbl-annual');
+    const proAmt  = document.getElementById('price-pro-amount');
+    const proPer  = document.getElementById('price-pro-period');
+    const proNote = document.getElementById('price-pro-note');
+    const buyNote = document.getElementById('price-buy-note');
+
+    if (isAnnual) {
+      sw.classList.add('on');
+      lm.classList.remove('active'); la.classList.add('active');
+      proAmt.textContent  = '$22';
+      proPer.textContent  = '/ month';
+      proNote.textContent = 'Billed $264/year — save $84 vs monthly';
+      proNote.style.color = '#22c55e';
+      buyNote.textContent = 'Pay once. Use forever. Price never changes.';
+    } else {
+      sw.classList.remove('on');
+      lm.classList.add('active'); la.classList.remove('active');
+      proAmt.textContent  = '$29';
+      proPer.textContent  = '/ month';
+      proNote.textContent = '';
+      buyNote.textContent = 'Pay once. Use forever. No renewal.';
+      buyNote.style.color = '#a78bfa';
+    }
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const ans = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      ans.classList.add('open');
+    }
+  }
+</script>
 </body>
 </html>
