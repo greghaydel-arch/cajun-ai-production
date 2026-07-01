@@ -128,9 +128,10 @@
     window.location.replace('tradeboard-full.html');
   }
 </script>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAVBAR -->
-<header class="navbar" id="navbar">
+<header class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" class="brand">
       <img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI
@@ -145,10 +146,10 @@
     <div class="nav-cta">
       <a href="tradeboard.html" class="btn btn-primary">Join Waitlist</a>
     </div>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="mobile-nav">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="../index.html">Home</a>
   <a href="tradeboard.html">TradeBoard</a>
   <a href="blog.html">Articles</a>
@@ -158,9 +159,9 @@
 </nav>
 
 <!-- COMING SOON CONTENT -->
-<main class="cs-wrap">
+<main class="cs-wrap" id="main-content" tabindex="-1">
   <div class="cs-badge">
-    <div class="cs-badge-dot"></div>
+    <div class="cs-badge-dot" aria-hidden="true"></div>
     <span>Launching Soon</span>
   </div>
 
@@ -175,13 +176,14 @@
 
   <!-- Email form -->
   <form class="cs-form" id="waitlistForm">
-    <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" required>
+    <label for="waitlistEmail" class="sr-only">Email address</label>
+    <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" autocomplete="email" required>
     <button type="submit" class="btn btn-primary">Join Waitlist →</button>
   </form>
 
   <!-- Success state -->
-  <div class="cs-success" id="csSuccess">
-    <span class="check">✓</span>
+  <div class="cs-success" id="csSuccess" role="alert" aria-live="polite">
+    <span class="check" aria-hidden="true">✓</span>
     <div>
       <p>You're on the list!</p>
       <small>We'll email you the moment we launch.</small>
@@ -191,10 +193,10 @@
   <p class="cs-note">No spam. Unsubscribe anytime.</p>
 
   <div class="cs-links">
-    <a href="https://youtube.com/@tradeboard" target="_blank" rel="noopener">▶ YouTube</a>
-    <span class="sep">|</span>
-    <a href="https://x.com/tradeboard" target="_blank" rel="noopener">𝕏 Twitter</a>
-    <span class="sep">|</span>
+    <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" aria-label="Cajun Nation Tech on YouTube (opens in new tab)"><span aria-hidden="true">▶</span> YouTube</a>
+    <span class="sep" aria-hidden="true">|</span>
+    <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on X / Twitter (opens in new tab)"><span aria-hidden="true">𝕏</span> Twitter</a>
+    <span class="sep" aria-hidden="true">|</span>
     <a href="about.html">About Cajun AI</a>
   </div>
 
@@ -210,7 +212,6 @@
     e.preventDefault();
     const email = document.getElementById('waitlistEmail').value;
     if (!email) return;
-    // Store locally — swap for API when ready
     try {
       const list = JSON.parse(localStorage.getItem('cajunai_waitlist') || '[]');
       if (!list.includes(email)) { list.push(email); localStorage.setItem('cajunai_waitlist', JSON.stringify(list)); }

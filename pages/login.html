@@ -31,39 +31,43 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <script>
   if (sessionStorage.getItem('cajunai_preview') === 'unlocked') {
     window.location.replace('login-full.html');
   }
 </script>
 
-<div class="cs-card">
-  <img src="../assets/images/logo.png" alt="Cajun AI" class="cs-logo">
+<main id="main-content" tabindex="-1">
+  <div class="cs-card">
+    <img src="../assets/images/logo.png" alt="Cajun AI" class="cs-logo">
 
-  <div class="cs-badge">
-    <div class="cs-badge-dot"></div>
-    <span>Launching Soon</span>
-  </div>
-
-  <h1 class="cs-title">TradeBoard is almost here</h1>
-  <p class="cs-sub">The app isn't open yet — but you can grab your spot now and be first through the door.</p>
-
-  <form id="waitlistForm">
-    <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" required>
-    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Notify Me at Launch →</button>
-  </form>
-
-  <div class="cs-success" id="csSuccess">
-    <span style="color:#22c55e;font-size:1.2rem;">✓</span>
-    <div>
-      <p>You're on the list!</p>
-      <small>We'll email you the moment login goes live.</small>
+    <div class="cs-badge">
+      <div class="cs-badge-dot" aria-hidden="true"></div>
+      <span>Launching Soon</span>
     </div>
-  </div>
 
-  <p class="cs-note">No spam. Unsubscribe anytime.</p>
-  <a href="../index.html" class="cs-back">← Back to Cajun AI</a>
-</div>
+    <h1 class="cs-title">TradeBoard is almost here</h1>
+    <p class="cs-sub">The app isn't open yet — but you can grab your spot now and be first through the door.</p>
+
+    <form id="waitlistForm">
+      <label for="waitlistEmail" class="sr-only">Email address</label>
+      <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" autocomplete="email" required>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Notify Me at Launch →</button>
+    </form>
+
+    <div class="cs-success" id="csSuccess" role="alert" aria-live="polite">
+      <span style="color:#22c55e;font-size:1.2rem;" aria-hidden="true">✓</span>
+      <div>
+        <p>You're on the list!</p>
+        <small>We'll email you the moment login goes live.</small>
+      </div>
+    </div>
+
+    <p class="cs-note">No spam. Unsubscribe anytime.</p>
+    <a href="../index.html" class="cs-back">← Back to Cajun AI</a>
+  </div>
+</main>
 
 <script>
   const form = document.getElementById('waitlistForm');

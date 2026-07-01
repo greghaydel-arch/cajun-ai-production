@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAVBAR -->
-<header class="navbar">
+<header class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
     <ul class="nav-links">
@@ -29,14 +30,16 @@
       <a href="login.html" class="btn btn-ghost">Log In</a>
       <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
     </div>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="mobile-nav">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="../index.html">Home</a><a href="tradeboard.html">TradeBoard</a><a href="pricing.html">Pricing</a><a href="blog.html">Articles</a><a href="youtube.html">YouTube</a><a href="about.html">About</a>
   <a href="login.html" class="btn btn-outline">Log In</a>
   <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
 </nav>
+
+<main id="main-content" tabindex="-1">
 
 <!-- HERO -->
 <section class="page-hero">
@@ -47,8 +50,10 @@
     </h1>
     <p class="section-sub">Tech tutorials, AI reviews, and software walkthroughs from Cajun Nation Tech. Real talk, no hype.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;">
-      <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener" class="btn btn-primary" style="background:#ff0000;border:none;">
-        ▶ Subscribe on YouTube
+      <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary" style="background:#ff0000;border:none;"
+         aria-label="Subscribe to Cajun Nation Tech on YouTube (opens in new tab)">
+        <span aria-hidden="true">▶</span> Subscribe on YouTube
       </a>
     </div>
   </div>
@@ -57,12 +62,14 @@
 <!-- CHANNEL BANNER -->
 <section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:50px 0;">
   <div class="container" style="display:flex;align-items:center;gap:40px;flex-wrap:wrap;">
-    <div style="background:rgba(229,143,82,.12);border:2px solid var(--border-acc);border-radius:50%;width:90px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;flex-shrink:0;">▶</div>
+    <div style="background:rgba(229,143,82,.12);border:2px solid var(--border-acc);border-radius:50%;width:90px;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;flex-shrink:0;" aria-hidden="true">▶</div>
     <div style="flex:1;min-width:240px;">
       <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:6px;">Cajun Nation Tech</h2>
       <p style="color:var(--muted);font-size:.93rem;line-height:1.7;">AI tools, tech tutorials, trading software walkthroughs, and real-world technology breakdowns. We cover what's actually useful — not just what's trending.</p>
     </div>
-    <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener" class="btn btn-primary" style="flex-shrink:0;">Visit Channel →</a>
+    <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener noreferrer"
+       class="btn btn-primary" style="flex-shrink:0;"
+       aria-label="Visit Cajun Nation Tech YouTube channel (opens in new tab)">Visit Channel →</a>
   </div>
 </section>
 
@@ -73,62 +80,66 @@
     <h2 class="section-title" style="margin-bottom:50px;">What we cover</h2>
     <div class="features-grid">
 
-      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener" class="yt-card">
+      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" class="yt-card"
+         aria-label="AI Tool Reviews and Comparisons — Cajun Nation Tech on YouTube (opens in new tab)">
         <div class="yt-thumb">
           <div class="yt-thumb-placeholder">
-            <div style="text-align:center;">
+            <div style="text-align:center;" aria-hidden="true">
               <div class="yt-play">▶</div>
               <div style="margin-top:12px;color:var(--muted);font-size:.85rem;">AI Tools</div>
             </div>
           </div>
         </div>
         <div class="yt-meta">
-          <h4>AI Tool Reviews &amp; Comparisons</h4>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:6px;">AI Tool Reviews &amp; Comparisons</h3>
           <p>ChatGPT, Claude, Perplexity, Midjourney, and more — tested and compared with honest takes.</p>
         </div>
       </a>
 
-      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener" class="yt-card">
+      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" class="yt-card"
+         aria-label="Step-by-Step Tech Tutorials — Cajun Nation Tech on YouTube (opens in new tab)">
         <div class="yt-thumb">
           <div class="yt-thumb-placeholder">
-            <div style="text-align:center;">
+            <div style="text-align:center;" aria-hidden="true">
               <div class="yt-play">▶</div>
               <div style="margin-top:12px;color:var(--muted);font-size:.85rem;">Tutorials</div>
             </div>
           </div>
         </div>
         <div class="yt-meta">
-          <h4>Step-by-Step Tech Tutorials</h4>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:6px;">Step-by-Step Tech Tutorials</h3>
           <p>Software walkthroughs, setup guides, and how-to videos for tools that actually matter.</p>
         </div>
       </a>
 
-      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener" class="yt-card">
+      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" class="yt-card"
+         aria-label="Trading and TradeBoard Walkthroughs — Cajun Nation Tech on YouTube (opens in new tab)">
         <div class="yt-thumb">
           <div class="yt-thumb-placeholder">
-            <div style="text-align:center;">
+            <div style="text-align:center;" aria-hidden="true">
               <div class="yt-play">▶</div>
               <div style="margin-top:12px;color:var(--muted);font-size:.85rem;">Trading</div>
             </div>
           </div>
         </div>
         <div class="yt-meta">
-          <h4>Trading &amp; TradeBoard Walkthroughs</h4>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:6px;">Trading &amp; TradeBoard Walkthroughs</h3>
           <p>How to use TradeBoard, analyze your performance, set up the execution bot, and trade smarter.</p>
         </div>
       </a>
 
-      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener" class="yt-card">
+      <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" class="yt-card"
+         aria-label="Tech News and Louisiana Innovation — Cajun Nation Tech on YouTube (opens in new tab)">
         <div class="yt-thumb">
           <div class="yt-thumb-placeholder">
-            <div style="text-align:center;">
+            <div style="text-align:center;" aria-hidden="true">
               <div class="yt-play">▶</div>
               <div style="margin-top:12px;color:var(--muted);font-size:.85rem;">Tech News</div>
             </div>
           </div>
         </div>
         <div class="yt-meta">
-          <h4>Tech News &amp; Louisiana Innovation</h4>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:6px;">Tech News &amp; Louisiana Innovation</h3>
           <p>What's happening in AI and tech — filtered for what's actually relevant to you.</p>
         </div>
       </a>
@@ -143,12 +154,16 @@
     <div class="cta-band-inner">
       <h2 class="section-title">Don't miss a video</h2>
       <p class="section-sub" style="margin:0 auto 36px;">Subscribe to Cajun Nation Tech and get notified when new content drops.</p>
-      <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener" class="btn btn-primary" style="background:#ff0000;border:none;font-size:1.05rem;padding:16px 36px;">
-        ▶ Subscribe Free on YouTube
+      <a href="https://youtube.com/@cajunnationtech?si=aDPxzJuhT9Q78Pje" target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary" style="background:#ff0000;border:none;font-size:1.05rem;padding:16px 36px;"
+         aria-label="Subscribe free to Cajun Nation Tech on YouTube (opens in new tab)">
+        <span aria-hidden="true">▶</span> Subscribe Free on YouTube
       </a>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -158,10 +173,10 @@
         <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
         <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
         <div class="footer-social">
-          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
-          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
-          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
-          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on YouTube (opens in new tab)">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on X / Twitter (opens in new tab)">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on Instagram (opens in new tab)">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on TikTok (opens in new tab)">TK</a>
         </div>
       </div>
       <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>

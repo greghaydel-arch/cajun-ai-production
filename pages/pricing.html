@@ -45,9 +45,10 @@
     window.location.replace('pricing-full.html');
   }
 </script>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAVBAR -->
-<header class="navbar" id="navbar">
+<header class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" class="brand">
       <img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI
@@ -62,10 +63,10 @@
     <div class="nav-cta">
       <a href="tradeboard.html" class="btn btn-primary">Join Waitlist</a>
     </div>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="mobile-nav">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="../index.html">Home</a>
   <a href="tradeboard.html">TradeBoard</a>
   <a href="blog.html">Articles</a>
@@ -74,9 +75,9 @@
   <a href="tradeboard.html" class="btn btn-primary">Join Waitlist</a>
 </nav>
 
-<main class="cs-wrap">
+<main class="cs-wrap" id="main-content" tabindex="-1">
   <div class="cs-badge">
-    <div class="cs-badge-dot"></div>
+    <div class="cs-badge-dot" aria-hidden="true"></div>
     <span>Pricing Coming Soon</span>
   </div>
 
@@ -90,7 +91,7 @@
   </p>
 
   <!-- Price hint cards -->
-  <div class="price-hint">
+  <div class="price-hint" aria-label="Planned pricing tiers">
     <div class="price-hint-card">
       <div class="plan">Free</div>
       <div class="price">$0 <span>/ forever</span></div>
@@ -106,12 +107,13 @@
   </div>
 
   <form class="cs-form" id="waitlistForm">
-    <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" required>
+    <label for="waitlistEmail" class="sr-only">Email address</label>
+    <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" autocomplete="email" required>
     <button type="submit" class="btn btn-primary">Get Early Access →</button>
   </form>
 
-  <div class="cs-success" id="csSuccess">
-    <span class="check">✓</span>
+  <div class="cs-success" id="csSuccess" role="alert" aria-live="polite">
+    <span class="check" aria-hidden="true">✓</span>
     <div>
       <p>You're on the list!</p>
       <small>We'll notify you at launch with a special early-bird offer.</small>

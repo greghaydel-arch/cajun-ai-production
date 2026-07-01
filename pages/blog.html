@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAVBAR -->
-<header class="navbar">
+<header class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
     <ul class="nav-links">
@@ -29,14 +30,16 @@
       <a href="login.html" class="btn btn-ghost">Log In</a>
       <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
     </div>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="mobile-nav">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="../index.html">Home</a><a href="tradeboard.html">TradeBoard</a><a href="pricing.html">Pricing</a><a href="blog.html">Articles</a><a href="youtube.html">YouTube</a><a href="about.html">About</a>
   <a href="login.html" class="btn btn-outline">Log In</a>
   <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
 </nav>
+
+<main id="main-content" tabindex="-1">
 
 <!-- HERO -->
 <section class="page-hero">
@@ -50,13 +53,13 @@
 </section>
 
 <!-- FILTER BAR -->
-<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:20px 0;">
+<div style="background:var(--bg2);border-bottom:1px solid var(--border);padding:20px 0;" role="region" aria-label="Filter articles by category">
   <div class="container" style="display:flex;gap:10px;flex-wrap:wrap;">
-    <button onclick="filterCat('all')" class="filter-btn active-filter btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">All</button>
-    <button onclick="filterCat('ai')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">AI Tools</button>
-    <button onclick="filterCat('trading')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">Trading</button>
-    <button onclick="filterCat('tech')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">Tech &amp; Business</button>
-    <button onclick="filterCat('howto')" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;">How-To</button>
+    <button onclick="filterCat('all', this)" class="filter-btn active-filter btn btn-ghost" style="font-size:.82rem;padding:8px 18px;" aria-pressed="true">All</button>
+    <button onclick="filterCat('ai', this)" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;" aria-pressed="false">AI Tools</button>
+    <button onclick="filterCat('trading', this)" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;" aria-pressed="false">Trading</button>
+    <button onclick="filterCat('tech', this)" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;" aria-pressed="false">Tech &amp; Business</button>
+    <button onclick="filterCat('howto', this)" class="filter-btn btn btn-ghost" style="font-size:.82rem;padding:8px 18px;" aria-pressed="false">How-To</button>
   </div>
 </div>
 
@@ -64,12 +67,12 @@
 <section style="background:var(--bg);padding:70px 0 0;">
   <div class="container">
     <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;" data-cat="ai">
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem;">🤖</div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:3rem;" aria-hidden="true">🤖</div>
       <div>
         <div class="article-cat">Featured · AI Tools</div>
         <h2 style="font-size:1.6rem;font-weight:700;line-height:1.3;margin-bottom:14px;">What Is Generative AI? A Plain-English Breakdown</h2>
         <p style="color:var(--muted);line-height:1.8;margin-bottom:22px;">How modern AI systems create text, images, video and code — and why it matters for your business, career, or creative work right now.</p>
-        <div class="article-meta" style="margin-bottom:22px;"><span>June 2026</span><div class="article-meta-dot"></div><span>5 min read</span></div>
+        <div class="article-meta" style="margin-bottom:22px;"><span>June 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>5 min read</span></div>
         <a href="articles/what-is-generative-ai.html" class="btn btn-primary">Read Article →</a>
       </div>
     </div>
@@ -81,67 +84,67 @@
   <div class="container">
     <div class="features-grid" id="article-grid">
 
-      <a href="articles/chatgpt-vs-claude-vs-gemini.html" class="card article-card-item" data-cat="ai" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/chatgpt-vs-claude-vs-gemini.html" class="card article-card-item" data-cat="ai" style="text-decoration:none;display:block;cursor:pointer;" aria-label="ChatGPT vs Claude vs Gemini — Which AI Assistant Is Actually Better? — AI Tools — June 2026 — 8 min read">
         <div class="article-cat">AI Tools</div>
         <div class="article-title">ChatGPT vs Claude vs Gemini — Which AI Assistant Is Actually Better?</div>
         <div class="article-excerpt">We tested all three on real tasks: writing, code, reasoning, and research. Here's the honest breakdown.</div>
-        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot"></div><span>8 min read</span></div>
+        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>8 min read</span></div>
       </a>
 
-      <a href="articles/best-ai-tools-2026.html" class="card article-card-item" data-cat="ai" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/best-ai-tools-2026.html" class="card article-card-item" data-cat="ai" style="text-decoration:none;display:block;cursor:pointer;" aria-label="Best AI Tools In 2026 — Our Top Picks by Category — AI Tools — June 2026 — 7 min read">
         <div class="article-cat">AI Tools</div>
         <div class="article-title">Best AI Tools In 2026 — Our Top Picks by Category</div>
         <div class="article-excerpt">From writing assistants to code generators to image tools — the ones actually worth your money this year.</div>
-        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot"></div><span>7 min read</span></div>
+        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>7 min read</span></div>
       </a>
 
-      <a href="articles/analyze-trading-performance.html" class="card article-card-item" data-cat="trading" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/analyze-trading-performance.html" class="card article-card-item" data-cat="trading" style="text-decoration:none;display:block;cursor:pointer;" aria-label="How to Analyze Your Trading Performance — Trading — June 2026 — 9 min read">
         <div class="article-cat">Trading</div>
         <div class="article-title">How to Analyze Your Trading Performance — A Data-Driven Guide</div>
         <div class="article-excerpt">Most traders track P&amp;L and nothing else. Here's the full set of metrics you should be reviewing every week.</div>
-        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot"></div><span>9 min read</span></div>
+        <div class="article-meta"><span>June 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>9 min read</span></div>
       </a>
 
-      <a href="articles/ai-in-energy-healthcare-business.html" class="card article-card-item" data-cat="tech" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/ai-in-energy-healthcare-business.html" class="card article-card-item" data-cat="tech" style="text-decoration:none;display:block;cursor:pointer;" aria-label="AI Opportunities in Energy, Healthcare and Small Business — Tech and Business — May 2026 — 6 min read">
         <div class="article-cat">Tech &amp; Business</div>
         <div class="article-title">AI Opportunities in Energy, Healthcare &amp; Small Business</div>
         <div class="article-excerpt">How industries are leveraging AI right now — and what small businesses can do today to get ahead.</div>
-        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot"></div><span>6 min read</span></div>
+        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>6 min read</span></div>
       </a>
 
-      <a href="articles/perplexity-ai-review.html" class="card article-card-item" data-cat="tech" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/perplexity-ai-review.html" class="card article-card-item" data-cat="tech" style="text-decoration:none;display:block;cursor:pointer;" aria-label="Perplexity AI Review — The Research Tool That's Actually Useful — Tech Reviews — May 2026 — 5 min read">
         <div class="article-cat">Tech Reviews</div>
         <div class="article-title">Perplexity AI Review — The Research Tool That's Actually Useful</div>
         <div class="article-excerpt">We've been using Perplexity daily for 6 months. Here's what it's good at and where it falls short vs Google.</div>
-        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot"></div><span>5 min read</span></div>
+        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>5 min read</span></div>
       </a>
 
-      <a href="articles/trading-journal-setup.html" class="card article-card-item" data-cat="howto" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/trading-journal-setup.html" class="card article-card-item" data-cat="howto" style="text-decoration:none;display:block;cursor:pointer;" aria-label="How to Set Up a Trading Journal That Actually Improves Your Results — How-To — May 2026 — 6 min read">
         <div class="article-cat">How-To</div>
         <div class="article-title">How to Set Up a Trading Journal That Actually Improves Your Results</div>
         <div class="article-excerpt">A simple system for logging trades, identifying patterns, and fixing the leaks in your strategy — step by step.</div>
-        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot"></div><span>6 min read</span></div>
+        <div class="article-meta"><span>May 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>6 min read</span></div>
       </a>
 
-      <a href="articles/automate-workflow-with-ai.html" class="card article-card-item" data-cat="ai" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/automate-workflow-with-ai.html" class="card article-card-item" data-cat="ai" style="text-decoration:none;display:block;cursor:pointer;" aria-label="Using AI to Automate Your Workflow — AI Tools — April 2026 — 7 min read">
         <div class="article-cat">AI Tools</div>
         <div class="article-title">Using AI to Automate Your Workflow — Practical Examples That Work Today</div>
         <div class="article-excerpt">Not theoretical. These are real workflows we've automated with AI tools that save hours every week.</div>
-        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot"></div><span>7 min read</span></div>
+        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>7 min read</span></div>
       </a>
 
-      <a href="articles/trailing-stops-explained.html" class="card article-card-item" data-cat="trading" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/trailing-stops-explained.html" class="card article-card-item" data-cat="trading" style="text-decoration:none;display:block;cursor:pointer;" aria-label="Trailing Stops Explained — Trading — April 2026 — 5 min read">
         <div class="article-cat">Trading</div>
         <div class="article-title">Trailing Stops Explained — How to Lock In Gains Without Cutting Winners Short</div>
         <div class="article-excerpt">The mechanics of trailing stops, when to use them, and how to configure them for different trade setups.</div>
-        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot"></div><span>5 min read</span></div>
+        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>5 min read</span></div>
       </a>
 
-      <a href="articles/claude-35-sonnet-review.html" class="card article-card-item" data-cat="tech" style="text-decoration:none;display:block;cursor:pointer;">
+      <a href="articles/claude-35-sonnet-review.html" class="card article-card-item" data-cat="tech" style="text-decoration:none;display:block;cursor:pointer;" aria-label="Claude 3.5 Sonnet Review — Anthropic's Best Model Yet — Tech Reviews — April 2026 — 4 min read">
         <div class="article-cat">Tech Reviews</div>
         <div class="article-title">Claude 3.5 Sonnet Review — Anthropic's Best Model Yet</div>
         <div class="article-excerpt">What changed, what's still the same, and where Claude pulls ahead of GPT-4o in real use cases.</div>
-        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot"></div><span>4 min read</span></div>
+        <div class="article-meta"><span>April 2026</span><div class="article-meta-dot" aria-hidden="true"></div><span>4 min read</span></div>
       </a>
 
     </div>
@@ -156,13 +159,16 @@
       <h2 class="section-title">Stay in the loop</h2>
       <p class="section-sub" style="margin:0 auto 30px;">New articles, tool reviews, and tech news — delivered to your inbox.</p>
       <div style="display:flex;gap:10px;max-width:440px;margin:0 auto;">
-        <input type="email" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius);padding:13px 16px;color:#fff;font-size:.95rem;outline:none;">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" placeholder="your@email.com" autocomplete="email" style="flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius);padding:13px 16px;color:#fff;font-size:.95rem;outline:none;">
         <button class="btn btn-primary" style="flex-shrink:0;">Subscribe</button>
       </div>
       <p style="font-size:.78rem;color:var(--muted);margin-top:12px;">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -172,10 +178,10 @@
         <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
         <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
         <div class="footer-social">
-          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
-          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
-          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
-          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on YouTube (opens in new tab)">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on X / Twitter (opens in new tab)">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on Instagram (opens in new tab)">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on TikTok (opens in new tab)">TK</a>
         </div>
       </div>
       <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>
@@ -191,9 +197,15 @@
 
 <script src="../script.js"></script>
 <script>
-function filterCat(cat) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
-  event.target.classList.add('active-filter');
+function filterCat(cat, btn) {
+  // Update button states
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.remove('active-filter');
+    b.setAttribute('aria-pressed', 'false');
+  });
+  btn.classList.add('active-filter');
+  btn.setAttribute('aria-pressed', 'true');
+  // Filter cards
   document.querySelectorAll('[data-cat]').forEach(el => {
     el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
   });

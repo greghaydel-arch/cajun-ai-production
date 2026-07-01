@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legal | Cajun AI</title>
-  <meta name="description" content="Privacy Policy and Terms of Service for Cajun AI and TradeBoard by TradeBoard, LLC.">
+  <meta name="description" content="Privacy Policy and Terms of Service for Cajun AI and TradeBoard by Cajun AI LLC.">
   <link rel="icon" href="../assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAVBAR -->
-<header class="navbar">
+<header class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
     <ul class="nav-links">
@@ -29,35 +30,41 @@
       <a href="login.html" class="btn btn-ghost">Log In</a>
       <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
     </div>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
-<nav class="mobile-nav">
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="../index.html">Home</a><a href="tradeboard.html">TradeBoard</a><a href="pricing.html">Pricing</a><a href="blog.html">Articles</a><a href="youtube.html">YouTube</a><a href="about.html">About</a>
   <a href="login.html" class="btn btn-outline">Log In</a>
   <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
 </nav>
+
+<main id="main-content" tabindex="-1">
 
 <!-- LEGAL TABS -->
 <section class="page-hero" style="padding-bottom:0;">
   <div class="container">
     <div class="tag">Legal</div>
     <h1 class="section-title" style="font-size:2.2rem;max-width:600px;margin:0 auto 30px;">Privacy Policy &amp; Terms</h1>
-    <div style="display:flex;gap:0;justify-content:center;border-bottom:1px solid var(--border);margin-top:20px;">
-      <button onclick="showTab('privacy')" id="tab-privacy" style="background:none;border:none;color:#fff;font-size:.95rem;font-weight:600;padding:14px 32px;cursor:pointer;border-bottom:2px solid var(--accent);font-family:Inter,sans-serif;">Privacy Policy</button>
-      <button onclick="showTab('tos')" id="tab-tos" style="background:none;border:none;color:var(--muted);font-size:.95rem;font-weight:600;padding:14px 32px;cursor:pointer;border-bottom:2px solid transparent;font-family:Inter,sans-serif;">Terms of Service</button>
+    <div style="display:flex;gap:0;justify-content:center;border-bottom:1px solid var(--border);margin-top:20px;" role="tablist" aria-label="Legal documents">
+      <button onclick="showTab('privacy')" id="tab-privacy"
+              role="tab" aria-selected="true" aria-controls="section-privacy"
+              style="background:none;border:none;color:#fff;font-size:.95rem;font-weight:600;padding:14px 32px;cursor:pointer;border-bottom:2px solid var(--accent);font-family:Inter,sans-serif;">Privacy Policy</button>
+      <button onclick="showTab('tos')" id="tab-tos"
+              role="tab" aria-selected="false" aria-controls="section-tos"
+              style="background:none;border:none;color:var(--muted);font-size:.95rem;font-weight:600;padding:14px 32px;cursor:pointer;border-bottom:2px solid transparent;font-family:Inter,sans-serif;">Terms of Service</button>
     </div>
   </div>
 </section>
 
 <!-- PRIVACY POLICY -->
-<section id="section-privacy" class="section-pad" style="background:var(--bg);">
+<section id="section-privacy" class="section-pad" role="tabpanel" aria-labelledby="tab-privacy" tabindex="0" style="background:var(--bg);">
   <div class="container" style="max-width:820px;">
     <div class="legal-body">
-      <p style="color:var(--muted);font-size:.85rem;margin-bottom:30px;">Last updated: June 25, 2026 · TradeBoard, LLC</p>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:30px;">Last updated: June 25, 2026 · Cajun AI LLC</p>
 
       <h2>1. Introduction</h2>
-      <p>TradeBoard, LLC ("we," "us," or "our") operates the Cajun AI website and the TradeBoard platform. This Privacy Policy explains how we collect, use, and protect your personal information when you use our services.</p>
+      <p>Cajun AI LLC ("we," "us," or "our") operates the Cajun AI website and the TradeBoard platform. This Privacy Policy explains how we collect, use, and protect your personal information when you use our services.</p>
 
       <h2>2. Information We Collect</h2>
       <h3>Account Information</h3>
@@ -99,22 +106,22 @@
       </ul>
 
       <h2>9. Contact</h2>
-      <p>For privacy inquiries, contact us at: <a href="https://x.com/cajunai1001" target="_blank" rel="noopener" style="color:var(--accent);">@cajunai1001 on X</a> or via Instagram at <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener" style="color:var(--accent);">@cajun_ai</a>.</p>
+      <p>For privacy inquiries, contact us at: <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" style="color:var(--accent);" aria-label="Contact Cajun AI on X / Twitter (opens in new tab)">@cajunai1001 on X</a> or via Instagram at <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener noreferrer" style="color:var(--accent);" aria-label="Contact Cajun AI on Instagram (opens in new tab)">@cajun_ai</a>.</p>
     </div>
   </div>
 </section>
 
 <!-- TERMS OF SERVICE -->
-<section id="section-tos" class="section-pad" style="background:var(--bg);display:none;" id="tos">
+<section id="section-tos" class="section-pad" role="tabpanel" aria-labelledby="tab-tos" tabindex="0" style="background:var(--bg);display:none;">
   <div class="container" style="max-width:820px;">
     <div class="legal-body">
-      <p style="color:var(--muted);font-size:.85rem;margin-bottom:30px;">Last updated: June 25, 2026 · TradeBoard, LLC</p>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:30px;">Last updated: June 25, 2026 · Cajun AI LLC</p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>By using the Cajun AI website or the TradeBoard platform, you agree to these Terms of Service. If you do not agree, do not use our services.</p>
 
       <h2>2. Services</h2>
-      <p>TradeBoard, LLC provides trading analytics software, an execution bot, AI content, and related services through the Cajun AI platform. Features and pricing are subject to change with notice.</p>
+      <p>Cajun AI LLC provides trading analytics software, an execution bot, AI content, and related services through the Cajun AI platform. Features and pricing are subject to change with notice.</p>
 
       <h2>3. Account Responsibilities</h2>
       <ul>
@@ -145,7 +152,7 @@
       <p>Paid subscriptions are billed monthly. You may cancel at any time. Refunds are handled on a case-by-case basis. Contact us within 7 days of a charge for refund requests.</p>
 
       <h2>9. Limitation of Liability</h2>
-      <p>TradeBoard, LLC is not liable for trading losses, missed trades, technical outages, or any damages arising from use of the platform. The platform is provided "as-is" without warranty of any kind.</p>
+      <p>Cajun AI LLC is not liable for trading losses, missed trades, technical outages, or any damages arising from use of the platform. The platform is provided "as-is" without warranty of any kind.</p>
 
       <h2>10. Governing Law</h2>
       <p>These terms are governed by the laws of the State of Louisiana, USA. Any disputes shall be resolved in Louisiana courts.</p>
@@ -154,10 +161,12 @@
       <p>We may update these terms with notice. Continued use of the platform after changes constitutes acceptance of the updated terms.</p>
 
       <h2>12. Contact</h2>
-      <p>Legal inquiries: <a href="https://x.com/cajunai1001" target="_blank" rel="noopener" style="color:var(--accent);">@cajunai1001 on X</a></p>
+      <p>Legal inquiries: <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" style="color:var(--accent);" aria-label="Contact Cajun AI on X / Twitter (opens in new tab)">@cajunai1001 on X</a></p>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -167,10 +176,10 @@
         <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
         <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
         <div class="footer-social">
-          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener">YT</a>
-          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener">X</a>
-          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener">IG</a>
-          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener">TK</a>
+          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on YouTube (opens in new tab)">YT</a>
+          <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on X / Twitter (opens in new tab)">X</a>
+          <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on Instagram (opens in new tab)">IG</a>
+          <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on TikTok (opens in new tab)">TK</a>
         </div>
       </div>
       <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>
@@ -194,11 +203,15 @@ function showTab(tab) {
   if (tab === 'privacy') {
     privacy.style.display = ''; tos.style.display = 'none';
     tabPrivacy.style.borderBottomColor = 'var(--accent)'; tabPrivacy.style.color = '#fff';
+    tabPrivacy.setAttribute('aria-selected', 'true');
     tabTos.style.borderBottomColor = 'transparent'; tabTos.style.color = 'var(--muted)';
+    tabTos.setAttribute('aria-selected', 'false');
   } else {
     tos.style.display = ''; privacy.style.display = 'none';
     tabTos.style.borderBottomColor = 'var(--accent)'; tabTos.style.color = '#fff';
+    tabTos.setAttribute('aria-selected', 'true');
     tabPrivacy.style.borderBottomColor = 'transparent'; tabPrivacy.style.color = 'var(--muted)';
+    tabPrivacy.setAttribute('aria-selected', 'false');
   }
 }
 // Auto-switch to ToS if hash is #tos
