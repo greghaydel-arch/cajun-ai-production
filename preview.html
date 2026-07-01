@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Access</title>
+  <!-- No index — keep this page off search engines -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px; }
+    .gate-card { background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px 40px;max-width:380px;width:100%;text-align:center; }
+    .gate-logo { width:44px;margin-bottom:18px; }
+    .gate-title { font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:8px; }
+    .gate-sub { color:var(--muted);font-size:.88rem;margin-bottom:28px; }
+    .gate-label { display:block;text-align:left;color:var(--muted);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px; }
+    .gate-input { width:100%;padding:13px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s;margin-bottom:14px; }
+    .gate-input:focus { border-color:var(--accent); }
+    .gate-input.error { border-color:#ef4444; }
+    .gate-error { color:#ef4444;font-size:.82rem;margin-bottom:12px;display:none; }
+    .gate-footer { color:var(--border);font-size:.75rem;margin-top:20px; }
+  </style>
+</head>
+<body>
+<script>
+  // Already unlocked? Go straight to site
+  if (sessionStorage.getItem('cajunai_preview') === 'unlocked') {
+    window.location.replace('index.html');
+  }
+</script>
+
+<div class="gate-card">
+  <img src="assets/images/logo.png" alt="Cajun AI" class="gate-logo">
+  <h1 class="gate-title">Preview Access</h1>
+  <p class="gate-sub">Staff only — enter your password to view the full site.</p>
+
+  <form id="gateForm">
+    <label class="gate-label" for="gatePass">Password</label>
+    <input class="gate-input" type="password" id="gatePass" placeholder="••••••••••••" autocomplete="current-password">
+    <p class="gate-error" id="gateError">Incorrect password. Try again.</p>
+    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Unlock Preview →</button>
+  </form>
+
+  <p class="gate-footer">This page is not publicly linked.</p>
+</div>
+
+<script>
+  document.getElementById('gateForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const pass = document.getElementById('gatePass').value;
+    const input = document.getElementById('gatePass');
+    const err = document.getElementById('gateError');
+
+    if (pass === 'CajunAI2026!') {
+      sessionStorage.setItem('cajunai_preview', 'unlocked');
+      window.location.replace('index.html');
+    } else {
+      input.classList.add('error');
+      err.style.display = 'block';
+      input.value = '';
+      setTimeout(function() {
+        input.classList.remove('error');
+        err.style.display = 'none';
+      }, 2500);
+    }
+  });
+</script>
+</body>
+</html>
