@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview Access</title>
+  <title>Preview Access | Cajun AI</title>
   <!-- No index — keep this page off search engines -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="assets/images/favicon.png">
@@ -26,6 +26,7 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <script>
   // Already unlocked? Go straight to site
   if (sessionStorage.getItem('cajunai_preview') === 'unlocked') {
@@ -33,20 +34,22 @@
   }
 </script>
 
-<div class="gate-card">
-  <img src="assets/images/logo.png" alt="Cajun AI" class="gate-logo">
-  <h1 class="gate-title">Preview Access</h1>
-  <p class="gate-sub">Staff only — enter your password to view the full site.</p>
+<main id="main-content" tabindex="-1">
+  <div class="gate-card">
+    <img src="assets/images/logo.png" alt="Cajun AI" class="gate-logo">
+    <h1 class="gate-title">Preview Access</h1>
+    <p class="gate-sub">Staff only — enter your password to view the full site.</p>
 
-  <form id="gateForm">
-    <label class="gate-label" for="gatePass">Password</label>
-    <input class="gate-input" type="password" id="gatePass" placeholder="••••••••••••" autocomplete="current-password">
-    <p class="gate-error" id="gateError">Incorrect password. Try again.</p>
-    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Unlock Preview →</button>
-  </form>
+    <form id="gateForm">
+      <label class="gate-label" for="gatePass">Password</label>
+      <input class="gate-input" type="password" id="gatePass" placeholder="••••••••••••" autocomplete="current-password" aria-describedby="gateError">
+      <p class="gate-error" id="gateError" role="alert">Incorrect password. Try again.</p>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Unlock Preview →</button>
+    </form>
 
-  <p class="gate-footer">This page is not publicly linked.</p>
-</div>
+    <p class="gate-footer">This page is not publicly linked.</p>
+  </div>
+</main>
 
 <script>
   document.getElementById('gateForm').addEventListener('submit', function(e) {
