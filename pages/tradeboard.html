@@ -174,21 +174,14 @@
     Track every trade, understand your patterns, and stop repeating costly mistakes. Be the first to know when TradeBoard launches.
   </p>
 
-  <!-- Email form -->
-  <form class="cs-form" id="waitlistForm">
-    <label for="waitlistEmail" class="sr-only">Email address</label>
-    <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" autocomplete="email" required>
-    <button type="submit" class="btn btn-primary">Join Waitlist →</button>
-  </form>
-
-  <!-- Success state -->
-  <div class="cs-success" id="csSuccess" role="alert" aria-live="polite">
-    <span class="check" aria-hidden="true">✓</span>
-    <div>
-      <p>You're on the list!</p>
-      <small>We'll email you the moment we launch.</small>
-    </div>
-  </div>
+  <!-- Zoho Forms waitlist embed -->
+  <iframe
+    aria-label="TradeBoard Waitlist Signup"
+    title="TradeBoard Waitlist Signup"
+    src="https://forms.zohopublic.com/greghaydelgm1/form/TradeBoardWaitlist/formperma/ZesK-fk6NxQJBtB0a818KwRQSZhoyC8ThdQ-Co-J8Wc"
+    style="width:100%;max-width:520px;height:400px;border:none;background:transparent;margin-bottom:16px;"
+    loading="lazy">
+  </iframe>
 
   <p class="cs-note">No spam. Unsubscribe anytime.</p>
 
@@ -206,21 +199,5 @@
 </main>
 
 <script src="../script.js"></script>
-<script>
-  const form = document.getElementById('waitlistForm');
-  const success = document.getElementById('csSuccess');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('waitlistEmail').value;
-    if (!email) return;
-    try {
-      const list = JSON.parse(localStorage.getItem('cajunai_waitlist') || '[]');
-      if (!list.includes(email)) { list.push(email); localStorage.setItem('cajunai_waitlist', JSON.stringify(list)); }
-    } catch(e) {}
-    form.style.display = 'none';
-    success.style.display = 'flex';
-  });
-</script>
 </body>
 </html>
