@@ -276,3 +276,10 @@ The registrar displays a notice that standard `.com` pricing rises from $10.46 t
 - Usage dashboards are delayed/limited and cannot certify all future invoices. This review found no active paid website add-on, but did not open every unrelated product's resource inventory. External processors such as Zoho and Runable are outside this Cloudflare billing review.
 
 Recommendation: retain the current Free hosting configuration, do not enroll/upgrade/accept charge consent, and continue local-only development. Resolve the Access plan warning and owner login separately with owner/ChatGPT review. Preserve `REVIEW_PENDING_CHATGPT`; this financial inspection does not authorize a release or a GitHub push.
+
+
+## No-credit-card directive and preview retirement inspection
+
+Zero Trust onboarding is stopped; no payment method, legal/overage consent, subscription, settings save, deployment deletion, GitHub write, or deployment was performed. Current anonymous denial is reverified for all 38 hosted preview URLs and both aliases; production remains public on all five tested roots/custom domains. Both projects still use Custom preview branch controls; None is recommended but not applied. Current Access continuity without enrollment and authenticated owner access remain NOT VERIFIED.
+
+The complete per-project inventory, exact None-setting proposal, production preservation list, and approved-deletion boundaries are in [Cloudflare preview retirement report](CLOUDFLARE_PREVIEW_RETIREMENT_2026-10-16.md). This supersedes earlier suggestions to resume enrollment. Local development remains the preferred $0-additional-cost workflow. `REVIEW_PENDING_CHATGPT`.
