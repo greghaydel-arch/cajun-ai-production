@@ -34,6 +34,8 @@ These are planning labels. No playlist ID, YouTube videos, upload rights, or mon
 - Preserve accessible captions, realistic narration pacing, original visual examples, useful substantive commentary, and accurate scope. Avoid highly repetitive, templated AI-generated videos; YouTube reviews channels for original/authentic content.
 - Keep public video pages honest about what is **planned**, **unreleased**, or **actually published**.
 - YouTube monetization eligibility does not equal a guarantee of monetization or a specific earnings amount; review actual YouTube Studio Earn status when connected.
+- **Monetization rule watch:** as of October 16, 2026, YouTube lists 1,000 subscribers plus 4,000 qualifying public long-form watch hours / 10M qualifying Shorts views for ads/Premium entry. Its official help page announces that starting **February 1, 2027**, *new applicants* instead need 1,000 subscribers plus **8,000** qualified long-form watch hours or **20M** qualified Shorts views, with the same 365-/90-day windows. Earlier access at 500 subscribers and 3,000 hours / 3M Shorts views is described as unchanged. See https://support.google.com/youtube/answer/12843009 ; recheck before publishing eligibility figures, and don't promise thresholds in marketing copy.
+- Only eligible **public** video watch hours count toward the long-form watch-hour path. Unlisted/private videos, Shorts Feed watch hours and paid-ad campaign hours do not count toward that long-form threshold (https://support.google.com/youtube/answer/72851).
 - No new software stack, video CMS, duplicate uploader, or independent channel is required for the initial website release.
 
 ## Handoff gates for the new Codex TradeBoard chat
