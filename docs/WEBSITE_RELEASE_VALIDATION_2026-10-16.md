@@ -1,6 +1,6 @@
 # Cajun AI website completion and release validation
 
-**Date:** October 16, 2026 (America/Chicago)  
+**Date:** October 16, 2026 (America/Chicago)
 **Status:** `REVIEW_PENDING_CHATGPT` — release not authorized; unresolved integration/legal/access gates remain.
 
 ## Executive summary and Git handoff
@@ -8,9 +8,26 @@
 Preserved the existing Cajun AI design; corrected remaining product/pricing/import claims, centralized waitlist conversions, removed false signup/contact/newsletter behavior, completed the four-series/six-topic video hub, fixed legal anchors/keyboard controls, metadata, landmarks and mobile overflow. Legal text remains explicitly a review draft.
 
 - Repository: `greghaydel-arch/cajun-ai-production`; existing draft [PR #1](https://github.com/greghaydel-arch/cajun-ai-production/pull/1).
-- Branch: `marketing/20261016-release-truth`. Implementation through commit: `66f88a2cdc88cec53b42117480d263143ca1f6d4` (all task commits prefixed `[CF-Pages-Skip]`). This report is a subsequent documentation-only commit; its exact final head is recorded in the PR description and normal Git history.
-- Companion implementation: Cajun AI `66f88a2cdc88cec53b42117480d263143ca1f6d4`; TradeBoard marketing `7ee7bf6269a8fb0f96334bea1cc348f6bbed5def`. Both PRs must remain open drafts and unmerged.
+- Branch: `marketing/20261016-release-truth`. Implementation through commit: `66f88a2cdc88cec53b42117480d263143ca1f6d4` (all task commits prefixed `[CF-Pages-Skip]`). This report is a subsequent documentation-only commit; its exact local head is available in normal Git history. New commits have not been pushed and the existing PR description has not been updated under the owner hold.
+- Companion implementation: Cajun AI `66f88a2cdc88cec53b42117480d263143ca1f6d4`; TradeBoard marketing `7ee7bf6269a8fb0f96334bea1cc348f6bbed5def`. Both PRs remain open drafts and unmerged at their original remote heads; all new task commits are local only.
 - No independent-review PASS or production-ready verdict is issued. Earlier preview deployments predate this work; no new deploy is authorized.
+
+## Owner hold and verified hosting configuration
+
+The owner's later instruction explicitly requires **no additional pushes/remote commits** until hosting controls are reviewed and approval is given. That instruction overrides the earlier planned use of a commit-message skip prefix. No task commit was pushed; no PR description or provider setting was changed. The existing draft PRs therefore do not yet contain the new implementation or this report. Local implementation and validation are preserved on the requested branches.
+
+Read-only branch-control dialogs in **both projects** show:
+
+- Production branch: `main`; “Enable automatic production branch deployments” checked.
+- Preview branch: **All non-Production branches** selected; `None` and `Custom branches` available, neither selected.
+- Existing marketing branch previews are public: unauthenticated GET returned HTTP 200 and the website title for both branch aliases, with no Cloudflare Access login redirect. TradeBoard's hash preview also returned 200. Cajun AI's hash URL had a transport failure in that probe, so that one hash URL is NOT VERIFIED; its branch alias establishes public access.
+- Domain associations: Cajun AI `cajun-ai.com` and `www.cajun-ai.com`; TradeBoard marketing `trade-board.net`. Custom-domain tabs show all three bindings Active with SSL enabled. These map to the respective Pages projects above. Do not infer that the app's staging origin is the marketing domain.
+
+Recommended bounded owner-approved change: in **each** Pages project's Settings → Build → Branch control, choose **Custom branches**, retain the intended preview include pattern (`*` if retaining all other existing previews), and exclude exactly `marketing/20261016-release-truth`. Alternatively choose `None` only if the owner wants all automatic previews stopped. Leave production `main`, production automatic-deploy behavior, domains, DNS, build settings and credentials unchanged. This is a recommendation, not permission or an executed change. Re-open both dialogs and verify the saved exclusions before requesting permission to resume review-branch pushes.
+
+Stopping new preview builds does **not** make existing preview URLs private or remove their content. If they contain private review material, owner/security approval is separately needed to configure Cloudflare Access for preview hosts (including existing aliases/hash URLs); production/custom-domain protection is a separate scope. No existing deployment was removed and no access policy was changed. Public GitHub source also remains public.
+
+Required approval before continuing remote work: owner approval for the exact per-project branch exclusions (or the broader `None` choice), followed by verification and explicit resumption of pushes. ChatGPT independent review, legal approval and production release approval remain separate. Do not use `[CF-Pages-Skip]` to bypass the owner's current no-push instruction.
 
 ## Tests performed
 
@@ -108,7 +125,7 @@ Read-only inspection of the existing Cloudflare dashboard established both repos
 
 Dashboard settings displayed no deploy hooks. No repository GitHub Actions workflows were found; Cloudflare checks publish assets and therefore cannot be used as a no-deployment test gate here. **Hosted build/canonical Cloudflare execution for the new commits: NOT VERIFIED / intentionally not run.** Local build success is not release permission.
 
-Every task commit starts with `[CF-Pages-Skip]`, Cloudflare's documented deployment-omission prefix; it targets Pages and does not skip local validation. See [official GitHub integration documentation](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/#skipping-a-build-via-a-commit-message). Preserve this prefix for review-only follow-up commits. Hosting settings were not changed. Verify deployed source identities remain at the baselines after each push; record final confirmation in the PR body.
+Every task commit starts with `[CF-Pages-Skip]`, Cloudflare's documented deployment-omission prefix; it targets Pages and does not skip local validation. See [official GitHub integration documentation](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/#skipping-a-build-via-a-commit-message). Preserve this prefix for review-only follow-up commits. Hosting settings were not changed. The owner has since prohibited pushes; no task commit was transmitted, and provider deployment baselines remain the previously observed heads. Future post-push checks and PR updates are deferred until explicit owner resumption.
 
 Both repositories are currently **public** according to GitHub metadata; existing PRs cannot provide private review merely by being drafts. No visibility change was made. Do not add private screenshots, customer records, real credentials or confidential review material. Both preview gates ship their comparison logic/browser flags; source is retrievable without authentication. **Private preview protection: FAIL.** Server/hosting authentication requires a separately authorized owner/security decision. Root static Cajun AI publishing can also expose repository documentation; exclude internal review documents from the future public artifact or protect that environment before release.
 
