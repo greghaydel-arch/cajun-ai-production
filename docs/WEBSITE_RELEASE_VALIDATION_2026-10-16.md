@@ -171,3 +171,63 @@ Both repositories are currently **public** according to GitHub metadata; existin
 - `styles.css`
 
 This handoff also adds this report and an additive correction in `docs/VIDEO_CHANNEL_HANDOFF.md`.
+
+
+## Authorized preview protection update — October 16, 2026, 11:40 CDT
+
+This section supersedes the earlier hosting-settings hold and the earlier preview-protection FAIL **only for the provider controls and URLs tested below**. All website source, legal, content, form, release, and GitHub holds remain. Status: `REVIEW_PENDING_CHATGPT`; this is implementation evidence, not independent approval.
+
+The owner expressly authorized preview-only Cloudflare Access and Custom preview branch controls for these two projects. No GitHub push, PR update, merge, build, deployment, DNS change, DOT activity, new credentials, or paid enrollment was performed.
+
+| Saved setting | Cajun AI | TradeBoard marketing | Result |
+| --- | --- | --- | --- |
+| Preview branches | Custom; include `*`; exclude exact `marketing/20261016-release-truth` | Same | PASS: saved, reopened and read back |
+| Production branch and automatic deployments | `main`; enabled, unchanged | `main`; enabled, unchanged | PASS |
+| Access destination | `*.cajun-ai-production.pages.dev` | `*.tradeboard-website.pages.dev` | PASS: no production root/custom hostname in either application |
+| Access policy | Allow Members - Cloudflare Pages; one exact signed-in owner email include rule | Same exact owner identity; one rule | PASS: inspected generated policy details; no Everyone/bypass rule present |
+| Access application ID | `4539ef8b-421d-4c4c-9575-48a043533e71` | `81a10d1e-3842-4eeb-9403-4452e7323156` | PASS |
+| Policy ID | `4a8dafdb-1611-4875-ac04-0c32db8b4114` | `408c2b2c-6eca-458f-be58-80940a6454ab` | PASS |
+| Actual authenticated owner access to both aliases and hashes | Email-code login required; not completed | Not completed | NOT VERIFIED: owner must sign in directly through Cloudflare |
+| Excluded branch cannot trigger a build | Configuration verified; no test push | Same | NOT VERIFIED by push, intentionally: no push/build authorized |
+
+TradeBoard's first policy-creation attempt displayed “Access policy could not be created.” One retry succeeded; the resulting application and single email policy were read back. No broad/manual fallback policy was added. Cloudflare's shared team domain is `cajun-ai-production-pages.cloudflareaccess.com`, including for the TradeBoard application; the protected destination and policy are distinct.
+
+### Cookie-free HTTP verification
+
+The following separate HTTPS requests used no browser cookies, did not follow redirects, and did not submit forms. A 302 to Cloudflare Access is PASS for denial of unauthenticated website content, not proof that a signed-in owner can enter. Query strings containing transient authentication metadata were omitted from evidence. Probe time: 2026-10-16T16:40:42.299Z.
+
+| URL | HTTP status | Redirect destination / result | Verdict |
+| --- | --- | --- | --- |
+| https://marketing-20261016-release-t.cajun-ai-production.pages.dev/ | 302 | https://cajun-ai-production-pages.cloudflareaccess.com/cdn-cgi/access/login/marketing-20261016-release-t.cajun-ai-production.pages.dev | PASS |
+| https://d51eb552.cajun-ai-production.pages.dev/ | 302 | https://cajun-ai-production-pages.cloudflareaccess.com/cdn-cgi/access/login/d51eb552.cajun-ai-production.pages.dev | PASS |
+| https://marketing-20261016-release-t.tradeboard-website.pages.dev/ | 302 | https://cajun-ai-production-pages.cloudflareaccess.com/cdn-cgi/access/login/marketing-20261016-release-t.tradeboard-website.pages.dev | PASS |
+| https://e03944ca.tradeboard-website.pages.dev/ | 302 | https://cajun-ai-production-pages.cloudflareaccess.com/cdn-cgi/access/login/e03944ca.tradeboard-website.pages.dev | PASS |
+| https://cajun-ai-production.pages.dev/ | 200 | No redirect; public website title observed | PASS |
+| https://tradeboard-website.pages.dev/ | 200 | No redirect; public website title observed | PASS |
+| https://cajun-ai.com/ | 200 | No redirect; public website title observed | PASS |
+| https://www.cajun-ai.com/ | 200 | No redirect; public website title observed | PASS |
+| https://trade-board.net/ | 200 | No redirect; public website title observed | PASS |
+
+The initial sandboxed network attempt failed for all URLs; it was not counted as PASS. The subsequent permitted read-only network check produced the results above. Current review aliases and immutable hashes are directly verified; wildcard configuration covers other preview hostnames, but every historical deployment URL was not individually requested.
+
+Deployment history still showed the existing latest preview heads (`2e295e1` Cajun; `1a8b93f` TradeBoard) and production heads (`66e49c49b851fcfa9fa5a510ced483714eb3822d` Cajun; `3d5d94481326cb5625e64736130675ee578bb519` TradeBoard). No new deployment was started by this work.
+
+### Plan, legal, and owner-login boundary
+
+`BLOCKED_BY_OWNER_COST_APPROVAL`: Cloudflare One Settings reports “No plan has been chosen yet. Choose a plan to avoid disruptions to your account.” The Free option is displayed as $0/seat/month with a 50-seat limit. Its final checkout requires two unchecked consents: agreement to Terms/Privacy, and authorization to charge the existing card for usage exceeding free limits each month until cancellation. Neither consent was checked; Activate was not clicked. No subscription or payment change was made.
+
+Required decision details:
+
+1. Proposed operation: activate Cloudflare Zero Trust Free for the existing account to resolve its unselected-plan warning. This is an account-level enrollment, beyond merely saving the two preview applications.
+2. Displayed base charge: $0/month, up to 50 seats. Excess-usage rates, applicability, and a hard spending cap were not verified; $0 total cannot be guaranteed from this checkout. No GitHub Actions allowance or build minutes were used.
+3. Free/local alternative: continue local-only review and retain the saved branch exclusions. Access currently denies anonymous requests without completing enrollment, but its continuity is not certified. Local-only review avoids additional publishing; it does not itself secure existing previews.
+4. Postponement: both Access policies enforce the tested anonymous boundary now, but the provider warns of possible disruptions. Authenticated owner access and long-term availability remain uncertified.
+5. Recommendation: do not accept uncapped charge authorization. Owner/ChatGPT should confirm whether Pages-only Access can remain supported without plan enrollment or establish a zero-cost cap/approved enrollment path. Any legal acceptance or potential charge commitment requires a separate owner decision.
+
+The secure owner email-code login page was left open for owner completion; no code was requested in chat, read from email, or entered by the agent. Owner dashboard access and the policy's matching email are not substitutes for an actual successful preview login. Next: owner signs in directly, then validate website rendering on all four preview URLs and repeat anonymous denial checks. ChatGPT must independently review the saved controls and evidence before considering this boundary complete.
+
+Official references: [Pages preview Access scope](https://developers.cloudflare.com/pages/configuration/preview-deployments/), [branch controls](https://developers.cloudflare.com/pages/configuration/branch-build-controls/), and [Zero Trust plans](https://www.cloudflare.com/plans/zero-trust-services/). The account checkout, rather than the advertised base price alone, determines the outstanding approval boundary.
+
+Local evidence (outside these public repositories): `C:/webull-dashboard/.website-review/qa/cloudflare-preview-probes-2026-10-16.json`, `cloudflare-preview-check.cjs`, and screenshots `cajun-preview-branches-saved.jpg`, `tradeboard-preview-branches-saved.jpg`, `cajun-preview-owner-policy.jpg`, `tradeboard-preview-owner-policy.jpg`, `cajun-access-login-required.jpg`, `cloudflare-free-plan-approval-boundary.jpg` in the QA screenshots directory. Account screenshots are not committed to public source.
+
+All earlier local website implementation commits and complete validation reports are preserved. Pushes and PR-description updates remain deferred; branch exclusion and a commit skip prefix do not constitute owner authorization to publish. No website release is authorized.
