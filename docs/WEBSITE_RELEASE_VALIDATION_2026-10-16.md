@@ -310,3 +310,40 @@ Post-save verification at `2026-10-16T17:45:31.171Z`:
 No payment details, subscription activation, overage consent, DNS/SSL change, production setting change, Access change, deployment deletion, GitHub push/PR update/merge, or DOT action occurred. Both website checkouts and all earlier local commits/reports are preserved. Website work remains local. None stops future automatic preview builds; existing previews are intentionally retained, and manual deployment is not authorized.
 
 Local evidence: `C:/webull-dashboard/.website-review/qa/preview-none-saved-settings-2026-10-16.json`, `preview-none-access-results-2026-10-16.json`, and screenshots `screenshots/cajun-preview-none-saved.jpg` and `screenshots/tradeboard-preview-none-saved.jpg`. Earlier pre-change probe files are preserved. Screenshots are kept outside the public repositories.
+
+
+## Controlled GitHub review handoff — October 16, 2026
+
+Status: `REVIEW_PENDING_CHATGPT`; this is a review-only push, not a website release. The owner accepted the Cloudflare configuration and authorized one controlled fast-forward push to each existing marketing branch, conditional on these checks. This authorization supersedes earlier no-push holds solely for this handoff. No main push, merge, release, manual deployment, provider setting change, subscription, or DOT action is authorized.
+
+### Reconciliation and publication safety
+
+- PASS: both PRs are OPEN/DRAFT, base `main`, head `marketing/20261016-release-truth`, with no auto-merge request. Freshly fetched remote review heads remain ancestors of the local branches (no unrelated remote commits to overwrite). No force push or history rewrite is proposed.
+- PASS: Gitleaks 8.30.1, obtained from its official release and verified against the release checksum, scanned both repositories' reachable Git history (`git --log-opts=--all`) and current working files (`dir`) with redaction enabled. All four scans completed with zero findings. This includes outgoing commits, reports, tracked dependencies and build assets. Scanner output and tooling stay outside both public repositories.
+- PASS: supplemental local sensitive-name/content checks scanned HEAD plus every outgoing-commit snapshot: Cajun 38 tracked files / 42 unique text blobs; TradeBoard 16,109 tracked files / 15,176 unique text blobs, including its already-tracked dependency tree. No project or report candidate was found. Ninety-seven vendor file/rule candidates (72 personal-author-email, 24 example authenticated URL, one documented placeholder session token) were triaged as public upstream metadata/examples; every candidate blob matches public origin/main. No private environment files, live credentials, private API/session tokens, customer records, or confidential account screenshots/logs were identified in the publication set. Private QA material remains outside the repositories. Public contact addresses, public form identifiers and provider application/deployment UUIDs are not authentication secrets.
+- Binary assets are existing product illustrations/logos/vendor binaries; no new customer captures, account screenshots, or recordings are added. Client preview comparison values/flags are already-public cosmetic controls, not private credentials or effective authentication; private hosting access remains the existing Cloudflare boundary. The reports do not endorse those browser flags as security.
+- PASS: legal documents remain explicitly editorial drafts. Cajun's visible page says not approved/effective; TradeBoard's legal components are unrouted, with the public legal-status page explaining pending approval. No draft is approved by this GitHub handoff.
+
+### Fresh local validation
+
+| Check | Result |
+| --- | --- |
+| TradeBoard `npm run build` (includes real `tsc -b` typecheck) | PASS; Vite 7.3.6, 2,275 modules |
+| Cajun HTML structure, JS syntax, relative assets/links/anchors and metadata | PASS; 27 HTML pages |
+| HTTP route/resource/MIME checks against local servers | PASS; Cajun 32 and TradeBoard 23 checks |
+| Focused Chrome desktop regression | PASS; full marketing pages, showcase, pricing and legal status inspected; no surfaced warning/error entries |
+| Focused Chrome mobile regression | PASS at actual 390px width on each site; no horizontal document overflow; both menus open and dismiss with Escape; local tutorial anchor exists |
+| Legal draft/status visibility | PASS; no effective/approved policy represented |
+| Zoho rendering consistency, submission/receipt | NOT VERIFIED; iframe/direct fallback and wording present, blank frame observed again, no registration submitted |
+| Full WCAG, all browser engines, new hosted build | NOT VERIFIED / not run; previous report limits remain |
+
+The refresh also removes one trailing space on Cajun's homepage and refreshes TradeBoard's already-tracked generated build assets so they match the tested final source. No dependency upgrade or unrelated refactor is included. Local editorial test fixtures/flags were cleaned up before staging; no fixtures are published.
+
+### Pre-push automation inspection
+
+- PASS: authenticated GitHub repository metadata confirms both repositories public, default branch main and administrator read access. API inventories show zero GitHub Actions workflows and zero repository webhooks; GitHub Pages configuration endpoints return 404 (no site configured). Both PRs have no auto-merge request.
+- PASS: no active local Git hooks or core.hooksPath, and no tracked workflow/deployment pipeline added by this work. No remote CI was dispatched or rerun; zero Actions allowance was intentionally consumed.
+- PASS: both live Cloudflare Branch control dialogs still show preview None, production main, automatic production enabled, and no deploy hooks. Only the existing marketing branch is a push target. Keep `[CF-Pages-Skip]` on the final review commits as defense in depth; the accepted None configuration is the primary preview-build control.
+- Baseline before push: Cajun 62 deployment records, newest hosted preview `d51eb552-a473-4eb9-8c62-fe6ecc6a6e27` at `2e295e1`; TradeBoard 24 records, newest hosted preview `e03944ca-435d-42e8-859f-153938d8bb75` at `1a8b93f`. Production heads remain the previously documented main deployments. Post-push PR heads and Cloudflare history are to be read back and recorded in the PR descriptions and final handoff, without a second push just to report that verification.
+
+Remaining release blockers are unchanged: independent ChatGPT review; legal/processor/retention approval; stable Zoho rendering and authorized real submission/receipt acceptance; verified channel identity and approved real-app media; live canonical Cajun tutorial anchor (the current production page still lacks it); broader browser/accessibility coverage; and a separately approved controlled release. Current anonymous Access enforcement does not certify authenticated owner access or ongoing availability without enrollment. No paid onboarding is resumed.
