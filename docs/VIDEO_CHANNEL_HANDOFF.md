@@ -1,6 +1,8 @@
 # Cajun AI + TradeBoard: One YouTube Channel — Website / Codex Handoff
 
-Status: **review-stage decision; not deployed** (2026-10-16).
+Status: **review-stage decision; production release not authorized** (2026-10-16).
+
+Validation correction (October 16): read-only Cloudflare inspection found that the existing review branches already had public preview deployments before Codex began this completion task. “Not deployed” did not accurately describe those previews. Production remains on `main`. Task commits use the documented `[CF-Pages-Skip]` prefix to avoid further deployment without changing hosting settings. Cosmetic preview flags do not authenticate visitors. See [WEBSITE_RELEASE_VALIDATION_2026-10-16.md](WEBSITE_RELEASE_VALIDATION_2026-10-16.md) for actual PASS/FAIL/NOT VERIFIED results, remaining iframe/legal/access gates and `REVIEW_PENDING_CHATGPT`. Channel identity and historical monetization figures were not revalidated by this website task.
 
 ## Approved channel strategy
 
