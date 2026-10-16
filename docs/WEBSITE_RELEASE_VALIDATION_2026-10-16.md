@@ -283,3 +283,30 @@ Recommendation: retain the current Free hosting configuration, do not enroll/upg
 Zero Trust onboarding is stopped; no payment method, legal/overage consent, subscription, settings save, deployment deletion, GitHub write, or deployment was performed. Current anonymous denial is reverified for all 38 hosted preview URLs and both aliases; production remains public on all five tested roots/custom domains. Both projects still use Custom preview branch controls; None is recommended but not applied. Current Access continuity without enrollment and authenticated owner access remain NOT VERIFIED.
 
 The complete per-project inventory, exact None-setting proposal, production preservation list, and approved-deletion boundaries are in [Cloudflare preview retirement report](CLOUDFLARE_PREVIEW_RETIREMENT_2026-10-16.md). This supersedes earlier suggestions to resume enrollment. Local development remains the preferred $0-additional-cost workflow. `REVIEW_PENDING_CHATGPT`.
+
+
+## Owner-approved automatic preview disablement — October 16, 2026
+
+Status: `REVIEW_PENDING_CHATGPT`. The owner explicitly approved only setting automatic Preview branch deployments to None on both projects. That change is now saved and verified after reloading/reopening each project's Branch control dialog. This supersedes the earlier statements that None was proposed but not applied. The approval described the starting mode as All non-Production; the actual saved starting mode was Custom branches, as recorded below. Only preview mode was changed.
+
+| Setting | Before, both projects | After, both projects | Result |
+| --- | --- | --- | --- |
+| Preview branch deployments | Custom branches; include `*`, exclude `marketing/20261016-release-truth` | `None (Disable automatic branch deployments)` | PASS: persisted readback |
+| Production branch | `main` | `main` | PASS: unchanged |
+| Automatic production branch deployments | Enabled, checkbox checked | Enabled, checkbox checked | PASS: unchanged |
+| Preview Access | Restricted; existing wildcard applications | Restricted; same application IDs | PASS: retained |
+
+Saved readback time: `2026-10-16T17:45:03.147Z`. Cajun Access application remains `4539ef8b-421d-4c4c-9575-48a043533e71`; TradeBoard remains `81a10d1e-3842-4eeb-9403-4452e7323156`. No Access policy was edited. The no-credit-card directive remains in force; billing setup was not opened or completed.
+
+Post-save verification at `2026-10-16T17:45:31.171Z`:
+
+- PASS: all three production custom domains (`cajun-ai.com`, `www.cajun-ai.com`, `trade-board.net`) remain Active with SSL enabled in the dashboard, and cookie-free HTTPS GETs return 200 with expected website titles.
+- PASS: both production `pages.dev` roots also return public 200 responses.
+- PASS: all 38 inventoried historical preview hash URLs and both current branch aliases return 302 to Cloudflare Access without cookies; no website content is served by these anonymous probes. Existing Access protection remains in place.
+- PASS: deployment history totals remain Cajun 62 and TradeBoard 24. Current production deployments remain Cajun `8896466a-be82-4698-9ad2-202de6be9e01` (source `66e49c49b851fcfa9fa5a510ced483714eb3822d`) and TradeBoard `3b3f3ab1-3985-4d89-b55b-fce199866bc0` (source `3d5d94481326cb5625e64736130675ee578bb519`). No deletion, retry, build, or manual deployment action was performed. The previously recorded full inventory is preserved; every history UUID was not re-enumerated in this narrow settings operation.
+- NOT VERIFIED / intentionally not run: triggering a branch push to prove build suppression. The saved None configuration is the verification evidence; no push/build is authorized.
+- NOT VERIFIED / unchanged from prior reports: authenticated owner preview access and future Access availability without enrollment. Current anonymous denial passes; it does not complete Zero Trust billing setup or prove perpetual service availability.
+
+No payment details, subscription activation, overage consent, DNS/SSL change, production setting change, Access change, deployment deletion, GitHub push/PR update/merge, or DOT action occurred. Both website checkouts and all earlier local commits/reports are preserved. Website work remains local. None stops future automatic preview builds; existing previews are intentionally retained, and manual deployment is not authorized.
+
+Local evidence: `C:/webull-dashboard/.website-review/qa/preview-none-saved-settings-2026-10-16.json`, `preview-none-access-results-2026-10-16.json`, and screenshots `screenshots/cajun-preview-none-saved.jpg` and `screenshots/tradeboard-preview-none-saved.jpg`. Earlier pre-change probe files are preserved. Screenshots are kept outside the public repositories.
