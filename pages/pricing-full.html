@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing | TradeBoard by Cajun AI</title>
-  <meta name="description" content="TradeBoard pricing — free tier, Pro subscription, and Pro+ for serious traders. Start free, no credit card required.">
+  <meta name="description" content="TradeBoard pricing preview — planned tiers and features are under review.">
+  <meta name="robots" content="noindex, nofollow">
+  <script>if (sessionStorage.getItem("cajunai_preview") !== "unlocked") window.location.replace("pricing.html");</script>
   <link rel="icon" href="../assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,15 +239,15 @@
         <div class="pricing-price">$0 <span>/ forever</span></div>
         <p class="price-mo" style="height:22px;"></p>
         <div class="pricing-desc">
-          The free tier is your trial. No time limit, no credit card. Enough to see real value — not enough to replace the full platform.
+          A permanent Free tier is planned. Final feature limits and launch availability will be confirmed before public signups.
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li>1 broker connection (CSV import)</li>
+          <li>Initial validated CSV workflow (invited testing)</li>
           <li>Last 45 days of trade history</li>
           <li>6 basic charts: P&amp;L line, win/loss ratio, total trades, best/worst day, sector/symbol breakdown, net P&amp;L by day</li>
           <li>Basic trade journal</li>
-          <li>Mobile app (basic charts only)</li>
+          <li>Web experience (in development)</li>
           <li>Web dashboard</li>
           <li>Help center access</li>
           <li style="color:var(--muted);font-size:.82rem;list-style:none;padding-left:0;margin-top:8px;">
@@ -265,14 +267,14 @@
         </div>
         <p class="price-mo" id="price-pro-note" style="height:22px;color:var(--muted);font-size:.8rem;"></p>
         <div class="pricing-desc">
-          The full platform. All 20+ dashboards, multi-broker, mobile, export, psychology tracking, and unlimited history.
+          Pro features are proposed. Final inclusion and release timing depend on feature certification.
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li>Everything in Free</li>
           <li>Unlimited trade history</li>
           <li>All 20+ analytics dashboards</li>
-          <li>Multi-broker connections</li>
+          <li>Additional import formats (planned)</li>
           <li>Psychology &amp; mood tracking</li>
           <li>Unlimited playbooks</li>
           <li>Trade replay (daily candles)</li>
@@ -280,13 +282,13 @@
           <li>PDF &amp; CSV export (unlimited)</li>
           <li>Win-rate heatmap &amp; streak tracker</li>
           <li>Equity curve &amp; max drawdown</li>
-          <li>Full mobile app (iOS &amp; Android)</li>
+          <li>Responsive web experience (under development)</li>
           <li>Desktop app (Windows + Mac)</li>
-          <li>Multi-broker CSV import</li>
+          <li>Additional CSV formats (subject to certification)</li>
           <li>Email support</li>
         </ul>
         <a href="login.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Start Pro →</a>
-        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">Founding pricing — locks in before launch.</p>
+        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">Founding offer planned; signups are not open.</p>
       </div>
 
       <!-- PRO+ -->
@@ -313,13 +315,13 @@
           </li>
         </ul>
         <a href="login.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:auto;border-color:#a78bfa;color:#a78bfa;">Start Pro+ →</a>
-        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">Founding pricing — won't last long.</p>
+        <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:10px;">Founding offer terms are under review.</p>
       </div>
 
     </div>
 
     <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:40px;max-width:520px;margin-left:auto;margin-right:auto;">
-      Founding pricing in effect. Rates may increase at public launch — early subscribers lock in their rate for life.
+      Founding pricing is proposed for launch; no paid subscription offer is active yet.
       Questions? <a href="about.html" style="color:var(--accent);">Contact us.</a>
     </p>
   </div>
@@ -356,10 +358,10 @@
           <!-- Access & Data -->
           <tr class="section-row"><td colspan="4">Access &amp; Data</td></tr>
           <tr><td>Trade history</td><td class="center val-g">45 days</td><td class="center val-o">Unlimited</td><td class="center val-p">Unlimited</td></tr>
-          <tr><td>Broker connections</td><td class="center val-g">1</td><td class="center val-o">Multi-broker</td><td class="center val-p">Multi-broker</td></tr>
+          <tr><td>Direct broker connections (not available)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center dash">—</td></tr>
           <tr><td>CSV import (manual)</td><td class="center check-g">✓</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
-          <tr><td>OAuth broker auth (no credential storage)</td><td class="center check-g">✓</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
-          <tr><td>Multi-broker CSV (Robinhood, IBKR, TD, Tastytrade)</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
+          <tr><td>Read-only broker sync (future review)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center dash">—</td></tr>
+          <tr><td>Additional CSV formats (not released)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center dash">—</td></tr>
 
           <!-- Analytics -->
           <tr class="section-row"><td colspan="4">Analytics &amp; Dashboards</td></tr>
@@ -370,7 +372,7 @@
           <tr><td>Equity curve &amp; max drawdown</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
           <tr><td>Benchmark vs SPY / QQQ / NASDAQ / S&amp;P 500 / DOW</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
           <tr><td>Correlation analysis across symbols</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
-          <tr><td>Open positions tracker (live)</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
+          <tr><td>Historical position views (under review)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center dash">—</td></tr>
           <tr><td>Monthly &amp; weekly performance summaries</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
 
           <!-- Journal & Psychology -->
@@ -396,7 +398,7 @@
           <!-- Mobile & Platforms -->
           <tr class="section-row"><td colspan="4">Platforms</td></tr>
           <tr><td>Web dashboard</td><td class="center check-g">✓</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
-          <tr><td>Mobile app (iOS &amp; Android)</td><td class="center val-g">Basic charts</td><td class="center check-o">✓ Full</td><td class="center check-p">✓ Full</td></tr>
+          <tr><td>Native mobile apps (not released)</td><td class="center dash">—</td><td class="center dash">—</td><td class="center dash">—</td></tr>
           <tr><td>Desktop app (Windows + Mac)</td><td class="center dash">—</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
           <tr><td>Dark / light theme toggle</td><td class="center check-g">✓</td><td class="center check-o">✓</td><td class="center check-p">✓</td></tr>
 
@@ -430,7 +432,7 @@
         <div class="video-info">
           <span class="video-tier-tag tier-trial">Free</span>
           <h4>Getting Started in 5 Minutes</h4>
-          <p>Connect your broker, import trades, and see your P&amp;L live — from zero to dashboard in under 5 minutes.</p>
+          <p>Learn the initial validated CSV import and historical review workflow when the final app UI is approved.</p>
         </div>
       </div>
 
@@ -441,7 +443,7 @@
         </div>
         <div class="video-info">
           <span class="video-tier-tag tier-pro">Pro</span>
-          <h4>20+ Dashboards — Full Pro Tour</h4>
+          <h4>Historical Analytics — Product Tour</h4>
           <p>Every Pro analytics panel from benchmark overlay to correlation analysis — see the full power of the platform.</p>
         </div>
       </div>
@@ -465,8 +467,8 @@
         </div>
         <div class="video-info">
           <span class="video-tier-tag tier-pro">Pro</span>
-          <h4>Mobile App Walkthrough</h4>
-          <p>iOS and Android — monitor live positions, check P&amp;L, and review your journal on the go.</p>
+          <h4>Web Experience Walkthrough</h4>
+          <p>A walkthrough of the finalized browser experience, once approved for launch.</p>
         </div>
       </div>
 
@@ -506,22 +508,22 @@
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Is the free tier really free forever? <span class="arrow">▾</span></button>
-      <div class="faq-a">Yes. No trial period, no expiration. The free tier is permanently free. You get 45 days of history, 6 core charts, basic journal, and mobile access with those same limits. It's designed to be genuinely useful — just not the full platform.</div>
+      <div class="faq-a">A permanent Free tier is planned; exact limits, included features and availability will be published before launch.</div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">What's the difference between Pro and Pro+? <span class="arrow">▾</span></button>
-      <div class="faq-a">Pro unlocks the full platform — all 20+ dashboards, multi-broker, psychology tracking, unlimited history, mobile + desktop apps, export, and everything in between. Pro+ adds the AI Trade Coach (GPT-4o, backward-looking analysis only), advanced backtesting, intraday trade replay, mentor mode, priority support, and early access to every new feature we ship.</div>
+      <div class="faq-a">Pro and Pro+ are proposed tiers for expanded historical analytics and journaling. Advanced features, access and billing are not yet certified or available for purchase.</div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Do you store my brokerage credentials? <span class="arrow">▾</span></button>
-      <div class="faq-a">Never. TradeBoard uses OAuth for broker connections — you authorize through your broker's own login screen and we receive a secure token only. We never see or store your username or password. Tokens are stored encrypted in our database. Our attorney has explicitly included this in our Terms of Service and Privacy Policy.</div>
+      <div class="faq-a">No direct broker connections are enabled in initial invited testing. The approved CSV import flow does not require brokerage login credentials; future read-only sync requires provider and security approval.</div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">What brokers are supported? <span class="arrow">▾</span></button>
-      <div class="faq-a">At launch: Webull (OAuth). CSV import works with Robinhood, TD Ameritrade/Schwab, IBKR, Tastytrade, and Alpaca on Pro and Pro+. Additional OAuth broker connections are actively in development and will roll out to all active paid subscribers first.</div>
+      <div class="faq-a">Initial invited testing is limited to one validated CSV import format. Other import formats and direct broker connections are not currently supported.</div>
     </div>
 
     <div class="faq-item">
@@ -536,7 +538,7 @@
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">What is the "founding rate" and how long does it last? <span class="arrow">▾</span></button>
-      <div class="faq-a">Founding pricing is available now through public launch. We expect to raise prices after the official launch — anyone on a paid plan before then locks in their current rate for as long as they stay subscribed.</div>
+      <div class="faq-a">A limited founding offer is planned, but final terms and signup availability have not been published and no paid offer is currently active.</div>
     </div>
 
   </div>
@@ -547,9 +549,9 @@
   <div class="container">
     <div class="cta-band-inner">
       <div class="tag">Ready to start?</div>
-      <h2 class="section-title">Free forever. No card needed.</h2>
+      <h2 class="section-title">Permanent Free tier planned.</h2>
       <p class="section-sub" style="margin:0 auto 36px;">
-        Start on the free tier, upgrade when you're ready. Founding pricing won't last.
+        Join the waitlist for updates. Subscription checkout is not open yet.
       </p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
         <a href="login.html" class="btn btn-primary">Start Free →</a>
