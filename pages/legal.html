@@ -58,6 +58,8 @@
 </section>
 
 <!-- PRIVACY POLICY -->
+<!-- EDITORIAL DRAFT ONLY: requires owner/legal approval, plus validation of actual data collection,
+     processor disclosures, cookie use, retention, billing, and security controls before deployment. -->
 <section id="section-privacy" class="section-pad" role="tabpanel" aria-labelledby="tab-privacy" tabindex="0" style="background:var(--bg);">
   <div class="container" style="max-width:820px;">
     <div class="legal-body">
@@ -69,10 +71,10 @@
       <h2>2. Information We Collect</h2>
       <h3>Account Information</h3>
       <p>When you create an account, we collect your name, email address, and password (hashed — never stored in plain text).</p>
-      <h3>Broker Connections</h3>
-      <p>TradeBoard connects to brokerage accounts using OAuth 2.0 authorization only. <strong>We never store your broker username, password, or login credentials.</strong> OAuth tokens are encrypted at rest in our database and are used solely to retrieve your trade data on your behalf.</p>
+      <h3>Trade History Imports</h3>
+      <p>Initial invited TradeBoard testing uses an approved trade-history CSV format. Direct broker OAuth or API connections are not enabled for this release. Do not include brokerage login credentials in uploaded files. Any future read-only broker integration will require separate vendor and security approval and updated disclosures.</p>
       <h3>Trade Data</h3>
-      <p>We retrieve and store your trade history, positions, and portfolio data to power the TradeBoard analytics dashboard. This data is associated with your account and is not sold or shared with third parties.</p>
+      <p>TradeBoard may process trade-history records that invited users upload for retrospective analytics and journaling. The exact categories stored, data retention, and third-party processing arrangements require verification against the release implementation before publication.</p>
       <h3>Usage Data</h3>
       <p>We may collect anonymized usage data (page views, feature usage) to improve the platform. This data is not linked to personally identifiable information.</p>
 
@@ -80,13 +82,13 @@
       <ul>
         <li>To provide and improve the TradeBoard platform</li>
         <li>To authenticate your account and maintain your session</li>
-        <li>To retrieve and display your trade data from connected brokers</li>
+        <li>To process historical trade records that you choose to import</li>
         <li>To send transactional emails (account alerts, notifications you configure)</li>
         <li>To comply with applicable law</li>
       </ul>
 
       <h2>4. Data Security</h2>
-      <p>We use industry-standard encryption (TLS in transit, AES-256 at rest) to protect your data. OAuth tokens are encrypted in our database. We conduct regular security reviews and do not expose credentials to third parties.</p>
+      <p>We use safeguards intended to protect information in our services. Specific encryption, hosting, access-control, and retention descriptions must be checked against the audited production environment before finalizing this policy.</p>
 
       <h2>5. Data Retention</h2>
       <p>Your data is retained for as long as your account is active. You may request deletion of your account and all associated data at any time by contacting us.</p>
@@ -121,7 +123,7 @@
       <p>By using the Cajun AI website or the TradeBoard platform, you agree to these Terms of Service. If you do not agree, do not use our services.</p>
 
       <h2>2. Services</h2>
-      <p>Cajun AI LLC provides trading analytics software, an execution bot, AI content, and related services through the Cajun AI platform. Features and pricing are subject to change with notice.</p>
+      <p>Cajun AI LLC provides informational AI content and is developing TradeBoard as a historical trade analytics and journaling product. The invited release does not submit trades, provide trading signals, or offer automated execution. Features and pricing will be confirmed before public launch.</p>
 
       <h2>3. Account Responsibilities</h2>
       <ul>
@@ -131,14 +133,14 @@
         <li>You must be at least 18 years of age to use the platform</li>
       </ul>
 
-      <h2>4. Broker Connections &amp; Credentials</h2>
-      <p><strong>TradeBoard connects to your brokerage account using OAuth 2.0 only. We never store your broker login credentials (username or password).</strong> You authorize us to access your trade data through official broker APIs on your behalf. You may revoke this access at any time through your broker's settings or through the TradeBoard account settings.</p>
+      <h2>4. Trade Data Imports &amp; Future Broker Integrations</h2>
+      <p>TradeBoard initially accepts historical trade records through a validated CSV format for invited testing. Direct broker connections and automatic sync are not enabled. Any future broker-data integration requires separate security, vendor, and disclosure review before being advertised or offered.</p>
 
       <h2>5. No Financial Advice</h2>
-      <p>TradeBoard is an analytics and automation tool. Nothing on this platform constitutes financial, investment, or trading advice. All trading decisions are yours. Past performance shown in analytics does not guarantee future results. Trading involves substantial risk of loss.</p>
+      <p>TradeBoard provides historical analytics and educational information, not individualized financial, investment, tax, or trading advice. It does not place orders or issue entry/exit signals. Users make their own decisions; past results do not predict future performance, and trading involves risk of loss.</p>
 
-      <h2>6. Execution Bot</h2>
-      <p>The TradeBoard execution bot automates trade entries and exits based on your configured settings. You are solely responsible for all trades executed through the bot, including in live trading mode. We strongly recommend using paper trade mode to validate your strategy before enabling live execution.</p>
+      <h2>6. No Trade Execution</h2>
+      <p>TradeBoard is not an order-entry or trade-execution system. The product does not manage brokerage funds or automatically buy or sell financial instruments on your behalf.</p>
 
       <h2>7. Prohibited Use</h2>
       <ul>
@@ -149,7 +151,7 @@
       </ul>
 
       <h2>8. Payments &amp; Refunds</h2>
-      <p>Paid subscriptions are billed monthly. You may cancel at any time. Refunds are handled on a case-by-case basis. Contact us within 7 days of a charge for refund requests.</p>
+      <p>Paid TradeBoard subscriptions are not available through this website during invited testing. Before paid subscriptions open, the actual payment, cancellation, renewal and refund terms must be finalized and shown at checkout. Joining the waitlist does not create a paid subscription.</p>
 
       <h2>9. Limitation of Liability</h2>
       <p>Cajun AI LLC is not liable for trading losses, missed trades, technical outages, or any damages arising from use of the platform. The platform is provided "as-is" without warranty of any kind.</p>
