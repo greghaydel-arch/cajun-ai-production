@@ -26,11 +26,13 @@ if (hamburger && mobileNav) {
 }
 
 // ── Active nav link ──────────────────────────────────────────
-document.querySelectorAll('.nav-links a').forEach(a => {
-  if (a.getAttribute('href') === window.location.pathname.split('/').pop() ||
-      (window.location.pathname.endsWith('/') && a.getAttribute('href') === 'index.html')) {
-    a.classList.add('active');
-  }
+const normalizedPath = path => path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
+  if (a.hash) return;
+  const current = normalizedPath(new URL(a.href).pathname) === normalizedPath(window.location.pathname);
+  a.classList.toggle('active', current);
+  if (current) a.setAttribute('aria-current', 'page');
+  else a.removeAttribute('aria-current');
 });
 
 // ── Scroll fade-in (skipped if user prefers reduced motion) ──

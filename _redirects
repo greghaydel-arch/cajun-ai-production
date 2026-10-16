@@ -1,0 +1,3 @@
+# Former legal links lead to status only; no draft is published.
+/pages/legal.html /pages/legal-status 302
+/pages/legal /pages/legal-status 302

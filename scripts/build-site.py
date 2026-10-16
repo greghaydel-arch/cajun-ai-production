@@ -6,20 +6,28 @@ This script does not deploy or contact any provider.
 """
 from pathlib import Path
 import shutil
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "dist"
-ROOT_FILES = ("index.html", "preview.html", "styles.css", "script.js")
-PUBLIC_DIRS = ("pages", "assets")
 
 
 def build():
     # Delete only the generated output at this exact repository-local path.
     if OUTPUT.is_symlink() or OUTPUT.resolve() != ROOT / "dist":
         raise RuntimeError("Unsafe output path")
-    sources = [ROOT / name for name in ROOT_FILES]
-    for directory in PUBLIC_DIRS:
-        sources.extend(path for path in (ROOT / directory).rglob("*") if path.is_file())
+    names = json.loads((ROOT / "scripts/public-files.json").read_text())
+    if len(names) != len(set(names)):
+        raise RuntimeError("Duplicate public asset")
+    sources = []
+    for name in names:
+        relative = Path(name)
+        if relative.is_absolute() or '..' in relative.parts:
+            raise RuntimeError("Invalid public asset path")
+        source = ROOT / relative
+        if not source.is_file():
+            raise RuntimeError(f"Missing public asset: {name}")
+        sources.append(source)
     for source in sources:
         if source.is_symlink() or not source.resolve().is_relative_to(ROOT):
             raise RuntimeError("Public assets must be regular repository files")

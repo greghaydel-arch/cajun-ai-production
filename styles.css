@@ -1074,3 +1074,18 @@ a:focus-visible {
 [id] { scroll-margin-top:90px; }
 
 .mobile-nav { max-height:calc(100dvh - var(--nav-h)); overflow-y:auto; }
+
+/* Public release journey, using the established palette and controls. */
+.release-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; max-width:1080px; margin:0 auto 24px; text-align:left; }
+.release-grid article,.waitlist-panel { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; }
+.release-grid h2,.waitlist-panel h2 { font-size:1.2rem; margin-bottom:16px; }
+.release-grid p,.waitlist-panel p { color:var(--muted2); line-height:1.7; margin-bottom:18px; }
+.journey-links { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px auto 36px; }
+.journey-links a,.waitlist-panel p a { text-decoration:underline; text-underline-offset:3px; }
+.waitlist-panel { width:100%; max-width:720px; margin:0 auto 32px; }
+.waitlist-notice { font-size:.88rem; }
+.waitlist-panel p a:not(.btn),.journey-links a:not(.btn) { color:var(--accent); }
+.waitlist-panel .btn-primary,.journey-links .btn-primary { color:#07131b; }
+#waitlist { scroll-margin-top:110px; }
+.cs-links { flex-wrap:wrap; }
+@media(max-width:700px) { .release-grid { grid-template-columns:1fr; } .waitlist-panel { padding:22px 16px; } .waitlist-panel .btn { white-space:normal; } }
