@@ -1063,3 +1063,14 @@ a:focus-visible {
   }
   .trust-bar-inner { animation: none !important; }
 }
+
+/* Release review: keep new content within the established card system. */
+.tutorial-plan { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:24px; padding:24px; }
+.tutorial-plan li { padding:12px; }
+.tutorial-plan h3 { font-size:1rem; margin-bottom:8px; }
+.tutorial-plan p { color:var(--muted); font-size:.9rem; }
+.cs-links { flex-wrap:wrap; }
+.pricing-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); }
+[id] { scroll-margin-top:90px; }
+
+.mobile-nav { max-height:calc(100dvh - var(--nav-h)); overflow-y:auto; }

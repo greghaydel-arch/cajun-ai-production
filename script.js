@@ -51,3 +51,12 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     observer.observe(el);
   });
 }
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && hamburger && mobileNav && mobileNav.classList.contains('open')) {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.focus();
+  }
+});

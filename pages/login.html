@@ -29,6 +29,10 @@
     .cs-back { display:block;margin-top:20px;color:var(--muted);font-size:.82rem;text-decoration:underline; }
     .cs-back:hover { color:var(--accent); }
   </style>
+
+
+<meta name="description" content="Log In | Coming Soon — TradeBoard — Cajun AI information and planned TradeBoard release updates.">
+<link rel="canonical" href="https://cajun-ai.com/pages/login.html">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -48,42 +52,16 @@
     </div>
 
     <h1 class="cs-title">TradeBoard is almost here</h1>
-    <p class="cs-sub">The app isn't open yet — but you can grab your spot now and be first through the door.</p>
+    <p class="cs-sub">The app isn't open yet — join the waitlist for verified launch updates.</p>
 
-    <form id="waitlistForm">
-      <label for="waitlistEmail" class="sr-only">Email address</label>
-      <input class="cs-input" type="email" id="waitlistEmail" placeholder="your@email.com" autocomplete="email" required>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Notify Me at Launch →</button>
-    </form>
-
-    <div class="cs-success" id="csSuccess" role="alert" aria-live="polite">
-      <span style="color:#22c55e;font-size:1.2rem;" aria-hidden="true">✓</span>
-      <div>
-        <p>You're on the list!</p>
-        <small>We'll email you the moment login goes live.</small>
-      </div>
-    </div>
-
-    <p class="cs-note">No spam. Unsubscribe anytime.</p>
+    <p class="cs-note">Public login and paid checkout are closed. This website does not collect account credentials.</p>
+    <a href="https://forms.zohopublic.com/greghaydelgm1/form/TradeBoardWaitlist/formperma/ZesK-fk6NxQJBtB0a818KwRQSZhoyC8ThdQ-Co-J8Wc" class="btn btn-primary">Open the TradeBoard waitlist →</a>
+    <p class="cs-note">Joining is not an account registration, payment, or founding-place reservation. Confirm submission in the Zoho form.</p>
     <p style="color:var(--muted);font-size:.82rem;margin-top:12px;">Questions? <a href="mailto:support@trade-board.net" style="color:var(--accent);">support@trade-board.net</a></p>
     <a href="../index.html" class="cs-back">← Back to Cajun AI</a>
   </div>
 </main>
 
-<script>
-  const form = document.getElementById('waitlistForm');
-  const success = document.getElementById('csSuccess');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('waitlistEmail').value;
-    if (!email) return;
-    try {
-      const list = JSON.parse(localStorage.getItem('cajunai_waitlist') || '[]');
-      if (!list.includes(email)) { list.push(email); localStorage.setItem('cajunai_waitlist', JSON.stringify(list)); }
-    } catch(e) {}
-    form.style.display = 'none';
-    success.style.display = 'flex';
-  });
-</script>
+
 </body>
 </html>
