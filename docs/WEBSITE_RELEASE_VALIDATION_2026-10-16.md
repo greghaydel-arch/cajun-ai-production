@@ -231,3 +231,48 @@ Official references: [Pages preview Access scope](https://developers.cloudflare.
 Local evidence (outside these public repositories): `C:/webull-dashboard/.website-review/qa/cloudflare-preview-probes-2026-10-16.json`, `cloudflare-preview-check.cjs`, and screenshots `cajun-preview-branches-saved.jpg`, `tradeboard-preview-branches-saved.jpg`, `cajun-preview-owner-policy.jpg`, `tradeboard-preview-owner-policy.jpg`, `cajun-access-login-required.jpg`, `cloudflare-free-plan-approval-boundary.jpg` in the QA screenshots directory. Account screenshots are not committed to public source.
 
 All earlier local website implementation commits and complete validation reports are preserved. Pushes and PR-description updates remain deferred; branch exclusion and a commit skip prefix do not constitute owner authorization to publish. No website release is authorized.
+
+
+## Read-only Cloudflare billing review — October 16, 2026, 16:51 UTC
+
+Owner requested billing verification before any further preview login/enrollment. No provider settings, billing details, subscription, plan, consent, or resource were changed in this review. Development remains local; pushes, PR writes, builds on Cloudflare, releases, and DOT remain prohibited.
+
+### Verified account facts
+
+| Check | Observed result | Verdict |
+| --- | --- | --- |
+| Account Billing > Subscriptions > Subscribed (unfiltered) | Only `Workers Free`, Active; no paid Pages, Workers, Access, or other paid add-on subscription listed | PASS |
+| Compute > Workers plans | Free, `$0`, `Current plan`; Paid is an upgrade option, not current | PASS |
+| Domain overview | `cajun-ai.com` and `trade-board.net` Active, Plan `Free` | PASS |
+| Zero Trust > Settings > Cloudflare One plan | No plan has been chosen; provider still warns to choose one to avoid disruptions | PASS for observation; Access continuity NOT VERIFIED |
+| Zero Trust > Team & Resources > Users | Empty-state user inventory: users appear after first successful Access login/device enrollment; no registered users listed | PASS: 0 listed users; no paid seat subscription or billable seats shown |
+| Paid service activation by the two preview policies | No paid subscription appears after policy creation; Zero Trust still has no selected plan; prior checkout was never activated | PASS: no paid-service activation found |
+| Workers & Pages inventory, Show all | Three Pages projects (including the two websites); no standalone Worker script listed | PASS |
+| Account Workers usage, October 1–16 | Requests 0; CPU time 0 ms; observability events 0; Workers build minutes 0; today's requests 0/100,000 | PASS for displayed period; these are not Pages deployment counts |
+| Both current production deployments | Existing build logs explicitly report no `/functions` directory and skip Functions; no Wrangler configuration found | PASS |
+| Both website Settings > Bindings | Empty resource-binding configuration | PASS |
+| Billing > Billable usage, Current Month | Spectrum panel says No data; page says daily refresh and estimates only | NOT VERIFIED as a final invoice or universal $0 metered-usage certificate |
+| Billing > Invoices | Only two historical paid June invoices displayed; no new October invoice listed at review time | PASS for list observation; invoice-generation lag can exist |
+
+Verified recurring **monthly hosting and preview-security subscription cost for these websites: $0/month**. This is the observed active configuration, not an estimate of a future invoice or a guarantee of uninterrupted Access service without selecting a plan. Policies are applications, not two paid users; the user inventory is empty.
+
+### Existing annual domain renewals (separate from hosting)
+
+The account does have recurring annual registration costs and existing payment methods; it is not an account with no possible future charges. No payment details are reproduced here.
+
+| Domain | Registrar's current displayed renewal price | Existing auto-renew schedule | Registration expiry |
+| --- | --- | --- | --- |
+| `cajun-ai.com` | $10.46/year | Enabled; May 3, 2027, one year | June 2, 2027 |
+| `trade-board.net` | $11.86/year | Enabled; May 31, 2027, one year | June 30, 2027 |
+
+The registrar displays a notice that standard `.com` pricing rises from $10.46 to $11.17 effective November 1, 2026. Current displayed combined annual price is $22.32. **Estimate only:** $23.03/year after that announced increase if `.net` remains $11.86 and no other adjustments/taxes apply. These are annual renewals, not monthly hosting charges, and no renewal or payment action was performed.
+
+### Usage-based exposure and remaining boundary
+
+- Current static Pages asset delivery: official [Pages pricing](https://developers.cloudflare.com/pages/functions/pricing/) states static requests are free and unlimited. With current no-Functions artifacts, there is no identified request/CPU overage charge for serving these two static websites.
+- Functions, if added later, share Workers quotas. A future [Workers Paid](https://developers.cloudflare.com/workers/platform/pricing/) upgrade or paid storage/AI/other add-on can introduce usage charges; none is authorized or currently listed as a paid subscription. A plan's comparison table is not proof that those products are enabled.
+- Zero Trust's unsubmitted Free-plan checkout previously required legal acceptance and authorization for monthly charges exceeding free limits. That consent remains unaccepted by this agent. No claim is made that future enrollment has a verified hard $0 cap; enrollment remains `BLOCKED_BY_OWNER_COST_APPROVAL` and is outside this read-only request.
+- No current paid Access subscription and no users are observed. Authenticated preview access is still NOT VERIFIED; creating the policies did not itself complete owner login.
+- Usage dashboards are delayed/limited and cannot certify all future invoices. This review found no active paid website add-on, but did not open every unrelated product's resource inventory. External processors such as Zoho and Runable are outside this Cloudflare billing review.
+
+Recommendation: retain the current Free hosting configuration, do not enroll/upgrade/accept charge consent, and continue local-only development. Resolve the Access plan warning and owner login separately with owner/ChatGPT review. Preserve `REVIEW_PENDING_CHATGPT`; this financial inspection does not authorize a release or a GitHub push.
