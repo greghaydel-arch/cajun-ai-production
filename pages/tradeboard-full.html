@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TradeBoard | Cajun AI</title>
-  <meta name="description" content="TradeBoard — professional trading analytics and automation platform. Multi-broker, real-time P&L, advanced charting.">
+  <meta name="description" content="TradeBoard — historical trading performance analytics and journaling. Invited access is in preparation.">
+  <meta name="robots" content="noindex, nofollow">
+  <script>if (sessionStorage.getItem("cajunai_preview") !== "unlocked") window.location.replace("tradeboard.html");</script>
   <link rel="icon" href="../assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,10 +57,10 @@
       Trading analytics built for <span class="accent">serious traders</span>
     </h1>
     <p class="section-sub">
-      Multi-broker portfolio analytics, real-time P&amp;L tracking, automated execution tools, and more — in a single dashboard.
+      Review imported historical trades, journal decisions, and better understand your trading performance. Initial access is invitation-only.
     </p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;">
-      <a href="pricing.html" class="btn btn-primary">Start Free →</a>
+      <a href="pricing.html" class="btn btn-primary">Preview Plans →</a>
       <a href="pricing.html" class="btn btn-outline">View Pricing</a>
     </div>
   </div>
@@ -80,44 +82,44 @@
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">🔗</div>
-        <h3 style="margin-bottom:10px;">Multi-Broker Support</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Webull, Robinhood, TD Ameritrade/Schwab, IBKR, Tastytrade, Alpaca — OAuth-first connections, CSV fallback for full history.</p>
+        <h3 style="margin-bottom:10px;">Validated CSV Imports</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Initial invited testing uses a validated CSV import format. Other import formats and read-only broker connections require separate certification.</p>
       </div>
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">⚡</div>
-        <h3 style="margin-bottom:10px;">Execution Bot</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Watchlist-driven auto-entry from Discord and Telegram signals. Configurable trailing stops, T1/T2 targets, and paper trade mode to validate before going live.</p>
+        <h3 style="margin-bottom:10px;">Historical Review, Not Execution</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Study past outcomes and identify recurring patterns in your own trade records. TradeBoard does not submit orders or produce trading signals.</p>
       </div>
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">📅</div>
         <h3 style="margin-bottom:10px;">Trade Journal</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Tag every trade with strategy, setup, and notes. Filter, search, and review any entry. Screenshot support included.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Keep context around historical trade records and review outcomes. Expanded tagging and screenshot features remain subject to release validation.</p>
       </div>
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">📱</div>
-        <h3 style="margin-bottom:10px;">Web + Mobile App</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Full analytics web dashboard plus a native mobile app (iOS &amp; Android) so you can monitor positions anywhere.</p>
+        <h3 style="margin-bottom:10px;">Web Experience in Progress</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">The browser-based app is being polished for launch. Native iOS and Android applications are planned, not released.</p>
       </div>
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">📤</div>
-        <h3 style="margin-bottom:10px;">PDF / CSV Export</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Export any chart or report. Tax lot tracking and wash sale reporting built-in for end-of-year filing.</p>
+        <h3 style="margin-bottom:10px;">Data Ownership Roadmap</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Data export and deletion controls are part of release readiness. Availability will be confirmed after certification; no tax-reporting capability is claimed.</p>
       </div>
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">🔔</div>
-        <h3 style="margin-bottom:10px;">Smart Alerts</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Email, browser, and desktop notifications for auto-entries, exits, and watchlist triggers. Never miss a signal.</p>
+        <h3 style="margin-bottom:10px;">Education, Not Alerts</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">TradeBoard focuses on retrospective analysis and learning, not entry/exit alerts, automated trading, or trade recommendations.</p>
       </div>
 
       <div class="card feature-card-item">
         <div class="feature-icon" aria-hidden="true">🔒</div>
-        <h3 style="margin-bottom:10px;">Secure by Design</h3>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">OAuth-only broker authentication. Tokens encrypted in the database. We never store your username, password, or login credentials.</p>
+        <h3 style="margin-bottom:10px;">Limited Invited Access</h3>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.8;">Initial invited testing uses approved CSV import workflows; direct broker synchronization is not enabled.</p>
       </div>
 
     </div>
@@ -128,8 +130,8 @@
 <section class="section-pad" style="background:var(--bg2);">
   <div class="container">
     <div class="tag">Analytics</div>
-    <h2 class="section-title">20+ analytics views, organized</h2>
-    <p class="section-sub" style="margin-bottom:50px;">Every dashboard page is built around a specific trading question. Not just charts — answers.</p>
+    <h2 class="section-title">Historical analytics in development</h2>
+    <p class="section-sub" style="margin-bottom:50px;">Only validated historical analysis features will be offered when the invited release opens.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
       <!-- analytics pills -->
       <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;">
