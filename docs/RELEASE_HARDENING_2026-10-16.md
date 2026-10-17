@@ -1,3 +1,55 @@
+# Overnight local completion — 2026-10-16
+
+**REVIEW_PENDING_CHATGPT. Local technical work only; no independent certification or release approval.**
+
+Starting reviewed commit: `d73ee7030dff7c1fc5e63cbdc4a949b01a211bff`. Branch: `marketing/20261016-release-truth`. The exact final commit containing this report is in the review ZIP manifest and final handoff.
+
+Cajun: optimized logo/favicon and WebP backgrounds; originals excluded from the public allowlist. Corrected orange-button and contact-card contrast. Disabled contact form until its mail-draft handler attaches, preventing no-script personal-data GET fallback; added no-script navigation and contact link. Added canonical branded social metadata.
+
+Public artifact before: **6,938,002 bytes**; after: **898,440 bytes** across 32 files (**87.05% reduction**). These are uncompressed artifact bytes, not measured WAN speed or Core Web Vitals. Original source-image hashes were checked unchanged. No asset-quality claim relies only on byte counts.
+
+## Final local verification and evidence
+
+- PASS: Cajun AI six public-boundary regressions and allowlisted build (32 files); TradeBoard TypeScript, production Vite build and exact 15-file public-output checks. Review Vite build remains separate in ignored review-dist and includes the original assets required by preserved review components.
+- PASS: 95 filesystem/HTTP checks against final artifacts: HTML structure, asset links, anchors, canonicals, noindex, direct routes, excluded/internal/unknown routes returning 404, legal redirects and single direct Zoho destination. The loopback server approximates Pages aliases/redirects; this is not Cloudflare certification.
+- PASS: 96 Chromium checks at 320, 375, 390, 768, 1024, 1366 and 1500 pixels, including 77 page/viewport combinations, image decoding, overflow, heading, UTF-8 text, keyboard skip link, mobile menu Enter/Escape, no-script access and disabled contact fields. TradeBoard embed can load only on explicit request and can be removed; direct fallback persists. No form was submitted. No page JavaScript errors.
+- PASS: axe-core WCAG 2 A/AA and 2.1 AA tags on 11 representative pages at 390px: zero reported violations after correcting Cajun buttons/contact-link contrast. This is focused automated testing, not full WCAG conformance or screen-reader certification.
+- Screenshots: four new baseline home captures plus 22 final full-resolution captures, mobile 390px and desktop 1366px. The prior 131px evidence is not reused. Third-party fonts were blocked, so these captures show the supported fallback fonts. Background/logo fidelity was visually inspected; source originals remain unchanged.
+- NOT VERIFIED: live Cloudflare settings/headers/redirects, third-party form rendering or submission/delivery, actual Google Fonts delivery, real channel identity/videos, other browsers and hosted performance. All non-loopback browser requests were blocked, recorded as blocked, and never counted as successful. Public assets still reference Google Fonts and the same existing Zoho destination.
+- No test servers remained listening on the task ports after teardown. No dependency installation, app-repository modification, GitHub write/Actions, deployment, provider mutation, charge, actual email or waitlist submission occurred.
+
+Reproduce with existing tools: Cajun `python scripts/test-public-output.py` then `python scripts/build-site.py`; TradeBoard `node node_modules/typescript/bin/tsc -b`, `node node_modules/vite/bin/vite.js build`, `node scripts/test-public-output.mjs`. Optional preserved review check: `node node_modules/vite/bin/vite.js build --mode review`. Node 22.22.2 was used. The review ZIP includes browser.cjs, artifact-check.cjs, check-artifacts.cjs, serve-artifact.py and optimize-assets.py with commands in its README. Image derivation uses the already installed Pillow library; it is not a website runtime dependency. No new framework/service is introduced.
+
+## Owner/counsel decision packet — no legal approval granted
+
+| Actual boundary | Required decision / outstanding evidence |
+|---|---|
+| Website delivery through Cloudflare | Confirm controller/operator details, applicable hosting terms, request-log access/retention and any edge-injected analytics. No assertion that the provider collects nothing. |
+| Remote Google Fonts on page load | Requests expose normal connection/browser metadata to Google. Decide whether to approve/disclose this vendor or authorize future font self-hosting after license/source review. No optional analytics scripts are included in these artifacts. |
+| Zoho waitlist link; TradeBoard optional embed | One existing form destination. Loading contacts Zoho; submitting sends entered data to its operator. Confirm current fields, processors/region, cookies/anti-abuse behavior, purpose (launch updates), consent/notice placement, withdrawal/unsubscribe, retention period and deletion procedure before collecting data through this candidate. No invented retention or contractual guarantee. |
+| Cajun contact helper | Name/email/message stay in the browser until the visitor opens and sends an email draft. The email app and receiving mailbox process sent content. Approve the contact notice, mailbox access/deletion procedure; discourage credentials and trading records. Without JavaScript the helper stays disabled and a direct mail link remains. |
+| Cookies/storage | No new first-party tracking or consent platform was added. Third-party form cookies and hosting behavior require owner/provider verification. Do not interpret blocked-request tests as cookie certification. |
+| Plans | Permanent useful Free, planned Pro/Pro+, proposed $199/year for first 100 successfully paid Founding Members remain. No guarantee, allocation/reservation, live Checkout or automatic entitlement; final prices/benefits/renewal/refund terms still need commercial/legal approval. |
+
+## Exact proposed hosting checkpoint — NOT APPLIED
+
+Both existing Pages projects: production branch **main**, preview deployments **None**, repository root `/`, output **dist**. Keep current Access/security/DNS settings unchanged and preserve noindex in HTML and `_headers`. No Functions, Workers, API, database binding or paid service is needed. Do not deploy review-dist or repository root. Keep built root 404.html; no catch-all SPA rewrite. Validate direct routes, old legal redirects, www/apex/pages.dev behavior and noindex on the actual host only after explicit publication/hosting authorization.
+
+- Cajun AI build command: `python3 scripts/build-site.py` (standard-library Python >=3.9; proposed pinned provider version 3.12). Serving repository root is a release blocker because it bypasses the allowlist and includes draft/review material.
+- TradeBoard build command proposal: `npm ci --ignore-scripts --no-audit --no-fund && npm run build`, Node **22.22.2**, output **dist**, never `--mode review`. Local validation used existing locked dependencies; clean provider installation is NOT VERIFIED. Replace the historically recorded Bun build only with separate owner approval; avoid duplicate automatic dependency installs during that configuration review.
+- Keep Pages default caching rather than adding aggressive cache rules for mutable filenames. Hashed Vite assets and resized images need no new service. Cloudflare documents HTML normalization and root-404 behavior, but local tests do not prove provider configuration: https://developers.cloudflare.com/pages/configuration/serving-pages/ ; build settings: https://developers.cloudflare.com/pages/configuration/build-configuration/ ; headers: https://developers.cloudflare.com/pages/configuration/headers/ .
+
+## Later real-media workflow
+
+Use the existing single Cajun AI video hub. After approved application UI and separately authorized capture: launch the existing local synthetic application, record the import/history/journal/analytics workflow, inspect every frame for identifiers/secrets, create readable desktop/mobile captures with captions, obtain product/legal review, then add only verified owner-controlled channel/video IDs. No invented screenshots, testimonials, performance figures or new channel. Existing labeled illustrative concept remains labeled; no completed tutorial is claimed.
+
+## Remaining release gates
+
+Independent ChatGPT review; owner/counsel decisions above; separately approved GitHub publication and hosting/output verification (including cost approval if any cloud build/Actions could run). No current production authorization. Prior provider snapshots are historical, not fresh live facts. This local technical completion does not approve legal terms, data collection, production or deployment.
+
+---
+The earlier hardening report below is retained as historical evidence; this section supersedes its asset sizes and this batch's test status.
+
 # Cajun AI — local release hardening, 2026-10-16
 
 **Recommendation: CONDITIONAL PASS for independent source review. Production release remains blocked by the approvals below.**

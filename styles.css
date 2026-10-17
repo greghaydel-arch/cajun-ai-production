@@ -276,13 +276,13 @@ body {
       rgba(3,13,18,.4)  70%,
       rgba(3,13,18,.1)  100%
     ),
-    url('../assets/images/hero-bg.jpg') center/cover no-repeat;
+    url('../assets/images/hero-bg.webp') center/cover no-repeat;
 }
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/images/circuit-bg.jpg') center/cover no-repeat;
+  background: url('../assets/images/circuit-bg.webp') center/cover no-repeat;
   opacity: .12;
   mix-blend-mode: screen;
 }
@@ -1089,3 +1089,14 @@ a:focus-visible {
 #waitlist { scroll-margin-top:110px; }
 .cs-links { flex-wrap:wrap; }
 @media(max-width:700px) { .release-grid { grid-template-columns:1fr; } .waitlist-panel { padding:22px 16px; } .waitlist-panel .btn { white-space:normal; } }
+
+/* Without JavaScript, every mobile destination remains reachable. */
+@media (scripting: none) and (max-width: 900px) {
+  .hamburger { display:none; }
+  .mobile-nav { display:flex; position:static; margin-top:var(--nav-h); max-height:none; }
+}
+.sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* Orange brand buttons need dark labels; contact cards must not inherit browser blue. */
+.btn-primary,.btn-primary:hover { color:var(--bg); }
+a.card { color:var(--text); }

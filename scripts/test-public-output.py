@@ -52,6 +52,21 @@ class PublicOutputTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):builder.build()
         self.assertTrue((self.root/'dist/previous.txt').exists())
 
+    def test_public_icons_are_sized_and_originals_excluded(self):
+        import struct
+        for name, size in [('assets/images/favicon-64.png',64),('assets/images/logo-512.png',512)]:
+            data=(self.root/name).read_bytes()
+            self.assertEqual(struct.unpack('>II',data[16:24]),(size,size))
+        for name in ['assets/images/logo.png','assets/images/favicon.png','assets/images/hero-bg.jpg','assets/images/circuit-bg.jpg']:
+            self.assertNotIn(name,self.names)
+
+    def test_contact_no_script_cannot_submit_personal_data(self):
+        text=(self.root/'pages/contact.html').read_text(encoding='utf8')
+        self.assertIn('<fieldset id="contactFields" disabled',text)
+        self.assertIn('<noscript>',text)
+        self.assertIn('mailto:support@cajun-ai.com',text)
+        self.assertLess(text.index("e.preventDefault()"),text.index("contactFields').disabled = false"))
+
     def test_traversal_is_rejected(self):
         (self.root/'scripts/public-files.json').write_text('["../outside.html"]')
         with self.assertRaises(RuntimeError):builder.build()

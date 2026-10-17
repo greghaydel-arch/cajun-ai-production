@@ -27,8 +27,8 @@
   "script.js",
   "_headers",
   "_redirects",
-  "assets/images/circuit-bg.jpg",
-  "assets/images/hero-bg.jpg",
-  "assets/images/favicon.png",
-  "assets/images/logo.png"
+  "assets/images/circuit-bg.webp",
+  "assets/images/hero-bg.webp",
+  "assets/images/favicon-64.png",
+  "assets/images/logo-512.png"
 ]
