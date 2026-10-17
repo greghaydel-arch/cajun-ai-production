@@ -340,6 +340,7 @@ body {
 }
 
 .hero-scroll {
+  pointer-events: none;
   position: absolute;
   bottom: 36px;
   left: 50%;
@@ -978,7 +979,8 @@ footer {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .container { padding: 0 24px; }
-  .hero-content { padding: 80px 24px 80px; }
+  /* Reserve space for the decorative scroll cue below wrapped hero buttons. */
+  .hero-content { padding: 80px 24px 128px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
