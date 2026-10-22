@@ -42,7 +42,9 @@ if (hamburger && mobileNav) {
 const normalizedPath = path => path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
 document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
   if (a.hash) return;
-  const current = normalizedPath(new URL(a.href).pathname) === normalizedPath(window.location.pathname);
+  const target = normalizedPath(new URL(a.href).pathname);
+  const currentPath = normalizedPath(window.location.pathname);
+  const current = target === currentPath || (target === '/pages/blog' && currentPath.startsWith('/pages/articles/'));
   a.classList.toggle('active', current);
   if (current) a.setAttribute('aria-current', 'page');
   else a.removeAttribute('aria-current');

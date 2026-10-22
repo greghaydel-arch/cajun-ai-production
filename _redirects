@@ -1,3 +1,11 @@
 # Former legal links lead to status only; no draft is published.
 /pages/legal.html /pages/legal-status 302
 /pages/legal /pages/legal-status 302
+
+# Retired placeholder categories lead to the actual article library.
+/pages/ai-news /pages/blog 302
+/pages/ai-news.html /pages/blog 302
+/pages/ai-tools /pages/blog 302
+/pages/ai-tools.html /pages/blog 302
+/pages/tech-reviews /pages/blog 302
+/pages/tech-reviews.html /pages/blog 302

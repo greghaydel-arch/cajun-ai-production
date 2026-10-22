@@ -1,4 +1,11 @@
-# WCAG 2.1 AA Accessibility Fixes — Cajun AI Website
+# Historical installation notes — not current release instructions
+
+Do not follow the old push/auto-deploy directions below. Use the local build and
+approval gates in [README.md](README.md) and
+[the October 22 report](docs/WEBSITE_COMPLETION_2026-10-22.md).
+No full WCAG certification or publication approval is established by these notes.
+
+## Preserved July accessibility work
 ## Date: July 1, 2026
 
 ## Files Changed (12 total)

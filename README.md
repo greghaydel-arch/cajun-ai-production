@@ -1,4 +1,7 @@
-# Current review build (October 16, 2026)
+# Current local review build (October 22, 2026)
+
+See [the three-batch completion report](docs/WEBSITE_COMPLETION_2026-10-22.md)
+and [the indexing proposal](docs/INDEXING_ROLLOUT_2026-10-22.md). Neither authorizes release.
 
 All development and validation remain local; a passing build does not authorize publication.
 Run `python scripts/build-site.py` to prepare `dist/`, then
@@ -8,7 +11,7 @@ all `*-full.html` pages, `preview.html`, internal documents, development tools a
 unlisted assets. Run `python scripts/test-public-output.py` for boundary tests.
 Public legal links lead only to nonbinding `pages/legal-status.html`.
 
-**Release blocker:** Cloudflare currently serves the repository root. A future
+**Release blocker:** historical evidence recorded Cloudflare serving the repository root; current settings were not inspected. A future
 owner-approved hosting change must set build command `python3 scripts/build-site.py`
 and output directory `dist` before any release of this branch. Verify Python
 availability and hosted direct routes in that separately approved operation.

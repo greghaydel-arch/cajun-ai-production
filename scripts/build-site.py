@@ -22,7 +22,8 @@ def build():
     sources = []
     for name in names:
         relative = Path(name)
-        if relative.is_absolute() or relative.drive or '..' in relative.parts:
+        if (relative.is_absolute() or relative.drive or '..' in relative.parts or
+                name != relative.as_posix() or name != name.lower()):
             raise RuntimeError("Invalid public asset path")
         # A manifest edit must not silently opt draft/review material into release.
         # These source categories remain local even when accidentally listed.

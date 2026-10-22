@@ -70,6 +70,10 @@ class PublicOutputTests(unittest.TestCase):
     def test_traversal_is_rejected(self):
         (self.root/'scripts/public-files.json').write_text('["../outside.html"]')
         with self.assertRaises(RuntimeError):builder.build()
+        for name in ['pages/LEGAL.html', 'pages\\legal.html', 'pages/./legal.html']:
+            (self.root/'scripts/public-files.json').write_text(json.dumps([name]))
+            with self.assertRaisesRegex(RuntimeError, 'Invalid public asset path'):
+                builder.build()
 
     def test_accidentally_allowlisted_private_file_fails_closed(self):
         for name in ['preview.html', 'pages/legal.html', 'pages/login-full.html',
@@ -87,5 +91,30 @@ class PublicOutputTests(unittest.TestCase):
         for value in ['X-Robots-Tag: noindex, nofollow', 'Referrer-Policy: no-referrer',
                       "frame-ancestors 'none'", "object-src 'none'", "base-uri 'self'", "frame-src 'none'"]:
             self.assertIn(value, headers)
+
+    def test_editorial_corrections_and_indexing_hold(self):
+        import re
+        titles = set()
+        for name in self.names:
+            if not name.endswith('.html'): continue
+            text = (self.root/name).read_text(encoding='utf8')
+            self.assertRegex(text, r'noindex,\s*nofollow')
+            if name.startswith('pages/articles/'):
+                self.assertIn('October 22, 2026', text)
+                self.assertNotIn('Our Ratings', text)
+                self.assertNotIn('For most professional writing and knowledge work use cases:', text)
+                titles.add(re.search(r'<title>(.*?)</title>', text)[1])
+        self.assertEqual(len(titles), 10)
+        stop = (self.root/'pages/articles/trailing-stops-explained.html').read_text(encoding='utf8')
+        self.assertIn('A subsequent price of $59 is still above that trigger', stop)
+        self.assertIn('do not guarantee an execution price', stop)
+        self.assertNotIn('docs/SITEMAP_CANDIDATE.xml', self.names)
+
+    def test_real_article_library_replaces_empty_categories(self):
+        redirects = (self.root/'_redirects').read_text()
+        for slug in ['ai-news', 'ai-tools', 'tech-reviews']:
+            self.assertNotIn(f'pages/{slug}.html', self.names)
+            self.assertIn(f'/pages/{slug} /pages/blog 302', redirects)
+            self.assertIn(f'/pages/{slug}.html /pages/blog 302', redirects)
 
 if __name__=='__main__':unittest.main()

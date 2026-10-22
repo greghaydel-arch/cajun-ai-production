@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What Is Generative AI? A Plain-English Breakdown | Cajun AI</title>
-  <meta name="description" content="How modern AI systems create text, images, video and code — and why it matters for your business, career, or creative work right now.">
+  <title>What Is Generative AI? A Plain-English Guide | Cajun AI</title>
+  <meta name="description" content="How generative systems produce content, where retrieval fits, and why their answers need verification.">
   <link rel="icon" href="../../assets/images/favicon-64.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,12 +38,14 @@
 
 <link rel="canonical" href="https://cajun-ai.com/pages/articles/what-is-generative-ai">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="What Is Generative AI? A Plain-English Breakdown | Cajun AI">
+<meta property="og:title" content="What Is Generative AI? A Plain-English Guide | Cajun AI">
 <meta property="og:url" content="https://cajun-ai.com/pages/articles/what-is-generative-ai">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://cajun-ai.com/assets/images/logo-512.png">
 <meta property="og:image:alt" content="Cajun AI logo">
 <meta name="twitter:card" content="summary">
+<meta name="referrer" content="no-referrer">
+<meta property="og:description" content="How generative systems produce content, where retrieval fits, and why their answers need verification.">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -79,112 +81,29 @@
   <div class="container" style="max-width:760px;">
     <a href="../blog.html" class="back-link">← Back to Articles</a>
     <div class="article-cat" style="margin-bottom:14px;">Featured · AI Tools</div>
-    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:18px;">What Is Generative AI? A Plain-English Breakdown</h1>
-    <p style="color:var(--muted2);font-size:1.1rem;line-height:1.8;max-width:640px;">How modern AI systems create text, images, video and code — and why it matters for your business, career, or creative work right now.</p>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:18px;">What Is Generative AI? A Plain-English Guide</h1>
+    <p style="color:var(--muted2);font-size:1.1rem;line-height:1.8;max-width:640px;">How generative systems produce content, where retrieval fits, and why their answers need verification.</p>
     <div class="article-meta-header">
       <span>By Cajun AI Editorial</span>
       <span>·</span>
-      <span>June 2026</span>
+      <span>Updated October 22, 2026</span>
       <span>·</span>
-      <span>5 min read</span>
+      <span>Educational guide</span>
     </div>
   </div>
 </section>
 
 <!-- BODY -->
 <div class="article-body">
+<p class="disclaimer-box">Editorial update: October 22, 2026. Educational content; not a product benchmark or professional advice.</p>
 
-  <div class="disclaimer-box">
-    <strong>Note:</strong> This article reflects the AI landscape as of June 2026. The field moves fast — specific model names, benchmarks, and pricing may change after publication.
-  </div>
-
-  <p>If you've used ChatGPT, had an AI write a caption for you, or watched a video that turned out to be entirely computer-generated, you've already seen generative AI in action. But most people still don't have a clear picture of what it actually is under the hood — and why it's a fundamentally different kind of software than anything we've built before.</p>
-
-  <p>This isn't a technical deep-dive. It's a plain-English explanation of what generative AI is, how it works at a conceptual level, and why it's changing almost every industry at once.</p>
-
-  <h2>The Old Way vs. The New Way</h2>
-
-  <p>Traditional software follows rules. You tell it: <em>if the user clicks this button, do that thing.</em> Every behavior is hand-coded. The software can only do exactly what a programmer explicitly told it to do.</p>
-
-  <p>Machine learning flipped that. Instead of writing rules, you feed the system enormous amounts of data and let it figure out the patterns on its own. A spam filter, for example, isn't told what spam looks like — it's shown millions of emails labeled "spam" or "not spam" and learns to distinguish them itself.</p>
-
-  <p><strong>Generative AI takes this a step further.</strong> It doesn't just recognize patterns — it uses those patterns to create something new. Text, images, audio, video, code. Given a prompt, it generates output that didn't exist before.</p>
-
-  <h2>How Does It Actually Work?</h2>
-
-  <p>The dominant architecture behind today's generative AI is called a <strong>transformer model</strong>, introduced by Google researchers in a landmark 2017 paper titled "Attention Is All You Need." Without getting into the math: transformers learn by processing massive amounts of text (or images, or audio) and building statistical relationships between words, concepts, and ideas.</p>
-
-  <p>When you ask ChatGPT a question, it's not looking up the answer in a database. It's predicting — one token (roughly one word) at a time — what the most statistically likely next piece of text would be, given everything it learned during training and everything you've said in the current conversation.</p>
-
-  <blockquote>"The model isn't thinking. It's completing. But at sufficient scale, completion starts to look a lot like thinking." — common framing among AI researchers</blockquote>
-
-  <p>This is why these models can write poetry, debug code, explain quantum physics, and summarize a 50-page legal document — they've seen so much human-generated text that they've internalized the structure of almost every kind of written thought.</p>
-
-  <h2>The Main Types of Generative AI</h2>
-
-  <h3>Large Language Models (LLMs)</h3>
-  <p>These handle text. ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), and LLaMA (Meta) are all LLMs. They can write, summarize, translate, reason through problems, and generate code.</p>
-
-  <h3>Image Generation Models</h3>
-  <p>Tools like Midjourney, DALL·E, and Stable Diffusion generate images from text descriptions. They use a different architecture — typically a diffusion model — that starts with noise and progressively refines it into a coherent image.</p>
-
-  <h3>Audio & Music Models</h3>
-  <p>Models like Suno and Udio can generate full songs from a text prompt. Voice cloning tools like ElevenLabs can replicate a voice from a short audio sample.</p>
-
-  <h3>Video Generation Models</h3>
-  <p>Sora (OpenAI), Runway Gen-3, and Kling AI can generate short video clips from text or image prompts. Quality and length are improving rapidly — what was a 4-second clip in 2024 is now a coherent 2-minute scene in 2026.</p>
-
-  <h3>Code Generation Models</h3>
-  <p>GitHub Copilot, Cursor, and similar tools assist developers by autocompleting code, explaining functions, and generating entire programs from a plain-English description.</p>
-
-  <h2>Why Does It Matter Right Now?</h2>
-
-  <p>Every previous wave of technology automation replaced physical labor or routine digital tasks. Spreadsheets replaced manual bookkeeping. Email replaced postal mail. Search replaced encyclopedias.</p>
-
-  <p><strong>Generative AI is the first technology that competes with knowledge work at scale.</strong> Writing, research, design, coding, legal analysis, medical diagnosis — all of these are being transformed simultaneously. That's unprecedented.</p>
-
-  <p>This doesn't mean everyone's job is disappearing tomorrow. What it does mean:</p>
-
-  <ul>
-    <li>People who use AI tools effectively will outperform those who don't — in speed, output volume, and often quality</li>
-    <li>Entry-level work that was once a stepping stone is increasingly being automated first</li>
-    <li>New categories of jobs are appearing — prompt engineers, AI trainers, AI output editors — that didn't exist five years ago</li>
-    <li>Entire product categories are being rebuilt from scratch with AI at the core</li>
-  </ul>
-
-  <h2>The Honest Limitations</h2>
-
-  <p>Generative AI is not magic, and it's not infallible. Key limitations you should know:</p>
-
-  <ul>
-    <li><strong>Hallucination:</strong> LLMs sometimes generate confident-sounding incorrect information. Always verify claims against primary sources for anything high-stakes.</li>
-    <li><strong>Training cutoffs:</strong> Most models have a knowledge cutoff date. They don't know what happened yesterday unless you tell them.</li>
-    <li><strong>No true reasoning:</strong> Current models can mimic reasoning very convincingly but don't actually "understand" in the human sense. They fail at certain logical tasks in predictable ways.</li>
-    <li><strong>Context limits:</strong> There's a cap on how much text a model can process at once (though this is expanding rapidly).</li>
-    <li><strong>Bias:</strong> Models trained on human-generated data inherit human biases. Output requires critical review.</li>
-  </ul>
-
-  <h2>The Bottom Line</h2>
-
-  <p>Generative AI is not a search engine upgrade. It's a new category of tool — one that can create, not just retrieve. It's genuinely powerful, genuinely limited, and genuinely here. The gap between people who understand how to use it and people who don't is already widening fast.</p>
-
-  <p>You don't need to know the math to benefit from it. You do need to know what it's good at, what it's bad at, and how to direct it toward useful work. That's what we write about here.</p>
-
-  <div class="sources-section">
-    <h4>Sources & References</h4>
-    <ol>
-      <li>Vaswani, A., et al. (2017). "Attention Is All You Need." <em>Google Brain / Google Research.</em> <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">arxiv.org/abs/1706.03762</a></li>
-      <li>OpenAI. (2023). "GPT-4 Technical Report." <a href="https://arxiv.org/abs/2303.08774" target="_blank" rel="noopener">arxiv.org/abs/2303.08774</a></li>
-      <li>Anthropic. (2024). "Claude Model Card." <a href="https://www.anthropic.com/system-cards" target="_blank" rel="noopener">anthropic.com</a></li>
-      <li>McKinsey & Company. (2023). "The Economic Potential of Generative AI." <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai" target="_blank" rel="noopener">mckinsey.com</a></li>
-      <li>MIT Technology Review. (2024). "What large language models can and cannot do." <a href="https://www.technologyreview.com" target="_blank" rel="noopener">technologyreview.com</a></li>
-    </ol>
-    <p style="margin-top:16px;font-size:.83rem;color:var(--muted);">All factual claims in this article draw on publicly available research and reporting. No copyrighted text was reproduced. References are provided for attribution and further reading under standard editorial practice.</p>
-  </div>
-
+<p>Generative AI produces outputs such as text, images or audio from patterns learned during training and the context supplied at use time. A fluent answer is not evidence that the answer is correct.</p>
+<h2>Models, applications and tools</h2><p>A language model generates sequences of tokens. A token can be a word, part of a word or punctuation; it is not always a whole word. ChatGPT, Claude and Gemini are applications or product families built around models and additional tools. Some modes can retrieve documents or search the web. That makes “AI never looks anything up” an inaccurate description of the whole application.</p>
+<p>The 2017 paper <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention Is All You Need</a> introduced the Transformer architecture. It is an important foundation for language models, not a complete description of every image, audio or video system.</p>
+<h2>A practical verification habit</h2><p>Separate a draft from a verified result. Open cited sources, check dates and calculations, and test generated code before relying on it. <a href="https://help.openai.com/en/articles/8313428" target="_blank" rel="noopener noreferrer">OpenAI explains</a> that ChatGPT can produce incorrect facts and fabricated citations even when it sounds confident.</p>
+<p>Use material you are allowed to share, review the service’s data controls, and treat high-stakes decisions as requiring qualified human judgment. No universal video length, reasoning ability or productivity improvement follows simply from a product using AI.</p>
 </div>
 
-<!-- FOOTER -->
 </main>
 <footer>
   <div class="container">
