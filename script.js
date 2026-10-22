@@ -10,6 +10,19 @@ if (navbar) {
 const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.mobile-nav');
 if (hamburger && mobileNav) {
+  const closeMenu = () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  };
+  // A drawer opened on a phone must not cover desktop navigation after resize.
+  window.matchMedia('(max-width: 900px)').addEventListener('change', closeMenu);
+  document.addEventListener('click', event => {
+    if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('focusin', event => {
+    if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) closeMenu();
+  });
   hamburger.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open', isOpen);

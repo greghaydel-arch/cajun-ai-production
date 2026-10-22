@@ -49,6 +49,19 @@ const server = http.createServer((req, res) => {
       results.push({ width, height, ...layout, clicks, pass: Object.values(layout).every(Boolean) && clicks.every(Boolean) });
       await page.close();
     }
+    const menuPage = await browser.newPage({ viewport: { width:390, height:844 } });
+    await menuPage.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
+    await menuPage.goto(origin);
+    await menuPage.locator('.hamburger').click();
+    await menuPage.setViewportSize({ width:1366, height:900 });
+    await menuPage.waitForFunction(() => document.querySelector('.hamburger').getAttribute('aria-expanded') === 'false');
+    const resizedClosed = !await menuPage.locator('.mobile-nav').isVisible();
+    await menuPage.setViewportSize({ width:390, height:844 });
+    await menuPage.locator('.hamburger').click();
+    await menuPage.locator('.hero-btns a').first().focus();
+    const focusClosed = await menuPage.locator('.hamburger').getAttribute('aria-expanded') === 'false';
+    results.push({ menuResizeAndFocus: true, resizedClosed, focusClosed, pass: resizedClosed && focusClosed });
+    await menuPage.close();
   } finally {
     if (browser) await browser.close();
     await new Promise(resolve => server.close(resolve));
