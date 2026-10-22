@@ -1,6 +1,6 @@
 """Prepare only website assets for local validation and a future approved release.
 
-Cloudflare currently serves the repository root. Changing its build command to
+Historical Cloudflare evidence recorded repository-root serving. Changing its build command to
 python3 scripts/build-site.py and output directory to dist needs owner approval.
 This script does not deploy or contact any provider.
 """
@@ -22,8 +22,16 @@ def build():
     sources = []
     for name in names:
         relative = Path(name)
-        if relative.is_absolute() or '..' in relative.parts:
+        if relative.is_absolute() or relative.drive or '..' in relative.parts:
             raise RuntimeError("Invalid public asset path")
+        # A manifest edit must not silently opt draft/review material into release.
+        # These source categories remain local even when accidentally listed.
+        if (name.startswith(('.', 'docs/', 'scripts/')) or
+            name in ('preview.html', 'pages/legal.html') or '-full.' in name or
+            not (name in ('index.html', '404.html', 'styles.css', 'script.js', '_headers', '_redirects') or
+                 (name.startswith('pages/') and relative.suffix == '.html') or
+                 (name.startswith('assets/images/') and relative.suffix in ('.png', '.webp', '.jpg', '.ico')))):
+            raise RuntimeError(f"Nonpublic asset category: {name}")
         source = ROOT / relative
         if not source.is_file():
             raise RuntimeError(f"Missing public asset: {name}")

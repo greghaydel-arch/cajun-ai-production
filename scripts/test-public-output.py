@@ -71,4 +71,21 @@ class PublicOutputTests(unittest.TestCase):
         (self.root/'scripts/public-files.json').write_text('["../outside.html"]')
         with self.assertRaises(RuntimeError):builder.build()
 
+    def test_accidentally_allowlisted_private_file_fails_closed(self):
+        for name in ['preview.html', 'pages/legal.html', 'pages/login-full.html',
+                     'docs/review.md', '.env', 'assets/images/review.txt']:
+            with self.subTest(name=name):
+                target = self.root/name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text('INTERNAL_TEST_SENTINEL')
+                (self.root/'scripts/public-files.json').write_text(json.dumps(self.names+[name]))
+                with self.assertRaisesRegex(RuntimeError, 'Nonpublic asset category'):
+                    builder.build()
+
+    def test_output_headers_keep_hold_and_browser_boundaries(self):
+        headers = (self.root/'_headers').read_text()
+        for value in ['X-Robots-Tag: noindex, nofollow', 'Referrer-Policy: no-referrer',
+                      "frame-ancestors 'none'", "object-src 'none'", "base-uri 'self'", "frame-src 'none'"]:
+            self.assertIn(value, headers)
+
 if __name__=='__main__':unittest.main()
