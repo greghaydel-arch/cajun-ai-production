@@ -276,13 +276,13 @@ body {
       rgba(3,13,18,.4)  70%,
       rgba(3,13,18,.1)  100%
     ),
-    url('../assets/images/hero-bg.jpg') center/cover no-repeat;
+    url('../assets/images/hero-bg.webp') center/cover no-repeat;
 }
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/images/circuit-bg.jpg') center/cover no-repeat;
+  background: url('../assets/images/circuit-bg.webp') center/cover no-repeat;
   opacity: .12;
   mix-blend-mode: screen;
 }
@@ -310,7 +310,12 @@ body {
   gap: 20px;
   margin-bottom: 10px;
 }
-.hero-logo-row img { width: 100px; }
+img[src$="logo-200.png"] { height: auto; }
+.featured-article { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.article-card-item { color:inherit; text-decoration:none; }
+.cta-band p a:not(.btn) { color:var(--accent-light); text-decoration:underline; }
+@media (max-width:600px) { .featured-article { grid-template-columns:1fr; gap:24px; } }
+.hero-logo-row img { width: 100px; height: auto; }
 .hero h1 {
   font-size: clamp(3.5rem, 7vw, 5.5rem);
   font-weight: 800;
@@ -340,6 +345,7 @@ body {
 }
 
 .hero-scroll {
+  pointer-events: none;
   position: absolute;
   bottom: 36px;
   left: 50%;
@@ -978,11 +984,14 @@ footer {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .container { padding: 0 24px; }
-  .hero-content { padding: 80px 24px 80px; }
+  /* Reserve space for the decorative scroll cue below wrapped hero buttons. */
+  .hero-content { padding: 80px 24px 128px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 600px) {
+  .hero-bg { background-image:linear-gradient(100deg,rgba(3,13,18,.97) 0%,rgba(3,13,18,.85) 40%,rgba(3,13,18,.4) 70%,rgba(3,13,18,.1) 100%),url('/assets/images/hero-bg-mobile.webp'); }
+  .hero-bg::after { background-image:url('/assets/images/circuit-bg-mobile.webp'); }
   .hero h1 { font-size: 3rem; }
   .section-pad { padding: 70px 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -1063,3 +1072,40 @@ a:focus-visible {
   }
   .trust-bar-inner { animation: none !important; }
 }
+
+/* Release review: keep new content within the established card system. */
+.tutorial-plan { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:24px; padding:24px; }
+.tutorial-plan li { padding:12px; }
+.tutorial-plan h3 { font-size:1rem; margin-bottom:8px; }
+.tutorial-plan p { color:var(--muted); font-size:.9rem; }
+.cs-links { flex-wrap:wrap; }
+.pricing-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); }
+[id] { scroll-margin-top:90px; }
+
+.mobile-nav { max-height:calc(100dvh - var(--nav-h)); overflow-y:auto; }
+
+/* Public release journey, using the established palette and controls. */
+.release-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; max-width:1080px; margin:0 auto 24px; text-align:left; }
+.release-grid article,.waitlist-panel { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; }
+.release-grid h2,.waitlist-panel h2 { font-size:1.2rem; margin-bottom:16px; }
+.release-grid p,.waitlist-panel p { color:var(--muted2); line-height:1.7; margin-bottom:18px; }
+.journey-links { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px auto 36px; }
+.journey-links a,.waitlist-panel p a { text-decoration:underline; text-underline-offset:3px; }
+.waitlist-panel { width:100%; max-width:720px; margin:0 auto 32px; }
+.waitlist-notice { font-size:.88rem; }
+.waitlist-panel p a:not(.btn),.journey-links a:not(.btn) { color:var(--accent); }
+.waitlist-panel .btn-primary,.journey-links .btn-primary { color:#07131b; }
+#waitlist { scroll-margin-top:110px; }
+.cs-links { flex-wrap:wrap; }
+@media(max-width:700px) { .release-grid { grid-template-columns:1fr; } .waitlist-panel { padding:22px 16px; } .waitlist-panel .btn { white-space:normal; } }
+
+/* Without JavaScript, every mobile destination remains reachable. */
+@media (scripting: none) and (max-width: 900px) {
+  .hamburger { display:none; }
+  .mobile-nav { display:flex; position:static; margin-top:var(--nav-h); max-height:none; }
+}
+.sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* Orange brand buttons need dark labels; contact cards must not inherit browser blue. */
+.btn-primary,.btn-primary:hover { color:var(--bg); }
+a.card { color:var(--text); }

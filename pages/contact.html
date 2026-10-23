@@ -5,11 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Cajun AI</title>
   <meta name="description" content="Get in touch with Cajun AI LLC — questions, feedback, or just want to say hello.">
-  <link rel="icon" href="../assets/images/favicon.png">
+  <link rel="icon" href="../assets/images/favicon-64.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+
+<style>
+@media(max-width:600px){
+  div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr !important;gap:16px !important;}
+}
+</style>
+<link rel="canonical" href="https://cajun-ai.com/pages/contact">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Contact | Cajun AI">
+<meta property="og:url" content="https://cajun-ai.com/pages/contact">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://cajun-ai.com/assets/images/logo-512.png">
+<meta property="og:image:alt" content="Cajun AI logo">
+<meta name="twitter:card" content="summary">
+<meta name="referrer" content="no-referrer">
+<meta property="og:description" content="Get in touch with Cajun AI LLC — questions, feedback, or just want to say hello.">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -17,7 +33,7 @@
 <!-- NAVBAR -->
 <header class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+    <a href="../index.html" class="brand"><img src="../assets/images/logo-200.png" alt="Cajun AI" width="200" height="200"> Cajun AI</a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="tradeboard.html">TradeBoard</a></li>
@@ -27,20 +43,21 @@
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="login.html" class="btn btn-ghost">Log In</a>
-      <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
+      <a href="login.html" class="btn btn-ghost">Access Status</a>
+      <a href="tradeboard.html#waitlist" class="btn btn-primary">Join Waitlist</a>
     </div>
     <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
   <a href="../index.html">Home</a><a href="tradeboard.html">TradeBoard</a><a href="pricing.html">Pricing</a><a href="blog.html">Articles</a><a href="youtube.html">YouTube</a><a href="about.html">About</a>
-  <a href="login.html" class="btn btn-outline">Log In</a>
-  <a href="pricing.html" class="btn btn-primary">Get TradeBoard</a>
+  <a href="login.html" class="btn btn-outline">Access Status</a>
+  <a href="tradeboard.html#waitlist" class="btn btn-primary">Join Waitlist</a>
 </nav>
 
 <!-- HERO -->
-<section class="page-hero" id="main-content" tabindex="-1">
+<main id="main-content" tabindex="-1">
+<section class="page-hero">
   <div class="container">
     <div class="tag">Contact</div>
     <h1 class="section-title" style="font-size:clamp(2.2rem,4.5vw,3.2rem);max-width:640px;margin:0 auto 20px;">
@@ -82,8 +99,10 @@
     <!-- Contact form -->
     <div class="card" style="padding:40px;">
       <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:8px;">Send us a message</h2>
-      <p style="color:var(--muted);font-size:.9rem;margin-bottom:28px;">We read every message and reply within 1–2 business days.</p>
-      <form id="contactForm" novalidate>
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:28px;">This form opens a draft in your email app. Review and send it there; delivery is not confirmed by this page.</p>
+      <form id="contactForm">
+        <fieldset id="contactFields" disabled style="border:0;padding:0;min-width:0;">
+          <legend class="sr-only">Prepare an email draft</legend>
         <div class="form-group">
           <label for="contactName" style="display:block;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;">Name</label>
           <input type="text" id="contactName" name="name" placeholder="Your name" autocomplete="name" required>
@@ -96,37 +115,41 @@
           <label for="contactMsg" style="display:block;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;">Message</label>
           <textarea id="contactMsg" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Send Message →</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Open Email Draft →</button>
+        </fieldset>
       </form>
+      <noscript><p>The email-draft helper requires JavaScript. <a href="mailto:support@cajun-ai.com">Email support@cajun-ai.com directly</a>. No message is sent by this page.</p></noscript>
       <div id="contactSuccess" style="display:none;margin-top:20px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:var(--radius);padding:14px 20px;" role="alert" aria-live="polite">
-        <p style="color:#22c55e;font-weight:700;margin-bottom:2px;">Message sent!</p>
-        <p style="color:var(--muted);font-size:.85rem;margin-bottom:0;">We'll get back to you soon.</p>
+        <p style="color:#22c55e;font-weight:700;margin-bottom:2px;">Email draft requested</p>
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:0;">Review and send the message in your email app. If no app opens, email support@cajun-ai.com directly. Nothing has been sent by this website.</p>
       </div>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="../index.html" class="brand"><img src="../assets/images/logo.png" alt="Cajun AI"> Cajun AI</a>
+        <a href="../index.html" class="brand"><img src="../assets/images/logo-200.png" alt="Cajun AI" width="200" height="200"> Cajun AI</a>
         <p>Cajun AI LLC — building smart software, AI tools, and digital products. TradeBoard is our flagship app.</p>
         <div class="footer-social">
-          <a href="https://youtube.com/@cajunnationtech" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on YouTube (opens in new tab)">YT</a>
+          <a href="youtube.html" aria-label="Cajun AI video series">YT</a>
           <a href="https://x.com/cajunai1001" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on X / Twitter (opens in new tab)">X</a>
           <a href="https://www.instagram.com/cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on Instagram (opens in new tab)">IG</a>
           <a href="https://www.tiktok.com/@cajun_ai" target="_blank" rel="noopener noreferrer" aria-label="Cajun AI on TikTok (opens in new tab)">TK</a>
         </div>
       </div>
-      <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Log In</a></li></ul></div>
+      <div class="footer-col"><h5>Products</h5><ul><li><a href="tradeboard.html">TradeBoard</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Access Status</a></li></ul></div>
       <div class="footer-col"><h5>Content</h5><ul><li><a href="blog.html">Articles</a></li><li><a href="youtube.html">YouTube</a></li></ul></div>
-      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="legal.html">Privacy Policy</a></li><li><a href="legal.html#tos">Terms of Service</a></li></ul></div><div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:support@cajun-ai.com">support@cajun-ai.com</a></li><li><a href="mailto:info@cajun-ai.com">info@cajun-ai.com</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="legal-status.html">Privacy status</a></li><li><a href="legal-status.html#terms">Terms status</a></li></ul></div><div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:support@cajun-ai.com">support@cajun-ai.com</a></li><li><a href="mailto:info@cajun-ai.com">info@cajun-ai.com</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 Cajun AI LLC. All rights reserved. TradeBoard is a product of Cajun AI LLC.</p>
-      <div style="display:flex;gap:20px;"><a href="legal.html">Privacy</a><a href="legal.html#tos">Terms</a></div>
+      <div style="display:flex;gap:20px;"><a href="legal-status.html">Privacy status</a><a href="legal-status.html#terms">Terms status</a></div>
     </div>
   </div>
 </footer>
@@ -141,14 +164,11 @@
     const subject = encodeURIComponent('Website contact from ' + name);
     const body = encodeURIComponent(msg + '\n\n— ' + name + ' (' + email + ')');
     window.location.href = 'mailto:support@cajun-ai.com?subject=' + subject + '&body=' + body;
-    this.style.display = 'none';
     document.getElementById('contactSuccess').style.display = 'block';
   });
+  // Enable only after the local mail-draft handler is attached; no default GET of personal data.
+  document.getElementById('contactFields').disabled = false;
 </script>
-<style>
-@media(max-width:600px){
-  div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr !important;gap:16px !important;}
-}
-</style>
+
 </body>
 </html>

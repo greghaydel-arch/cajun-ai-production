@@ -10,6 +10,19 @@ if (navbar) {
 const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.mobile-nav');
 if (hamburger && mobileNav) {
+  const closeMenu = () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  };
+  // A drawer opened on a phone must not cover desktop navigation after resize.
+  window.matchMedia('(max-width: 900px)').addEventListener('change', closeMenu);
+  document.addEventListener('click', event => {
+    if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('focusin', event => {
+    if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) closeMenu();
+  });
   hamburger.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open', isOpen);
@@ -26,11 +39,15 @@ if (hamburger && mobileNav) {
 }
 
 // ── Active nav link ──────────────────────────────────────────
-document.querySelectorAll('.nav-links a').forEach(a => {
-  if (a.getAttribute('href') === window.location.pathname.split('/').pop() ||
-      (window.location.pathname.endsWith('/') && a.getAttribute('href') === 'index.html')) {
-    a.classList.add('active');
-  }
+const normalizedPath = path => path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
+  if (a.hash) return;
+  const target = normalizedPath(new URL(a.href).pathname);
+  const currentPath = normalizedPath(window.location.pathname);
+  const current = target === currentPath || (target === '/pages/blog' && currentPath.startsWith('/pages/articles/'));
+  a.classList.toggle('active', current);
+  if (current) a.setAttribute('aria-current', 'page');
+  else a.removeAttribute('aria-current');
 });
 
 // ── Scroll fade-in (skipped if user prefers reduced motion) ──
@@ -51,3 +68,12 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     observer.observe(el);
   });
 }
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && hamburger && mobileNav && mobileNav.classList.contains('open')) {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.focus();
+  }
+});
